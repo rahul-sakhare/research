@@ -92,3 +92,18 @@ if (root && window.PUBS){
     });
   });
 }
+
+// ---- downloads metric (auto-updated weekly via GitHub Action) ----
+const dlNum = document.getElementById('dl-num');
+if (dlNum){
+  fetch('metrics.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : null)
+    .then(m => {
+      if (!m || typeof m.total_downloads !== 'number') return;
+      dlNum.dataset.to = m.total_downloads;
+      dlNum.textContent = m.total_downloads.toLocaleString();
+      const u = document.getElementById('dl-updated');
+      if (u && m.updated) u.textContent = 'updated ' + m.updated;
+    })
+    .catch(()=>{});
+}

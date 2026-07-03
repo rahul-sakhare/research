@@ -7,7 +7,7 @@
 <meta name="description" content="Rahul Sakhare — Transportation Research Engineer at Purdue University. Connected vehicle data, traffic safety, work zones, and surrogate safety measures.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,13 +30,20 @@
 <main>
   <!-- HERO -->
   <section class="hero wrap" id="top">
-    <p class="loc mono">TRANSPORTATION RESEARCH ENGINEER · <b>PURDUE UNIVERSITY</b> · WEST LAFAYETTE, IN</p>
-    <h1>Turning connected-vehicle data into <span class="flow">safer roads</span>.</h1>
-    <p class="lede">I build scalable performance measures from billions of connected-vehicle and probe records — helping DOTs and FHWA see traffic safety and mobility in near real time, from work zones and winter storms to hard-braking risk.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="index.html#research">Explore research →</a>
-      <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      <a class="btn btn-ghost" href="index.html#contact">Get in touch</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="loc mono">TRANSPORTATION RESEARCH ENGINEER · <b>PURDUE UNIVERSITY</b> · WEST LAFAYETTE, IN</p>
+        <h1>Turning connected-vehicle data into <span class="flow">safer roads</span>.</h1>
+        <p class="lede">I build scalable performance measures from billions of connected-vehicle and probe records — helping DOTs and FHWA see traffic safety and mobility in near real time, from work zones and winter storms to hard-braking risk.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="index.html#research">Explore research →</a>
+          <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn btn-ghost" href="index.html#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/img/hero_cutout.webp" alt="Rahul Sakhare" width="505" height="1050">
+      </div>
     </div>
     <div class="readout" role="group" aria-label="Research metrics">
       <div class="cell"><div class="num" data-to="476">476</div><div class="lab">Citations</div></div>
@@ -44,12 +51,14 @@
       <div class="cell"><div class="num" data-to="18">18</div><div class="lab">i10-index</div></div>
       <div class="cell"><div class="num" data-to="31">31</div><div class="lab">Journal articles</div></div>
       <div class="cell"><div class="num" data-to="22">22</div><div class="lab">Funded projects</div></div>
+      <div class="cell"><div class="num" id="dl-num" data-to="5588">5,588</div><div class="lab">Report downloads</div></div>
     </div>
+    <p class="readout-note">Report downloads tallied from Purdue e-Pubs · auto-refreshes weekly · <b id="dl-updated">seed from CV</b></p>
   </section>
 
   <!-- ABOUT -->
   <section class="section wrap" id="about">
-    <p class="eyebrow">// about</p>
+    <p class="eyebrow">about</p>
     <h2>Research that reaches practice.</h2>
     <div class="about-grid">
       <div>
@@ -65,6 +74,8 @@
           <span class="tag">Scalable Performance Measures</span>
         </div>
       </div>
+      <div class="about-side">
+      <img class="about-photo" src="assets/img/about_photo.jpg" alt="Rahul Sakhare, Purdue University" width="750" height="720" loading="lazy">
       <aside class="about-card">
         <h3>At a glance</h3>
         <div class="row"><b>Role</b><span>Transportation Research Engineer</span></div>
@@ -74,12 +85,13 @@
         <div class="row"><b>Certified</b><span>Google Cloud Generative AI Leader</span></div>
         <div class="row"><b>TRB committee</b><span>ACF13 — Limited Access Roadway Operations</span></div>
       </aside>
+      </div>
     </div>
   </section>
 
   <!-- RESEARCH -->
   <section class="section wrap" id="research">
-    <p class="eyebrow">// research</p>
+    <p class="eyebrow">research</p>
     <h2>Focus areas.</h2>
     <p class="intro">Six threads run through my work — all aimed at making massive vehicle datasets usable, safe-by-design, and adoptable by agencies.</p>
     <div class="grid">
@@ -94,7 +106,7 @@
 
   <!-- SELECTED IMPACT -->
   <section class="section wrap" id="impact">
-    <p class="eyebrow">// selected impact</p>
+    <p class="eyebrow">selected impact</p>
     <h2>Work that made the news.</h2>
     <div class="feat">
       <a class="card" href="https://www.sciencedirect.com/science/article/pii/S2590198224002112" target="_blank" rel="noopener">
@@ -126,7 +138,7 @@
 
   <!-- EXPERIENCE & EDUCATION -->
   <section class="section wrap" id="experience">
-    <p class="eyebrow">// experience &amp; education</p>
+    <p class="eyebrow">experience &amp; education</p>
     <h2>Path so far.</h2>
     <div class="timeline">
       <div class="tl-item"><div class="tl-date mono">Aug 2023 — Present</div><div class="tl-body"><h3>Transportation Research Engineer</h3><div class="org">Joint Transportation Research Program, Purdue University</div><p>Lead connected-vehicle data research for INDOT and FHWA, developing statewide safety and mobility performance measures.</p></div></div>
@@ -139,7 +151,7 @@
 
   <!-- TEACHING -->
   <section class="section wrap" id="teaching">
-    <p class="eyebrow">// teaching &amp; mentoring</p>
+    <p class="eyebrow">teaching &amp; mentoring</p>
     <h2>In the classroom &amp; the lab.</h2>
     <ul class="teach-list">
       <li><div class="yr mono">2021</div><div><b>Instructor — SPARC Mobility Course &amp; Workshop</b><p>Developed course material and taught three session modules under the Scheme for Promotion of Academic and Research Collaboration (Government of India initiative).</p></div></li>
@@ -150,7 +162,7 @@
 
   <!-- NEWS PREVIEW -->
   <section class="section wrap" id="news-preview">
-    <p class="eyebrow">// news &amp; media</p>
+    <p class="eyebrow">news &amp; media</p>
     <h2>Recent coverage.</h2>
     <div class="feat">
       <a class="card" href="https://purdue.edu/newsroom/releases/2023/Q1/connected-vehicles-the-latest-tool-to-give-engineers-real-time-insight-into-highway-traffic-congestion-issues.html" target="_blank" rel="noopener">
@@ -168,7 +180,7 @@
 
   <!-- CONTACT -->
   <section class="contact wrap" id="contact">
-    <p class="eyebrow">// contact</p>
+    <p class="eyebrow">contact</p>
     <h2>Let's connect.</h2>
     <p>Open to faculty positions, research collaborations, and conversations about connected-vehicle data and transportation safety.</p>
     <div class="links">
