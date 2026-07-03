@@ -47,3 +47,23 @@ The hero shows a **Report downloads** number tallied from your Purdue e-Pubs pag
 3. Go to the **Actions** tab → “Update download metrics” → **Run workflow** once to populate live totals immediately. After that it runs weekly on its own.
 
 Notes: GitHub Actions is free for public repositories. The script tallies Purdue e-Pubs (report) downloads; journal-article views on MDPI/IEEE aren't included because those publishers report them inconsistently. To add/remove sources, edit `scripts/sources.json`.
+
+---
+
+## Fixing GitHub Pages deployment
+
+**The "Node.js 20 is deprecated" warning is harmless** — it comes from GitHub's own Pages pipeline, not this site, and can be ignored.
+
+If the deploy fails ("Deployment failed, try again later"), it's because GitHub tried to build the site with **Jekyll**. This is a plain static site, so turn Jekyll off. Pick **one** of these:
+
+**Option A — simplest (Deploy from a branch).**
+The included `.nojekyll` file disables Jekyll. Just make sure Pages is set to:
+Settings → Pages → Source → **Deploy from a branch** → `main` / `(root)` → Save, then re-run the failed deployment (Actions tab → the failed run → **Re-run jobs**).
+
+**Option B — robust, recommended (GitHub Actions).**
+Use the included `.github/workflows/deploy-pages.yml`, which deploys the static files directly (no Jekyll) with current action versions:
+Settings → Pages → Source → **GitHub Actions** → Save. It deploys on every push to `main`.
+
+Use only one option — selecting "GitHub Actions" as the source replaces branch-based deploys.
+
+Note: if your default branch is `master` (not `main`), edit the `branches:` line in `deploy-pages.yml` and `update-metrics.yml` accordingly.

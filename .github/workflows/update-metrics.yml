@@ -12,7 +12,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: actions/setup-python@v5
         with:
@@ -35,6 +35,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No metric changes."
           else
-            git commit -m "chore: refresh download metrics [skip ci]"
+            git commit -m "chore: refresh download metrics"
             git push
           fi
