@@ -1,69 +1,33 @@
 # Rahul Sakhare — Academic Website
 
-A light-themed, tab-based faculty site (Home/About, Research, Publications, Teaching, News, CV, Contact).
+Editorial, multi-page faculty site. Every tab is its own page:
+`index.html` (landing) · `about.html` · `research.html` · `publications.html` · `education.html` · `teaching.html` · `news.html` · `contact.html`
 
-## Files
-- `index.html` — home (about, research, experience, teaching, news preview, contact)
-- `publications.html` — full, filterable publication list (reads `pubs-data.js`)
-- `news.html` — media coverage
-- `styles.css`, `script.js` — shared styling and behavior
-- `pubs-data.js` — your publications as data (edit here to add papers)
-- `assets/Sakhare_CV.pdf` — the CV linked from the "CV" tab
+## Data files (edit these, not the HTML)
+- `pubs-data.js` — all 91 publications. Add new entries as
+  `{"type":"journal","year":2026,"cite":"…","url":"https://doi.org/…","note":null}`
+  (types: journal, report, conference, technical, book, thesis). Your name is auto-bolded; every entry becomes a clickable card.
+- `media-data.js` — press/media mentions (outlet, title, date, url, kind, optional note; `marquee:true` features it in the dark band on News & Media).
+- `metrics.json` — the holistic **Downloads & views** figure on the home page (currently **37,532**, seeded from Publications.xlsx). Auto-refreshed weekly.
+- `scripts/sources.json` — the 45 per-paper metric links (PlumX/MDPI/SCIRP/Springer/e-Pubs) the scraper visits.
 
-## Publish free on GitHub Pages
-1. Create a repository. For a personal site, name it `<username>.github.io`.
-2. Upload all of these files to the repository **root** (keep the `assets/` folder).
-3. In the repo: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)` → Save**.
-4. Your site goes live at `https://<username>.github.io/` within a minute or two.
+## Rebuilding pages
+Shared nav/head/footer live in `build_pages.py`. To change them once for all pages:
+`python3 build_pages.py` regenerates every HTML file.
 
-## Updating
-- **Add a publication:** add an object to `pubs-data.js`:
-  `{"type":"journal","year":2026,"cite":"Authors (2026). Title. Venue, vol(iss), pp.","url":"https://doi.org/...","note":null}`
-  (types: `journal`, `report`, `conference`, `technical`, `book`, `thesis`). Your name is auto-bolded.
-- **Replace the CV:** overwrite `assets/Sakhare_CV.pdf` (keep the filename).
-- **Edit stats/bio:** in `index.html` (the readout numbers and About text).
+## Auto-updating Downloads & views
+- `scripts/update_metrics.py` opens each source link in a headless browser, reads the rendered count, and rewrites `metrics.json`. If a page fails, the last-known count is kept, so the total never drops on a bad scrape.
+- `.github/workflows/update-metrics.yml` runs it every Monday (and on demand: Actions → Update download metrics → Run workflow).
+- One-time: Settings → Actions → General → Workflow permissions → **Read and write permissions**.
+- Honest caveat: publisher pages change markup; expect the Action to keep most counts fresh and fall back to last-known for the rest. The 37,532 seed is accurate as of Jul 2026.
 
-Fonts load from Google Fonts; no build step or dependencies required.
-
----
+## Deployment (GitHub Pages)
+Included `.nojekyll` + `.github/workflows/deploy-pages.yml`.
+Settings → Pages → Source → **GitHub Actions** (recommended), or Deploy from a branch (the `.nojekyll` handles it).
+If your default branch is `master`, edit the `branches:` line in both workflow files.
 
 ## Photos
-Headshots live in `assets/img/`:
-- `hero_cutout.webp` — background-removed studio headshot used in the hero (blends onto the page).
-- `about_photo.jpg` — Purdue-branded photo in the About section.
-To swap either, replace the file (keep the name) or point the `<img>` in `index.html` at a new file.
+`assets/img/about_photo.jpg` — the About portrait (subtle scroll parallax). Replace the file to swap it.
 
-## Auto-updating "Report downloads" stat
-The hero shows a **Report downloads** number tallied from your Purdue e-Pubs pages. It refreshes itself weekly:
-
-- `metrics.json` — the number the site displays (seeded from your CV: 5,588).
-- `scripts/sources.json` — the list of e-Pubs URLs to tally (generated from your reports).
-- `scripts/update_metrics.py` — opens each page in a headless browser, reads the rendered download count, sums them, and rewrites `metrics.json`.
-- `.github/workflows/update-metrics.yml` — a GitHub Action that runs the script **every Monday** (and on demand) and commits the updated `metrics.json`.
-
-### One-time setup on GitHub
-1. Push all files (including the hidden `.github/` folder) to your repo.
-2. **Settings → Actions → General → Workflow permissions → “Read and write permissions” → Save** (lets the Action commit the refreshed number).
-3. Go to the **Actions** tab → “Update download metrics” → **Run workflow** once to populate live totals immediately. After that it runs weekly on its own.
-
-Notes: GitHub Actions is free for public repositories. The script tallies Purdue e-Pubs (report) downloads; journal-article views on MDPI/IEEE aren't included because those publishers report them inconsistently. To add/remove sources, edit `scripts/sources.json`.
-
----
-
-## Fixing GitHub Pages deployment
-
-**The "Node.js 20 is deprecated" warning is harmless** — it comes from GitHub's own Pages pipeline, not this site, and can be ignored.
-
-If the deploy fails ("Deployment failed, try again later"), it's because GitHub tried to build the site with **Jekyll**. This is a plain static site, so turn Jekyll off. Pick **one** of these:
-
-**Option A — simplest (Deploy from a branch).**
-The included `.nojekyll` file disables Jekyll. Just make sure Pages is set to:
-Settings → Pages → Source → **Deploy from a branch** → `main` / `(root)` → Save, then re-run the failed deployment (Actions tab → the failed run → **Re-run jobs**).
-
-**Option B — robust, recommended (GitHub Actions).**
-Use the included `.github/workflows/deploy-pages.yml`, which deploys the static files directly (no Jekyll) with current action versions:
-Settings → Pages → Source → **GitHub Actions** → Save. It deploys on every push to `main`.
-
-Use only one option — selecting "GitHub Actions" as the source replaces branch-based deploys.
-
-Note: if your default branch is `master` (not `main`), edit the `branches:` line in `deploy-pages.yml` and `update-metrics.yml` accordingly.
+## University logos
+`education.html` intentionally uses typographic marks — Purdue and IIT Madras names/logos are registered trademarks and official marks require brand-guideline permission. The page includes the attribution language to use if permission is granted.
