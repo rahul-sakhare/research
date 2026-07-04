@@ -3,52 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Sakhare, Ph.D., P.E. | Transportation Research Engineer</title>
-<meta name="description" content="Rahul Sakhare — Transportation Research Engineer at Purdue University. Connected vehicle data, traffic safety, work zones, and surrogate safety measures.">
+<title>Rahul Sakhare, Ph.D., P.E. | Transportation Engineer & Researcher</title>
+<meta name="description" content="Rahul Sakhare — transportation engineer and researcher at Purdue University, working across infrastructure, emerging technology, teaching, and applied research.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body><header class="site-head">
+<body class="home"><header class="site-head" id="site-head">
   <nav class="wrap nav" aria-label="Primary">
     <a class="brand" href="index.html">Rahul&nbsp;Sakhare<span class="dot">.</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="education.html">Education</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News & Media</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV ↗</a></li></ul>
+    <ul class="nav-links"><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="education.html">Education</a></li><li><a href="awards.html">Awards</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV ↗</a></li></ul>
   </nav>
 </header>
 <main>
   <section class="hero wrap">
-    <p class="loc">TRANSPORTATION RESEARCH ENGINEER · <b>PURDUE UNIVERSITY</b> · WEST LAFAYETTE, IN</p>
-    <h1>Turning connected-vehicle data into <span class="flow">safer roads</span>.</h1>
-    <p class="lede">I build scalable performance measures from billions of connected-vehicle and probe records — helping DOTs and FHWA see traffic safety and mobility in near real time, from work zones and winter storms to hard-braking risk.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="research.html">Explore research →</a>
-      <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+    <div class="hero-inner">
+      <div>
+        <p class="loc">TRANSPORTATION RESEARCH ENGINEER · <b>PURDUE UNIVERSITY</b> · WEST LAFAYETTE, IN</p>
+        <h1>Engineering <span class="flow">safer, smarter</span> transportation.</h1>
+        <p class="lede">I'm a transportation engineer who pairs civil-engineering fundamentals with emerging technology — turning research into performance measures, teaching, and tools that agencies actually use, from traffic safety and work zones to winter operations.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="research.html">Explore research →</a>
+          <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-photo"><img src="assets/img/hero_blend.webp" alt="Rahul Sakhare" width="760" height="701"></div>
     </div>
     <div class="readout" role="group" aria-label="Research metrics">
-      <div class="cell"><div class="num" data-to="476">476</div><div class="lab">Citations</div></div>
-      <div class="cell"><div class="num" data-to="13">13</div><div class="lab">h-index</div></div>
-      <div class="cell"><div class="num" data-to="18">18</div><div class="lab">i10-index</div></div>
-      <div class="cell"><div class="num" data-to="31">31</div><div class="lab">Journal articles</div></div>
-      <div class="cell"><div class="num" data-to="22">22</div><div class="lab">Technical reports</div></div>
-      <div class="cell"><div class="num" id="dl-num" data-to="37532">37,532</div><div class="lab">Downloads &amp; views</div></div>
+      <div class="cell"><div class="numline"><div class="num" id="stat-cites" data-to="476">476</div></div><div class="lab">Citations</div></div>
+      <div class="cell"><div class="numline"><div class="num" id="stat-h" data-to="13">13</div></div><div class="lab">h-index</div></div>
+      <div class="cell"><div class="numline"><div class="num" id="stat-i10" data-to="18">18</div></div><div class="lab">i10-index</div></div>
+      <div class="cell"><div class="numline"><div class="num" id="stat-journal" data-to="31">31</div></div><div class="lab">Journal articles</div></div>
+      <div class="cell"><div class="numline"><div class="num" id="stat-report" data-to="22">22</div></div><div class="lab">Technical reports</div></div>
+      <div class="cell"><div class="numline"><span class="pre">&gt;</span><div class="num" id="dl-num" data-to="37532">37,532</div></div><div class="lab">Downloads &amp; views</div><div class="asof" id="dl-asof">as of Jul 1, 2026</div></div>
     </div>
-    <nav class="dir" aria-label="Site directory">
-      <a href="about.html"><span class="t">About</span><span class="d">Background, role at JTRP, and research interests</span><span class="go">→</span></a>
-      <a href="research.html"><span class="t">Research</span><span class="d">Focus areas and selected impact</span><span class="go">→</span></a>
-      <a href="publications.html"><span class="t">Publications</span><span class="d">91 journal articles, reports &amp; presentations</span><span class="go">→</span></a>
-      <a href="education.html"><span class="t">Education</span><span class="d">Purdue · IIT Madras</span><span class="go">→</span></a>
-      <a href="teaching.html"><span class="t">Teaching</span><span class="d">Instruction and mentoring</span><span class="go">→</span></a>
-      <a href="news.html"><span class="t">News &amp; Media</span><span class="d">NYT, FHWA, Google Cloud and 20+ more</span><span class="go">→</span></a>
-    </nav>
+    <div class="dirgrid">
+      <a class="dirc" href="about.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 19.5c1.8-3.2 4.3-4.7 7.5-4.7s5.7 1.5 7.5 4.7"/></svg><span class="t">About</span></div>
+        <ul><li>Transportation Research Engineer at Purdue's Joint Transportation Research Program</li>
+        <li>Licensed PE (Indiana) working where civil engineering meets data and emerging technology</li></ul>
+        <span class="go">Read more →</span></a>
+      <a class="dirc" href="research.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/><path d="M12 4V2M12 22v-2M4 12H2M22 12h-2"/></svg><span class="t">Research</span></div>
+        <ul><li>Six focus areas spanning traffic safety, work zones, and scalable performance measures</li>
+        <li>Deployed statewide with INDOT and FHWA — including the 2024 solar-eclipse mobility study</li></ul>
+        <span class="go">Explore →</span></a>
+      <a class="dirc" href="publications.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v15H6.5A2.5 2.5 0 0 0 4 20.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H12v15h5.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg><span class="t">Publications</span></div>
+        <ul><li>31 peer-reviewed journal articles and 22 technical reports — 91 entries in all</li>
+        <li>Every entry links straight to its DOI or archive</li></ul>
+        <span class="go">Browse →</span></a>
+      <a class="dirc" href="education.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><path d="M12 4 2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5"/><path d="M22 9v5"/></svg><span class="t">Education</span></div>
+        <ul><li>Ph.D. in Civil Engineering, Purdue University (2023)</li>
+        <li>Dual degree — B.Tech. &amp; M.Tech. — from IIT Madras (2018)</li></ul>
+        <span class="go">See degrees →</span></a>
+      <a class="dirc" href="awards.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 5H5a3 3 0 0 0 3 4.5M16 5h3a3 3 0 0 1-3 4.5"/><path d="M12 13v3.5M8.5 20h7M10 16.5h4v3.5h-4z"/></svg><span class="t">Awards</span></div>
+        <ul><li>Google Cloud Research Innovator, 2024 cohort</li>
+        <li>ITS Midwest Project of the Year (2021) and an Editor's Choice journal award</li></ul>
+        <span class="go">View honors →</span></a>
+      <a class="dirc" href="teaching.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M12 16v2M8.5 21l3.5-3 3.5 3M7 8h6M7 11h9"/></svg><span class="t">Teaching</span></div>
+        <ul><li>Course instructor under the Government of India's SPARC initiative</li>
+        <li>Mentoring graduate and undergraduate researchers at JTRP</li></ul>
+        <span class="go">Learn more →</span></a>
+      <a class="dirc" href="news.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span class="t">News &amp; Media</span></div>
+        <ul><li>Research featured on the front page of The New York Times (Dec 2024)</li>
+        <li>Coverage from FHWA, Google Cloud, USDOT, and 20+ outlets</li></ul>
+        <span class="go">See coverage →</span></a>
+      <a class="dirc" href="gallery.html"><div class="dh"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3.6"/><path d="M8.5 7l1.4-2.4h4.2L15.5 7"/></svg><span class="t">Gallery</span></div>
+        <ul><li>Photos from the field, conferences, and campus</li>
+        <li>New — images coming soon</li></ul>
+        <span class="go">Take a look →</span></a>
+    </div>
   </section>
+  <div class="scroll-cue" id="scroll-cue" aria-hidden="true"><svg class="car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 13.5 6.8 9.6A2 2 0 0 1 8.7 8.2h6.6a2 2 0 0 1 1.9 1.4l1.3 3.9"/><rect x="4.5" y="13.5" width="15" height="4.6" rx="1.4"/><circle cx="8" cy="19.6" r="1.5"/><circle cx="16" cy="19.6" r="1.5"/></svg><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"/></svg></div>
 </main>
 <footer class="foot wrap">
   <span>© 2026 Rahul Suryakant Sakhare</span>
   <span>Built for research · West Lafayette, IN</span>
 </footer>
+<script src="pubs-data.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

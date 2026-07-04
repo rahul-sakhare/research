@@ -31,3 +31,19 @@ If your default branch is `master`, edit the `branches:` line in both workflow f
 
 ## University logos
 `education.html` intentionally uses typographic marks — Purdue and IIT Madras names/logos are registered trademarks and official marks require brand-guideline permission. The page includes the attribution language to use if permission is granted.
+
+
+---
+
+## What updates automatically (daily)
+`.github/workflows/update-stats.yml` runs **every day** and commits:
+- `scholar.json` — citations, h-index, i10-index pulled from the Google Scholar profile (`scripts/update_scholar.py`). If Scholar rate-limits the bot, last-known values are kept.
+- `metrics.json` — the "> Downloads & views" total and its as-of date (`scripts/update_metrics.py`).
+The **Journal articles** and **Technical reports** numbers on the home page are counted live from `pubs-data.js` in the browser — update that file (e.g., from a new CV) and the stats follow automatically.
+
+## Feedback form (Contact page)
+Uses FormSubmit.co to deliver messages to rsakhare@purdue.edu with no backend. **First submission:** FormSubmit emails you an activation link — click it once and the form is live from then on. A honeypot field is included for spam; you can also manage settings at formsubmit.co.
+
+## New pages in this version
+- `awards.html` — six highlight honors plus a full timeline.
+- `gallery.html` — placeholder grid; when photos are ready, replace the "Coming soon" tiles with `<img>` tags (or send them to me and I'll lay out a proper gallery).

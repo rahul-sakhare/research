@@ -12,26 +12,77 @@ if (toggle && links){
 const reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 const hasIO = 'IntersectionObserver' in window;
 
+// ---- nav tabs: prominent on the home page, compact once noticed ----
+const headEl = document.getElementById('site-head');
+const isHome = document.body.classList.contains('home');
+if (headEl){
+  if (!isHome){
+    headEl.classList.add('compact');
+  } else {
+    const onScroll = ()=> headEl.classList.toggle('compact', window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  }
+}
+
+// ---- scroll cue: fades once scrolling starts, disappears near the end ----
+const cue = document.getElementById('scroll-cue');
+if (cue){
+  const upd = ()=>{
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    cue.classList.toggle('faded', y > 40 && y < max - 160);
+    cue.classList.toggle('gone', y >= max - 160 || max <= 40);
+  };
+  window.addEventListener('scroll', upd, {passive:true});
+  window.addEventListener('resize', upd);
+  upd();
+}
+
 // ---- stat count-up ----
 const nums = document.querySelectorAll('.num[data-to]');
-if (nums.length && hasIO && !reduce){
-  const run = (el)=>{
-    const to = parseFloat(el.dataset.to);
-    const t0 = performance.now(); const dur = 1100;
-    const tick = (t)=>{
-      const p = Math.min(1,(t-t0)/dur); const eased = 1-Math.pow(1-p,3);
-      el.textContent = Math.round(to*eased).toLocaleString();
-      if(p<1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+const animateTo = (el)=>{
+  const to = parseFloat(el.dataset.to);
+  if (reduce || !hasIO){ el.textContent = to.toLocaleString(); return; }
+  const t0 = performance.now(); const dur = 1100;
+  const tick = (t)=>{
+    const p = Math.min(1,(t-t0)/dur); const eased = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(to*eased).toLocaleString();
+    if(p<1) requestAnimationFrame(tick);
   };
+  requestAnimationFrame(tick);
+};
+if (nums.length && hasIO && !reduce){
   const so = new IntersectionObserver((ents,o)=>{
-    ents.forEach(e=>{ if(e.isIntersecting){ run(e.target); o.unobserve(e.target); }});
+    ents.forEach(e=>{ if(e.isIntersecting){ animateTo(e.target); o.unobserve(e.target); }});
   },{threshold:.6});
   nums.forEach(n=>so.observe(n));
 }
 
-// ---- downloads metric (auto-updated weekly via GitHub Action) ----
+// ---- home stats: journal & report counts derived live from pubs-data.js ----
+if (isHome && window.PUBS){
+  const nJ = window.PUBS.filter(p=>p.type==='journal').length;
+  const nR = window.PUBS.filter(p=>p.type==='report').length;
+  const sj = document.getElementById('stat-journal'), sr = document.getElementById('stat-report');
+  if (sj){ sj.dataset.to = nJ; sj.textContent = nJ.toLocaleString(); }
+  if (sr){ sr.dataset.to = nR; sr.textContent = nR.toLocaleString(); }
+}
+
+// ---- Google Scholar stats (refreshed daily via GitHub Action -> scholar.json) ----
+if (isHome){
+  fetch('scholar.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : null)
+    .then(s => {
+      if (!s) return;
+      const map = {'stat-cites':'citations','stat-h':'h_index','stat-i10':'i10_index'};
+      Object.entries(map).forEach(([id,key])=>{
+        const el = document.getElementById(id);
+        if (el && typeof s[key] === 'number'){ el.dataset.to = s[key]; el.textContent = s[key].toLocaleString(); }
+      });
+    }).catch(()=>{});
+}
+
+// ---- downloads metric + as-of date (metrics.json, refreshed by Action) ----
 const dlNum = document.getElementById('dl-num');
 if (dlNum){
   fetch('metrics.json', {cache:'no-store'})
@@ -40,10 +91,16 @@ if (dlNum){
       if (!m || typeof m.total_downloads !== 'number') return;
       dlNum.dataset.to = m.total_downloads;
       dlNum.textContent = m.total_downloads.toLocaleString();
+      const a = document.getElementById('dl-asof');
+      if (a && m.updated){
+        const d = new Date(m.updated + 'T12:00:00');
+        a.textContent = 'as of ' + (isNaN(d) ? m.updated :
+          d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}));
+      }
     }).catch(()=>{});
 }
 
-// ---- scroll reveals ----
+// ---- scroll reveals (hiding applied by this script, so no-JS stays visible) ----
 const revs = document.querySelectorAll('.reveal');
 if (revs.length && hasIO && !reduce){
   const ro = new IntersectionObserver((ents,o)=>{
@@ -52,25 +109,10 @@ if (revs.length && hasIO && !reduce){
   revs.forEach(r=>{ r.classList.add('pre'); ro.observe(r); });
 }
 
-// ---- about photo parallax (subtle, scroll-linked) ----
-const pp = document.getElementById('parallax-photo');
-if (pp && !reduce){
-  let ticking = false;
-  const update = ()=>{
-    const rect = pp.parentElement.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
-    pp.style.setProperty('--py', ((progress - .5) * -26) + 'px');
-    ticking = false;
-  };
-  window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(update); ticking = true; }}, {passive:true});
-  update();
-}
-
 // ---- research popovers: tap-to-toggle on touch ----
 document.querySelectorAll('.grid .card .pop').forEach(pop=>{
   const card = pop.closest('.card');
-  card.addEventListener('click', (e)=>{
+  card.addEventListener('click', ()=>{
     if (window.matchMedia('(hover: none)').matches){
       document.querySelectorAll('.card.pop-open').forEach(c=>{ if(c!==card) c.classList.remove('pop-open'); });
       card.classList.toggle('pop-open');
@@ -148,7 +190,7 @@ if (mroot && window.MEDIA){
   const marq = window.MEDIA.filter(m=>m.marquee);
   const rest = window.MEDIA.filter(m=>!m.marquee).sort((a,b)=>(b.year||0)-(a.year||0));
 
-  const mqHTML = marq.length ? `<div class="media-marquee" data-kind="marquee">` + marq.map(m=>`
+  const mqHTML = marq.length ? `<div class="media-marquee">` + marq.map(m=>`
     <a class="mq" data-kind="${m.kind}" href="${m.url}" target="_blank" rel="noopener">
       <div class="kicker"><span class="src">${m.outlet}</span><span>${m.date}</span></div>
       <h3>${m.title}</h3>${m.note?`<p>${m.note}</p>`:''}
