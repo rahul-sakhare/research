@@ -1,9 +1,9 @@
 {
- "total_downloads": 39223,
+ "total_downloads": 39224,
  "item_count": 45,
  "counted_items": 35,
- "fresh_scrapes": 5,
- "updated": "2026-07-05",
+ "fresh_scrapes": 9,
+ "updated": "2026-07-06",
  "source": "Publisher metrics (PlumX, MDPI, SCIRP, Springer, Purdue e-Pubs)",
  "items": {
   "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/imr/7&theme=plum-bigben-theme": 1364,
@@ -29,7 +29,7 @@
   "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1834&theme=plum-bigben-theme": 325,
   "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1829&theme=plum-bigben-theme": 529,
   "https://www.mdpi.com/2673-7590/3/4/63#metrics": 1720,
-  "https://hammer.purdue.edu/articles/thesis/INTEGRATING_CONNECTED_VEHICLE_DATA_FOR_OPERATIONAL_DECISION_MAKING/22684822/1": 290,
+  "https://hammer.purdue.edu/articles/thesis/INTEGRATING_CONNECTED_VEHICLE_DATA_FOR_OPERATIONAL_DECISION_MAKING/22684822/1": 291,
   "https://www.mdpi.com/2673-7590/4/1/7#metrics": 596,
   "https://docs.lib.purdue.edu/jtrpaffdocs/47/": 47,
   "https://www.mdpi.com/2673-7590/4/3/46": 575,
