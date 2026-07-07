@@ -72,15 +72,16 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Engineer & R
     <div class="hero-inner">
       <div>
         <p class="loc">TRANSPORTATION RESEARCH ENGINEER · <b>PURDUE UNIVERSITY</b> · WEST LAFAYETTE, IN</p>
-        <h1>Engineering <span class="flow">safer, smarter</span> transportation.</h1>
-        <p class="lede">I'm a transportation engineer who pairs civil-engineering fundamentals with emerging technology — turning research into performance measures, teaching, and tools that agencies actually use, from traffic safety and work zones to winter operations.</p>
+        <h1>Rahul Sakhare<span class="creds">, Ph.D., P.E.</span></h1>
+        <p class="tagline">Engineering <span class="flow">safer, smarter</span> transportation.</p>
+        <p class="lede">I'm a Transportation Research Engineer who pairs civil-engineering fundamentals with emerging technology — turning research into performance measures, teaching, and tools that agencies actually use, from traffic safety and work zones to winter operations.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="research.html">Explore research →</a>
           <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV</a>
           <a class="btn btn-ghost" href="contact.html">Get in touch</a>
         </div>
       </div>
-      <div class="hero-photo"><img src="assets/img/hero_blend.webp" alt="Rahul Sakhare" width="760" height="701"></div>
+      <div class="hero-photo"><img src="assets/img/hero_photo.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1000" height="666"></div>
     </div>
     <div class="readout" role="group" aria-label="Research metrics">
       <div class="cell"><div class="numline"><div class="num" id="stat-cites" data-to="476">476</div></div><div class="lab">Citations</div></div>
@@ -256,24 +257,24 @@ P["education.html"] = head("Education | Rahul Sakhare, Ph.D., P.E.",
       <a class="edu-card reveal" href="https://engineering.purdue.edu/CCE" target="_blank" rel="noopener">
         <span class="edu-visit">Visit university site ↗</span>
         <span class="edu-when">April 2023 · West Lafayette, Indiana</span>
-        <h2 class="edu-uni">Purdue University</h2>
         <p class="edu-deg">Doctor of Philosophy (Ph.D.)</p>
+        <h2 class="edu-uni">Purdue University</h2>
         <p class="edu-dept">Lyles School of Civil &amp; Construction Engineering — Transportation &amp; Infrastructure Systems</p>
         <p>Dissertation: "Integrating Connected Vehicle Data for Operational Decision Making." Advisor: Prof. Darcy M. Bullock; committee: Profs. Samuel Labi, Konstantina Gkritza, and James Krogmeier. Supported by the Christopher B. &amp; Susan S. Burke Graduate Research Assistantship.</p>
       </a>
       <a class="edu-card reveal" href="https://www.iitm.ac.in/" target="_blank" rel="noopener">
         <span class="edu-visit">Visit university site ↗</span>
         <span class="edu-when">May 2018 · Chennai, India</span>
-        <h2 class="edu-uni">Indian Institute of Technology Madras</h2>
         <p class="edu-deg">Master of Technology (M.Tech.)</p>
+        <h2 class="edu-uni">Indian Institute of Technology Madras</h2>
         <p class="edu-dept">Department of Civil Engineering — Transportation Engineering</p>
         <p>Completed as part of the five-year dual-degree program. Thesis: "Reliable Corridor Level Travel Time Estimation Using Probe Vehicle Data." Advisor: Prof. Lelitha Devi Vanajakshi. Recognized for exemplary, all-round best performance in the dual-degree program.</p>
       </a>
       <a class="edu-card reveal" href="https://www.iitm.ac.in/" target="_blank" rel="noopener">
         <span class="edu-visit">Visit university site ↗</span>
         <span class="edu-when">May 2018 · Chennai, India</span>
-        <h2 class="edu-uni">Indian Institute of Technology Madras</h2>
         <p class="edu-deg">Bachelor of Technology (B.Tech.)</p>
+        <h2 class="edu-uni">Indian Institute of Technology Madras</h2>
         <p class="edu-dept">Department of Civil Engineering — Minor in Management Studies</p>
         <p>Completed as part of the five-year dual-degree program alongside the M.Tech. Entered through the IIT Joint Entrance Exam ranked in the top 0.2 percentile of 1.45 million candidates.</p>
       </a>
@@ -292,7 +293,7 @@ P["awards.html"] = head("Awards | Rahul Sakhare, Ph.D., P.E.",
   </section>
   <section class="section wrap" style="border-top:none;padding-top:26px">
     <div class="aw-high">
-      <div class="awh">{I["trophy"]}<h3>Google Cloud Research Innovator</h3><div class="by">Google Cloud · fourth global cohort</div><div class="yrp">2024</div></div>
+      <a class="awh" href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener">{I["trophy"]}<h3>Google Cloud Research Innovator</h3><div class="by">Google Cloud · fourth global cohort</div><div class="yrp">2024 ↗</div></a>
       <div class="awh">{I["trophy"]}<h3>Project of the Year — queue-truck navigation alerts</h3><div class="by">ITS Midwest</div><div class="yrp">2021</div></div>
       <div class="awh">{I["trophy"]}<h3>Editor's Choice Award — work-zone monitoring methodology</h3><div class="by">Safety (journal)</div><div class="yrp">2022</div></div>
       <div class="awh">{I["trophy"]}<h3>International Collegiate Traffic Bowl Championship</h3><div class="by">ITE International</div><div class="yrp">2020</div></div>
@@ -301,7 +302,7 @@ P["awards.html"] = head("Awards | Rahul Sakhare, Ph.D., P.E.",
     </div>
     <h2>Timeline.</h2>
     <ul class="aw-line">
-      <li><span class="yr">2024</span><div class="what"><b>Google Cloud Research Innovator</b><span>Selected to the fourth global cohort of researchers driving scientific breakthroughs with Google Cloud.</span></div></li>
+      <li><span class="yr">2024</span><div class="what"><b><a href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener">Google Cloud Research Innovator ↗</a></b><span>Selected to the fourth global cohort of researchers driving scientific breakthroughs with Google Cloud.</span></div></li>
       <li><span class="yr">2023</span><div class="what"><b>Edward J. Cox Memorial Scholarship</b><span>Indiana ITE Section.</span></div></li>
       <li><span class="yr">2022–23</span><div class="what"><b>Best Student Speaker Award</b><span>Purdue ITE.</span></div></li>
       <li><span class="yr">2022</span><div class="what"><b>Editor's Choice Award</b><span>"Methodology for Monitoring Work Zones Traffic Operations Using Connected Vehicle Data," Safety 8(2).</span></div></li>

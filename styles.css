@@ -47,10 +47,13 @@ a:hover{color:var(--accent)}
 .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;margin-bottom:48px}
 .hero .loc{font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
 .hero .loc b{color:var(--accent)}
-.hero h1{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.05;
-  font-size:clamp(44px,6.2vw,82px);margin:0;max-width:16ch}
-.hero h1 .flow{font-style:italic;color:var(--accent)}
-.hero .lede{font-size:20px;line-height:1.6;max-width:56ch;margin:24px 0 32px;opacity:.87}
+.hero h1{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.02;
+  font-size:clamp(46px,6.6vw,88px);margin:0;max-width:15ch}
+.hero h1 .creds{color:var(--muted);font-size:.42em;font-weight:500;letter-spacing:.01em;white-space:nowrap}
+.hero .tagline{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.8vw,34px);
+  line-height:1.15;margin:14px 0 0;color:var(--ink)}
+.hero h1 .flow,.hero .tagline .flow{font-style:italic;color:var(--accent)}
+.hero .lede{font-size:19px;line-height:1.6;max-width:56ch;margin:20px 0 32px;opacity:.85}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;padding:13px 24px;
   border:1px solid var(--ink);border-radius:2px;transition:background .15s,color .15s,border-color .15s}
@@ -59,7 +62,9 @@ a:hover{color:var(--accent)}
 .btn-ghost{background:transparent;color:var(--ink)}
 .btn-ghost:hover{background:var(--ink);color:var(--paper)}
 .hero-photo{display:flex;justify-content:flex-end;align-items:center}
-.hero-photo img{width:100%;max-width:560px;height:auto;filter:grayscale(.08) contrast(1.02)}
+.hero-photo img{width:100%;max-width:560px;height:auto;border-radius:10px;
+  box-shadow:0 2px 6px rgba(27,26,22,.10), 0 18px 40px rgba(27,26,22,.22);
+  transform:perspective(1400px) rotateY(-2deg)}
 
 /* stat ledger */
 .readout{display:flex;flex-wrap:wrap;border-top:2px solid var(--rule-strong);border-bottom:1px solid var(--rule)}
@@ -168,8 +173,8 @@ a.edu-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shado
 a.edu-card:hover .edu-visit{color:var(--accent-ink)}
 .edu-when{display:inline-block;font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   color:#fff;background:var(--accent);padding:6px 14px;border-radius:3px;margin:0 0 16px}
-.edu-uni{font-family:var(--serif);font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.08;margin:0 0 6px}
-.edu-deg{font-family:var(--serif);font-weight:500;font-size:29px;font-size:clamp(24px,2.6vw,33px);line-height:1.15;color:var(--accent-ink);margin:0 0 6px}
+.edu-uni{font-family:var(--serif);font-weight:600;font-size:26px;font-size:clamp(23px,2.5vw,30px);line-height:1.12;color:var(--accent-ink);margin:0 0 2px}
+.edu-deg{font-family:var(--serif);font-weight:600;font-size:34px;font-size:clamp(28px,3.4vw,42px);line-height:1.1;color:var(--ink);margin:0 0 6px}
 .edu-dept{font-size:15px;font-weight:600;color:var(--muted);margin:0 0 12px}
 .edu-card p{margin:0;color:var(--muted);font-size:15.5px;max-width:86ch}
 
@@ -220,7 +225,8 @@ a.mi:hover{border-color:var(--accent);color:var(--ink)}
 
 /* AWARDS */
 .aw-high{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:8px 0 44px}
-.awh{background:var(--paper2);border:1px solid var(--rule);border-top:4px solid var(--accent);border-radius:8px;padding:22px 22px 20px}
+.awh{display:block;color:var(--ink);background:var(--paper2);border:1px solid var(--rule);border-top:4px solid var(--accent);border-radius:8px;padding:22px 22px 20px;transition:transform .15s,box-shadow .15s,border-color .15s}
+a.awh:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(27,26,22,.09);color:var(--ink)}
 .awh .ico{color:var(--accent);width:24px;height:24px}
 .awh h3{font-family:var(--serif);font-weight:500;font-size:20px;line-height:1.25;margin:12px 0 6px}
 .awh .by{font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
