@@ -20,6 +20,20 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCES = json.loads((ROOT / "scripts" / "sources.json").read_text(encoding="utf-8"))
 OUT = ROOT / "metrics.json"
 
+# --- What this reads, and what it does NOT read ---------------------------
+# Report counts come from each report's PUBLIC Purdue e-Pubs page (the 10.5703
+# DOI resolves there); the page's rendered "DOWNLOADS since <date>" is the
+# all-time figure. Journal counts come from the publisher metric pages.
+#
+# The personal Digital Commons dashboard (dashboard.digital-commons.com/?...&.authT=...)
+# is intentionally NOT used: it is a private, session-token page that requires a
+# live login and whose token expires, so it cannot be scraped by an unattended job.
+#
+# Excluded by design: the "jtrpafteractions" district speed-profile snapshot
+# series (IDs like 202502-07). Each snapshot reports its own ~100 downloads and
+# they would multiply the count for what is really one running series.
+EXCLUDE = re.compile(r"jtrpafteractions|/\d{6}-\d{2}\b|\b\d{6}-\d{2}\b", re.I)
+
 def previous_items():
     try:
         return json.loads(OUT.read_text(encoding="utf-8")).get("items", {})
@@ -72,6 +86,9 @@ def main():
         page = browser.new_page(user_agent="Mozilla/5.0 (metrics-bot)")
         for s in SOURCES:
             url = s["url"]; seed = s.get("seed")
+            if EXCLUDE.search(url):
+                print(f"[excl] snapshot series  {url[:90]}")
+                continue
             fallback = prev.get(url, seed)
             try:
                 page.goto(url, wait_until="networkidle", timeout=45000)

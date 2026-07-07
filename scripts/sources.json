@@ -1,272 +1,320 @@
 [
  {
+  "url": "https://doi.org/10.5703/1288284317751",
+  "kind": "report",
+  "title": "Sakhare, R. S., Desai, J., Mathew, J. K., McGregor, J., Kachler, M., & Bullock, D. M. (202",
+  "seed": 444
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318612",
+  "kind": "report",
+  "title": "Thompson, A., Desai, J. C., Sakhare, R. S., & Bullock, D. M. (2026",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318579",
+  "kind": "report",
+  "title": "Sakhare, R. S., Desai, J., Gartner, C., Mukai, J., Sturdevant, N., Shellhamer, N., Ruble, ",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318595",
+  "kind": "report",
+  "title": "Desai, J., Sakhare, R. S., McGregor, J., Sturdevant, J., & Bullock, D. M. (2025",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318581",
+  "kind": "report",
+  "title": "Overall, M. W., Mukai, J., Desai, J., Sakhare, R. S., Kachler, M., McGregor, J., & Bullock",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318592",
+  "kind": "report",
+  "title": "Desai, J. C., Gartner, C., Sakhare, R. S., Cox, E. D., Sturdevant, J., & Bullock, D. M. (2",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318578",
+  "kind": "report",
+  "title": "Overall, M. W., Mukai, J., Sakhare, R. S., Desai, J., Horton, D., & Bullock, D. M. (2025",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284318232",
+  "kind": "report",
+  "title": "Desai, J., Sakhare, R. S., Mathew, J. K., Sturdevant, N., Cox, E., & Bullock, D. M. (2025",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317907",
+  "kind": "report",
+  "title": "Overall, M. W., Mukai, J., Sakhare, R. S., Desai, J., Lowther, H., Cox, E., Sturdevant, J.",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317852",
+  "kind": "report",
+  "title": "Sakhare, R. S., Desai, J., Horton, D., & Bullock, D. M. (2025",
+  "seed": 1888
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317843",
+  "kind": "report",
+  "title": "Sakhare, R. S., Desai, J., Horton, D., & Bullock, D. M. (2025",
+  "seed": null
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317755",
+  "kind": "report",
+  "title": "Gayen, S., Saldivar-Carranza, E. D., Sakhare, R. S., Desai, J., Mathew, J. K., Shellhamer,",
+  "seed": 128
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317805",
+  "kind": "report",
+  "title": "Brinster, G. L., Desai, J., Overall, M. W., Gartner, C., Sakhare, R. S., Mathew, J. K., Ev",
+  "seed": 49
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317642",
+  "kind": "report",
+  "title": "Sakhare, R. S., Desai, J., Woker, W., Li, H., Mathew, J., Mahlberg, J., Saldivar-Carranza,",
+  "seed": 248
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317643",
+  "kind": "report",
+  "title": "Desai, J., Sakhare, R. S., Mahlberg, J., Mathew, J. K., Li, H., & Bullock, D. M. (2023",
+  "seed": 134
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317652",
+  "kind": "report",
+  "title": "Mahlberg, J. A., Desai, J., Malackowski, H., Li, H., Mathew, J. K., Sakhare, R. S., Wells,",
+  "seed": 166
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317448",
+  "kind": "report",
+  "title": "Sakhare, R. S., Mahlberg, J., Mathew, J. K., Desai, J., Li, H., Bullock, D. M. (2022",
+  "seed": 284
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317363",
+  "kind": "report",
+  "title": "Mathew, J. K., Li, H., Desai, J., Sakhare, R. S., Saldivar-Carranza, E., Hunter, M., Schol",
+  "seed": 348
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317591",
+  "kind": "report",
+  "title": "Desai, J., Mathew, J. K., Li, H., Sakhare, R. S., Horton, D., & Bullock, D. M. (2022",
+  "seed": 284
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317585",
+  "kind": "report",
+  "title": "Desai, J., Mathew, J. K., Li, H., Sakhare, R. S., Horton, D., & Bullock, D. M. (2022",
+  "seed": 333
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317589",
+  "kind": "report",
+  "title": "Sakhare, R. S., Li, H., Mathew, J. K., Desai, J., Horton, D., & Bullock, D. M. (2022",
+  "seed": 153
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284317324",
+  "kind": "report",
+  "title": "Sakhare, R. S., Desai, J., Mathew, J. K., Kim, W., Mahlberg, J., Li, H., & Bullock, D. M. ",
+  "seed": 409
+ },
+ {
+  "url": "https://doi.org/10.5703/1288284316352",
+  "kind": "report",
+  "title": "Day, C. M., McNamara, M. L., Li, H., Sakhare, R. S., Desai, J., Cox, E. D., Horton, D. K.,",
+  "seed": 720
+ },
+ {
   "url": "Source",
-  "doi": "DOI",
+  "kind": "journal",
   "title": "Publication-Title",
   "seed": null
  },
  {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/imr/7&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284316352",
-  "title": "2015 Indiana Mobility Report and Performance Measure Dashboards",
-  "seed": 1078
- },
- {
   "url": "https://doi.org/10.1520/GTJ20150296",
-  "doi": "https://doi.org/10.1520/GTJ20150296",
+  "kind": "journal",
   "title": "A Double Acting Piston Based Automatic Volume Change Apparatus",
   "seed": null
  },
  {
   "url": "https://trid.trb.org/view/1437147",
-  "doi": "https://trid.trb.org/view/1437147",
+  "kind": "journal",
   "title": "Integrating crowdsourced probe vehicle traffic speeds into winter operations performance m",
   "seed": null
  },
  {
-  "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1011&context=incav",
-  "doi": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1011&context=incav",
-  "title": "Connected Vehicle Data for Interstate Performance Measures",
-  "seed": null
- },
- {
   "url": "https://trid.trb.org/view/1494388",
-  "doi": "https://trid.trb.org/view/1494388",
+  "kind": "journal",
   "title": "Estimating intersection control delay using high fidelity commercial probe vehicle traject",
   "seed": null
  },
  {
   "url": "https://trid.trb.org/view/1495014",
-  "doi": "https://trid.trb.org/view/1495014",
+  "kind": "journal",
   "title": "Comparison of Bluetooth and bus GPS data for estimating arterial travel time and trip chai",
   "seed": null
  },
  {
   "url": "https://www.tandfonline.com/doi/full/10.1080/19427867.2019.1671041",
-  "doi": "https://doi.org/10.1080/19427867.2019.1671041",
+  "kind": "journal",
   "title": "Reliable corridor level travel time estimation using probe vehicle data",
   "seed": 297
  },
  {
   "url": "https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/382590",
-  "doi": "https://ams.confex.com/ams/101ANNUAL/meetingapp.cgi/Paper/382590",
+  "kind": "journal",
   "title": "Predicting Weather Impact on Traffic Speeds Using the Multi-Radar Multi-Sensor System",
   "seed": null
  },
  {
   "url": "https://www.proquest.com/scholarly-journals/big-data-applications-managing-roadways/docview/2486868581/se-2?accountid=13360",
-  "doi": "https://www.proquest.com/scholarly-journals/big-data-applications-managing-roadways/docview/2486868581/se-2?accountid=13360",
+  "kind": "journal",
   "title": "Big Data Applications for Managing Roadways",
   "seed": null
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=111727",
-  "doi": "https://doi.org/10.4236/jtts.2021.114035",
+  "kind": "journal",
   "title": "Evaluation of the impact of queue trucks with navigation alerts using connected vehicle da",
   "seed": 3821
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=111822",
-  "doi": "https://doi.org/10.4236/jtts.2021.114038",
+  "kind": "journal",
   "title": "Leveraging Telematics for Winter Operations Performance Measures and Tactical Adjustment",
   "seed": 1692
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=107921",
-  "doi": "https://doi.org/10.4236/jtts.2021.112010",
+  "kind": "journal",
   "title": "Evaluation of the Impact of Presence Lighting and Digital Speed Limit Trailers on Intersta",
   "seed": 2807
  },
  {
   "url": "https://www.mdpi.com/1424-8220/21/18/6014#metrics",
-  "doi": "https://doi.org/10.3390/s21186014",
+  "kind": "journal",
   "title": "Prioritizing Roadway Pavement Marking Maintenance Using Lane Keep Assist Sensor Data",
   "seed": 3431
  },
  {
   "url": "https://ieeexplore.ieee.org/abstract/document/9564653",
-  "doi": "https://doi.org/10.1109/ITSC48978.2021.9564653",
+  "kind": "journal",
   "title": "Using connected vehicle data to evaluate impact of secondary crashes on Indiana interstate",
   "seed": 224
  },
  {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1771&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317324",
-  "title": "Evaluating the Impact of Vehicle Digital Communication Alerts on Vehicles",
-  "seed": 434
- },
- {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/imr/10&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317591",
-  "title": "National Mobility Analysis for All Interstate Routes in the United States: December 2022",
-  "seed": 1115
- },
- {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=119810",
-  "doi": "https://doi.org/10.4236/jtts.2022.124040",
+  "kind": "journal",
   "title": "Calibration and Confidence in Snowplow Fleet Operations and Fleet Telematics",
   "seed": 882
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=119566",
-  "doi": "https://doi.org/10.4236/jtts.2022.124034",
+  "kind": "journal",
   "title": "Truck and Passenger Car Connected Vehicle Penetration on Indiana Roadways",
   "seed": 1715
  },
  {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/imr/9&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317589",
-  "title": "Indiana Interstate Speed Profiles 2018\u20132022",
-  "seed": 311
- },
- {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/imr/8&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317585",
-  "title": "National Mobility Analysis for All Interstate Routes in the United States: August 2022",
-  "seed": 1260
- },
- {
   "url": "https://www.mdpi.com/2313-576X/8/2/41#metrics",
-  "doi": "https://doi.org/10.3390/safety8020041",
+  "kind": "journal",
   "title": "Methodology for Monitoring Work Zones Traffic Operations Using Connected Vehicle Data",
   "seed": 4534
  },
  {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1807&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317448",
-  "title": "Impacts to Traffic Behavior from Queue Warning Truck: Current Pilot Project",
-  "seed": 269
- },
- {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1781&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317363",
-  "title": "Integration of Probe Data Tools into TMC Operations",
-  "seed": 457
- },
- {
   "url": "https://www.mdpi.com/2624-8921/5/1/9#metrics",
-  "doi": "https://doi.org/10.3390/vehicles5010009",
+  "kind": "journal",
   "title": "Impact of Rain Intensity on Interstate Traffic Speeds Using Connected Vehicle Data",
   "seed": 3092
  },
  {
   "url": "https://www.mdpi.com/2673-7590/3/4/71#metrics",
-  "doi": "https://doi.org/10.3390/futuretransp3040071",
+  "kind": "journal",
   "title": "Analysis of Connected Vehicle Data to Quantify National Mobility Impacts of Winter Storms ",
   "seed": 1077
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=128062",
-  "doi": "https://doi.org/10.4236/jtts.2023.134031",
+  "kind": "journal",
   "title": "Correlating Connected Vehicle Estimated Deceleration Events with Crash Incidents near Inte",
   "seed": 590
  },
  {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1833&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317643",
-  "title": "Implementation of Enhanced Probe Data (CANBUS) for Tactical Workzone and Winter Operations",
-  "seed": 117
- },
- {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1834&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317652",
-  "title": "Crowdsourcing/Winter Operations Dashboard Upgrade",
-  "seed": 176
- },
- {
-  "url": "https://plu.mx/plum/a/?repo_url=https://docs.lib.purdue.edu/jtrp/1829&theme=plum-bigben-theme",
-  "doi": "https://doi.org/10.5703/1288284317642",
-  "title": "Connected Vehicle-Centric Dashboards for TMC of the Future",
-  "seed": 196
- },
- {
   "url": "https://www.mdpi.com/2673-7590/3/4/63#metrics",
-  "doi": "https://doi.org/10.3390/futuretransp3040063",
+  "kind": "journal",
   "title": "Methodology for the identification of shock wave type and speed in a traffic stream using ",
   "seed": 1720
  },
  {
   "url": "https://hammer.purdue.edu/articles/thesis/INTEGRATING_CONNECTED_VEHICLE_DATA_FOR_OPERATIONAL_DECISION_MAKING/22684822/1",
-  "doi": "https://doi.org/10.25394/PGS.22684822.v1",
+  "kind": "journal",
   "title": "Integrating Connected Vehicle Data for Operational Decision Making",
   "seed": 504
  },
  {
   "url": "https://www.mdpi.com/2673-7590/4/1/7#metrics",
-  "doi": "https://doi.org/10.3390/futuretransp4010007",
+  "kind": "journal",
   "title": "Methodology for Monitoring Border Crossing Delays with Connected Vehicle Data: United Stat",
   "seed": 596
  },
  {
-  "url": "https://docs.lib.purdue.edu/jtrpaffdocs/47/",
-  "doi": "https://doi.org/10.5703/1288284317751",
-  "title": "Measuring and Visualizing Freeway Traffic Conditions: Using Connected Vehicle Data",
-  "seed": 47
- },
- {
   "url": "https://www.mdpi.com/2673-7590/4/3/46",
-  "doi": "https://doi.org/10.3390/futuretransp4030046",
+  "kind": "journal",
   "title": "Large Scale Evaluation of Normalized Hard-Braking Events Derived from Connected Vehicle Tr",
   "seed": 575
  },
  {
   "url": "https://www.mdpi.com/2624-6511/7/5/93",
-  "doi": "https://doi.org/10.3390/smartcities7050093",
+  "kind": "journal",
   "title": "Impact of Privacy Filters and Fleet Changes on Connected Vehicle Trajectory Datasets for I",
   "seed": 585
  },
  {
   "url": "https://doi.org/10.1016/j.trip.2024.101225",
-  "doi": "https://doi.org/10.1016/j.trip.2024.101225",
+  "kind": "journal",
   "title": "Impact of 2024 solar eclipse on national traffic mobility using connected vehicle data and",
   "seed": null
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=136481",
-  "doi": "https://doi.org/10.4236/jtts.2024.144030",
+  "kind": "journal",
   "title": "Evaluating the Robustness of MDSS Maintenance Forecasts Using Connected Vehicle Data",
   "seed": 147
  },
  {
   "url": "https://www.mdpi.com/2624-8921/6/4/90",
-  "doi": "https://doi.org/10.3390/vehicles6040090",
+  "kind": "journal",
   "title": "Impact of In-Cab Alerts on Connected Truck Speed Reductions in Indiana",
   "seed": 732
  },
  {
   "url": "https://ieeexplore.ieee.org/abstract/document/10758643",
-  "doi": "https://doi.org/10.1109/ACCESS.2024.3503368",
+  "kind": "journal",
   "title": "Assessing the Interstate Coverage of Commercial Trucks Capable of Providing Roadway Imager",
   "seed": 148
  },
  {
   "url": "https://www.scirp.org/journal/paperinformation?paperid=138038",
-  "doi": "https://doi.org/10.4236/jtts.2025.151001",
+  "kind": "journal",
   "title": "Spatiotemporal Analysis of Pavement Roughness Using Connected Vehicle Data for Asset Manag",
   "seed": 292
  },
  {
   "url": "https://www.mdpi.com/2313-576X/10/4/99",
-  "doi": "https://doi.org/10.3390/safety10040099",
+  "kind": "journal",
   "title": "Expanding on Methodologies for Analyzing Truck Speeds in States with Differential Speed Li",
   "seed": 729
- },
- {
-  "url": "https:// doi.org/10.5703/1288284317755",
-  "doi": "https:// doi.org/10.5703/1288284317755",
-  "title": "Statewide Screening of Signalized Intersections for Capacity Improvements",
-  "seed": null
- },
- {
-  "url": "https://docs.lib.purdue.edu/imr/11/",
-  "doi": "https://doi.org/10.5703/1288284317843",
-  "title": "Indiana Interstate Speed Profiles 2020-2024",
-  "seed": 19
- },
- {
-  "url": "https://docs.lib.purdue.edu/imr/12/",
-  "doi": "https://doi.org/10.5703/1288284317852",
-  "title": "Crawfordsville District Interstate Speed Profiles: April 2020\u2013March 2025",
-  "seed": 1863
  }
 ]

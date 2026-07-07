@@ -17,8 +17,7 @@ I = {  # minimal inline icons (stroke, currentColor)
  "linkedin":'<svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M8 10.5V17M8 7.6v.1M12 17v-4a2.4 2.4 0 0 1 4.8 0v4"/></svg>',
  "orcid":'<svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8.5v7M9 6.7v.1M12.5 15.5v-7h2a3.5 3.5 0 0 1 0 7z"/></svg>',
  "rg":'<svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 16V8h3a2.3 2.3 0 0 1 .9 4.4L15 16"/></svg>',
- "car":'<svg class="car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 13.5 6.8 9.6A2 2 0 0 1 8.7 8.2h6.6a2 2 0 0 1 1.9 1.4l1.3 3.9"/><rect x="4.5" y="13.5" width="15" height="4.6" rx="1.4"/><circle cx="8" cy="19.6" r="1.5"/><circle cx="16" cy="19.6" r="1.5"/></svg>',
- "chev":'<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9.5l6 6 6-6"/></svg>',
+ "cuecar":'<svg class="cuecar" viewBox="0 0 36 66" fill="none" xmlns="http://www.w3.org/2000/svg"><line class="cue-road" x1="5" y1="0" x2="5" y2="66"/><line class="cue-road" x1="31" y1="0" x2="31" y2="66"/><g class="cue-body"><line class="cue-wheel" x1="11" y1="20" x2="11" y2="27"/><line class="cue-wheel" x1="25" y1="20" x2="25" y2="27"/><line class="cue-wheel" x1="11" y1="39" x2="11" y2="46"/><line class="cue-wheel" x1="25" y1="39" x2="25" y2="46"/><rect x="11.5" y="15" width="13" height="36" rx="5.5" fill="#F1EFE9" stroke="currentColor" stroke-width="1.6"/><path d="M13.5 38.5c1.4 1.8 2.8 2.6 4.5 2.6s3.1-.8 4.5-2.6" stroke="currentColor" stroke-width="1.3"/><path d="M14 24.5c1.2-1.4 2.5-2 4-2s2.8.6 4 2" stroke="currentColor" stroke-width="1.3"/><line x1="11.5" y1="33" x2="8.5" y2="31.5" stroke="currentColor" stroke-width="1.4"/><line x1="24.5" y1="33" x2="27.5" y2="31.5" stroke="currentColor" stroke-width="1.4"/></g></svg>',
 }
 
 NAV_ITEMS = [("about.html","About"),("research.html","Research"),("publications.html","Publications"),
@@ -126,7 +125,7 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Engineer & R
         <span class="go">Take a look →</span></a>
     </div>
   </section>
-  <div class="scroll-cue" id="scroll-cue" aria-hidden="true">{I["car"]}{I["chev"]}</div>
+  <div class="scroll-cue" id="scroll-cue" aria-hidden="true">{I["cuecar"]}</div>
 """ + foot("Built for research · West Lafayette, IN", '<script src="pubs-data.js"></script>\n')
 
 # ================= ABOUT =================
@@ -254,27 +253,30 @@ P["education.html"] = head("Education | Rahul Sakhare, Ph.D., P.E.",
   </section>
   <section class="section wrap" style="border-top:none;padding-top:26px">
     <div class="edu-stack">
-      <article class="edu-card reveal">
+      <a class="edu-card reveal" href="https://engineering.purdue.edu/CCE" target="_blank" rel="noopener">
+        <span class="edu-visit">Visit university site ↗</span>
         <span class="edu-when">April 2023 · West Lafayette, Indiana</span>
         <h2 class="edu-uni">Purdue University</h2>
         <p class="edu-deg">Doctor of Philosophy (Ph.D.)</p>
         <p class="edu-dept">Lyles School of Civil &amp; Construction Engineering — Transportation &amp; Infrastructure Systems</p>
         <p>Dissertation: "Integrating Connected Vehicle Data for Operational Decision Making." Advisor: Prof. Darcy M. Bullock; committee: Profs. Samuel Labi, Konstantina Gkritza, and James Krogmeier. Supported by the Christopher B. &amp; Susan S. Burke Graduate Research Assistantship.</p>
-      </article>
-      <article class="edu-card reveal">
+      </a>
+      <a class="edu-card reveal" href="https://www.iitm.ac.in/" target="_blank" rel="noopener">
+        <span class="edu-visit">Visit university site ↗</span>
         <span class="edu-when">May 2018 · Chennai, India</span>
         <h2 class="edu-uni">Indian Institute of Technology Madras</h2>
         <p class="edu-deg">Master of Technology (M.Tech.)</p>
         <p class="edu-dept">Department of Civil Engineering — Transportation Engineering</p>
         <p>Completed as part of the five-year dual-degree program. Thesis: "Reliable Corridor Level Travel Time Estimation Using Probe Vehicle Data." Advisor: Prof. Lelitha Devi Vanajakshi. Recognized for exemplary, all-round best performance in the dual-degree program.</p>
-      </article>
-      <article class="edu-card reveal">
+      </a>
+      <a class="edu-card reveal" href="https://www.iitm.ac.in/" target="_blank" rel="noopener">
+        <span class="edu-visit">Visit university site ↗</span>
         <span class="edu-when">May 2018 · Chennai, India</span>
         <h2 class="edu-uni">Indian Institute of Technology Madras</h2>
         <p class="edu-deg">Bachelor of Technology (B.Tech.)</p>
         <p class="edu-dept">Department of Civil Engineering — Minor in Management Studies</p>
         <p>Completed as part of the five-year dual-degree program alongside the M.Tech. Entered through the IIT Joint Entrance Exam ranked in the top 0.2 percentile of 1.45 million candidates.</p>
-      </article>
+      </a>
     </div>
   </section>
 """ + foot()

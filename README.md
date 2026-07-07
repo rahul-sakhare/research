@@ -47,3 +47,15 @@ Uses FormSubmit.co to deliver messages to rsakhare@purdue.edu with no backend. *
 ## New pages in this version
 - `awards.html` — six highlight honors plus a full timeline.
 - `gallery.html` — placeholder grid; when photos are ready, replace the "Coming soon" tiles with `<img>` tags (or send them to me and I'll lay out a proper gallery).
+
+
+## Download & view counts — how the number is built
+The home-page "> Downloads & views" figure is the sum of:
+- **Reports (23):** all-time downloads read from each report's **public Purdue e-Pubs page** (the 10.5703 DOI resolves there). All 22 technical reports + the TPF-5(514) monograph are now included in `scripts/sources.json` (8 reports that were previously missing have been added).
+- **Journals (30):** views/downloads from each publisher's metric page (MDPI, SCIRP, IEEE, Springer, PlumX).
+
+**Excluded by design:** the `jtrpafteractions` district speed-profile *snapshot* series (IDs like `202502-07`). Each snapshot lists its own ~100 downloads; counting them individually would multiply the total for what is really one running series. The exclusion is enforced in `scripts/update_metrics.py` (the `EXCLUDE` pattern) and in how `sources.json` is built.
+
+**Why the private dashboard link isn't used:** the `dashboard.digital-commons.com/?...&.authT=...` URL is your personal, logged-in Digital Commons page. It carries a session auth token that expires and requires your live login, so an unattended weekly job can't read it (and a token shouldn't be committed to a repo). The public e-Pubs report pages give the same all-time download numbers in a way that *can* be automated.
+
+If you want an immediate exact figure before the first Action run, open your dashboard, note the grand total **minus** the `202502-07`-style snapshots, and I can hard-seed that into `metrics.json`.
