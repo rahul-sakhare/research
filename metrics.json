@@ -1,9 +1,9 @@
 {
- "total_downloads": 35566,
+ "total_downloads": 35567,
  "item_count": 53,
  "counted_items": 36,
  "fresh_scrapes": 1,
- "updated": "2026-07-13",
+ "updated": "2026-07-14",
  "source": "Publisher metrics (PlumX, MDPI, SCIRP, Springer, Purdue e-Pubs)",
  "items": {
   "https://doi.org/10.5703/1288284317751": 444,
@@ -33,7 +33,7 @@
   "https://www.mdpi.com/2673-7590/3/4/71#metrics": 1077,
   "https://www.scirp.org/journal/paperinformation?paperid=128062": 590,
   "https://www.mdpi.com/2673-7590/3/4/63#metrics": 1720,
-  "https://hammer.purdue.edu/articles/thesis/INTEGRATING_CONNECTED_VEHICLE_DATA_FOR_OPERATIONAL_DECISION_MAKING/22684822/1": 292,
+  "https://hammer.purdue.edu/articles/thesis/INTEGRATING_CONNECTED_VEHICLE_DATA_FOR_OPERATIONAL_DECISION_MAKING/22684822/1": 293,
   "https://www.mdpi.com/2673-7590/4/1/7#metrics": 596,
   "https://www.mdpi.com/2673-7590/4/3/46": 575,
   "https://www.mdpi.com/2624-6511/7/5/93": 585,
