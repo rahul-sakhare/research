@@ -87,7 +87,7 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Eng
           I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP) and a licensed Professional Engineer (P.E.) in Indiana. My research focuses on turning high-frequency connected vehicle trajectory streams, commercial truck telematics, and roadway sensing data into operational performance measures that enhance highway mobility, work zone safety, and infrastructure reliability.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="publications.html">View Publications (91) →</a>
+          <a class="btn btn-primary" href="publications.html">View Publications (92) →</a>
           <a class="btn btn-secondary" href="education.html">Academic Education</a>
           <a class="btn btn-ghost" href="teaching.html">Teaching &amp; Mentoring</a>
           <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a>
@@ -129,7 +129,7 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Eng
       <div class="cell"><div class="numline"><div class="num" id="stat-cites" data-to="521">521</div></div><div class="lab">Citations</div></div>
       <div class="cell"><div class="numline"><div class="num" id="stat-h" data-to="13">13</div></div><div class="lab">h-index</div></div>
       <div class="cell"><div class="numline"><div class="num" id="stat-i10" data-to="19">19</div></div><div class="lab">i10-index</div></div>
-      <div class="cell"><div class="numline"><div class="num" id="stat-journal" data-to="31">31</div></div><div class="lab">Journal articles</div></div>
+      <div class="cell"><div class="numline"><div class="num" id="stat-journal" data-to="32">32</div></div><div class="lab">Journal articles</div></div>
       <div class="cell"><div class="numline"><div class="num" id="stat-report" data-to="22">22</div></div><div class="lab">Technical reports</div></div>
       <div class="cell"><div class="numline"><span class="pre">&gt;</span><div class="num" id="dl-num" data-to="35566">35,566</div></div><div class="lab">Downloads &amp; views</div><div class="asof" id="dl-asof">as of Jul 8, 2026</div></div>
       <div class="cell"><div class="numline"><span class="pre">$</span><div class="num" data-to="6">6.0</div><span class="pre">M+</span></div><div class="lab">Research Funding Portfolio</div></div>
@@ -166,6 +166,11 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Eng
         <h2 class="home-section-title">Recent Highlights</h2>
         <div class="highlight-stack">
           <div class="hl-card">
+            <div class="hl-tagline"><span>Transportation (Springer Nature)</span><span class="hl-date">2026</span></div>
+            <h3 class="hl-title">Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics</h3>
+            <p class="hl-desc">Translating billions of connected vehicle waypoints into granular 0.1-mile segment performance metrics across statewide highway networks.</p>
+          </div>
+          <div class="hl-card">
             <div class="hl-tagline"><span>Future Transportation</span><span class="hl-date">2026</span></div>
             <h3 class="hl-title">Work Zone Performance Measures Derived from Connected Vehicle Data</h3>
             <p class="hl-desc">Framework mapping connected vehicle trajectory metrics directly to the FHWA Rule on Work Zone Safety and Mobility.</p>
@@ -176,18 +181,13 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Eng
             <p class="hl-desc">Empirical trajectory analysis of variable speed limits and ramp metering on the I-465 beltway.</p>
           </div>
           <div class="hl-card">
-            <div class="hl-tagline"><span>FHWA Monograph</span><span class="hl-date">2024</span></div>
-            <h3 class="hl-title">Measuring &amp; Visualizing Freeway Traffic Conditions</h3>
-            <p class="hl-desc">506-page reference monograph establishing national standards for multi-state spatiotemporal speed heatmaps.</p>
-          </div>
-          <div class="hl-card">
             <div class="hl-tagline"><span>The New York Times</span><span class="hl-date">Dec 2024</span></div>
             <h3 class="hl-title">Front-Page Media Feature</h3>
             <p class="hl-desc">Research on connected vehicle traffic data and road congestion dynamics featured on the front page of The New York Times.</p>
           </div>
         </div>
 
-        <a class="btn btn-ghost" href="publications.html" style="width:100%;justify-content:center;margin-top:16px">Browse All 91 Publications &amp; Reports →</a>
+        <a class="btn btn-ghost" href="publications.html" style="width:100%;justify-content:center;margin-top:16px">Browse All 92 Publications &amp; Reports →</a>
       </div>
     </div>
 
@@ -195,7 +195,7 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Eng
     <div class="nav-grid">
       <a class="nav-card" href="publications.html">
         <div class="nav-card-head">{I["book"]}<span>Publications</span></div>
-        <p>31 peer-reviewed journal articles, 22 technical reports, and 1 monograph. Searchable with instant BibTeX copy.</p>
+        <p>32 peer-reviewed journal articles, 22 technical reports, and 1 monograph. Searchable with instant BibTeX copy.</p>
         <span class="go">Browse publications →</span>
       </a>
       <a class="nav-card" href="education.html">
