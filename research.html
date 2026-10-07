@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research | Rahul Sakhare, Ph.D., P.E.</title>
-<meta name="description" content="Research focus areas — connected vehicle data, surrogate safety measures, work zones, and scalable performance measures.">
+<title>Research & Systems | Rahul Sakhare, Ph.D., P.E.</title>
+<meta name="description" content="Transportation Cyber-Physical Systems (TCPS) — Connected vehicle telematics, cloud network diagnostics, edge machine vision, and production software tools.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,60 +14,191 @@
   <nav class="wrap nav" aria-label="Primary">
     <a class="brand" href="index.html">Rahul&nbsp;Sakhare<span class="dot">.</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links"><li><a href="about.html">About</a></li><li><a href="research.html" class="active">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="education.html">Education</a></li><li><a href="awards.html">Awards</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV ↗</a></li></ul>
+    <ul class="nav-links"><li><a href="about.html">About</a></li><li><a href="research.html" class="active">Research & Systems</a></li><li><a href="projects.html">Projects</a></li><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="education.html">Education</a></li><li><a href="awards.html">Awards</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV ↗</a></li></ul>
   </nav>
 </header>
 <main>
   <section class="page-hero wrap">
-    <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/><path d="M12 4V2M12 22v-2M4 12H2M22 12h-2"/></svg> Research</span>
-    <h1>Focus areas.</h1>
-    <p>Six threads run through my work — all aimed at making massive vehicle datasets usable, safe-by-design, and adoptable by agencies. Hover over any area for the detail behind it.</p>
+    <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.6"/><path d="M12 4V2M12 22v-2M4 12H2M22 12h-2"/></svg> Research &amp; Systems</span>
+    <h1>Transportation Cyber-Physical Systems (TCPS).</h1>
+    <p>Operating at the convergence of civil infrastructure physics, distributed cloud computing, and applied machine vision. We build scalable data-to-decision architectures that turn billions of raw probe records and vehicle video streams into deployed operational intelligence for public agencies.</p>
   </section>
-  <section class="section wrap" style="border-top:none;padding-top:26px">
-    <div class="grid">
-      <div class="card" tabindex="0"><span class="ic">01</span><h3>Connected Vehicle Data Applications</h3><p>Deriving segment-level mobility and safety metrics from billions of connected-vehicle and probe records at 3-second fidelity.</p><span class="more">Hover for detail</span>
-        <div class="pop"><b>In practice:</b> national interstate mobility analyses, border-crossing delay monitoring, and dash-camera coverage assessment across the U.S. truck fleet — published across IEEE Access, TRIP, and Future Transportation.</div></div>
-      <div class="card" tabindex="0"><span class="ic">02</span><h3>Surrogate Safety Measures</h3><p>Evaluating hard braking, hard acceleration, and deceleration as early indicators of crash risk across intersections, roundabouts, and freeways.</p><span class="more">Hover for detail</span>
-        <div class="pop"><b>In practice:</b> Co-PI on INDOT SPR-4928 screening the network for hard-braking events; studies tying hard braking to secondary crashes and interchange crash incidents — the evidence base for proactive safety programs.</div></div>
-      <div class="card" tabindex="0"><span class="ic">03</span><h3>Work Zone Safety &amp; Analytics</h3><p>Performance measures for work zones that map to the FHWA Work Zone Safety and Mobility Rule, deployed statewide in Indiana.</p><span class="more">Hover for detail</span>
-        <div class="pop"><b>In practice:</b> queue-truck alerts recognized as ITS Midwest 2021 Project of the Year, automated worksite speed enforcement evaluation, and Editor's Choice work-zone monitoring methodology in the journal Safety.</div></div>
-      <div class="card" tabindex="0"><span class="ic">04</span><h3>Incident &amp; Winter Operations</h3><p>Quantifying mobility impacts of winter storms, incidents, and recovery-resource delay to support real-time agency decisions.</p><span class="more">Hover for detail</span>
-        <div class="pop"><b>In practice:</b> national winter-storm mobility readouts used by decision-makers and media, snowplow telematics calibration, and incident-management performance-measure databases for INDOT.</div></div>
-      <div class="card" tabindex="0"><span class="ic">05</span><h3>Big Data &amp; Cloud Analytics</h3><p>Building scalable, cloud-based pipelines and dashboards that make massive trajectory datasets usable for practitioners.</p><span class="more">Hover for detail</span>
-        <div class="pop"><b>In practice:</b> the JTRP pipeline featured in a Google Cloud customer story; connected-vehicle dashboards for the TMC of the future; selected to the Google Cloud Research Innovators 2024 cohort.</div></div>
-      <div class="card" tabindex="0"><span class="ic">06</span><h3>Scalable Performance Measures</h3><p>Translating research methods into repeatable, statewide measures that DOTs and FHWA can adopt directly.</p><span class="more">Hover for detail</span>
-        <div class="pop"><b>In practice:</b> interstate speed profiles, signalized-intersection screening, and pavement-condition measures now embedded in INDOT's regular reporting cycles.</div></div>
+
+  <!-- Architectural Workflow Section -->
+  <section class="section wrap" style="border-top:none;padding-top:20px">
+    <span class="eyebrow">Architectural Workflow</span>
+    <h2>The TCPS Research Framework.</h2>
+    <p class="intro">Our methodology integrates physical sensing, high-performance distributed computing, deep learning machine vision, and closed-loop operational actuation into one seamless cyber-physical pipeline.</p>
+
+    <div class="arch-card">
+      <img src="assets/img/tcps_workflow.webp" alt="Architectural Workflow of the Scalable Transportation Cyber-Physical Systems (TCPS) Research Framework" loading="lazy">
+      <div class="arch-caption">
+        <b>Figure 1: Architectural Workflow of the Scalable Transportation Cyber-Physical Systems (TCPS) Research Framework</b>
+        <span>Tier 1: Telematics Ingestion · Tier 2: Cloud-Native Geospatial Aggregation (BigQuery) · Tier 3: Edge Machine Vision &amp; Multimodal AI · Tier 4: Closed-Loop Operational Decision Support</span>
+      </div>
     </div>
   </section>
+
+  <!-- Three Core Research Thrusts -->
   <section class="section wrap">
-    <span class="eyebrow">Selected impact</span>
-    <h2>Work that made the news.</h2>
-    <div class="feat">
-      <a class="card" href="https://www.sciencedirect.com/science/article/pii/S2590198224002112" target="_blank" rel="noopener">
-        <div class="kicker"><span class="src">Study · TRIP</span><span>2024</span></div>
-        <h3>2024 Solar Eclipse: national mobility from 192M connected-truck records</h3>
-        <p>Analyzed 192 million records from 240,000 connected trucks to quantify how the total eclipse reshaped highway congestion across 13 states.</p>
-        <span class="go">Read the study ↗</span></a>
-      <a class="card" href="https://rip.trb.org/View/2404035" target="_blank" rel="noopener">
-        <div class="kicker"><span class="src">Project · INDOT SPR-4928 (Co-PI)</span><span>2024–25</span></div>
-        <h3>Screening the network for hard-braking &amp; hard-acceleration events</h3>
-        <p>Scalable methods that flag risky locations from connected-vehicle trajectories — directly tied to surrogate-safety research.</p>
-        <span class="go">View project ↗</span></a>
-      <a class="card" href="https://www.mdpi.com/2673-7590/6/1/12" target="_blank" rel="noopener">
-        <div class="kicker"><span class="src">Study · Future Transportation</span><span>2026</span></div>
-        <h3>Work-zone performance measures mapped to the FHWA Safety &amp; Mobility Rule</h3>
-        <p>Turning connected-vehicle data into work-zone safety and mobility measures agencies can report against.</p>
-        <span class="go">Read the study ↗</span></a>
-      <a class="card" href="publications.html">
-        <div class="kicker"><span class="src">Recognition · ITS Midwest</span><span>2021</span></div>
-        <h3>Project of the Year — Queue-truck navigation alerts</h3>
-        <p>Recognized by ITS Midwest; part of a body of work spanning 31 journal articles and 22 technical reports.</p>
-        <span class="go">See all publications →</span></a>
+    <span class="eyebrow">Scientific Thrusts</span>
+    <h2>Three Core Research Pillars.</h2>
+    <div class="grid">
+      <!-- Thrust 1 -->
+      <div class="card" style="padding-top:20px">
+        <span class="ic">THRUST 01</span>
+        <h3>Connected Vehicle Telematics &amp; Dynamic Safety Systems</h3>
+        <p>Freeway bottleneck queues and temporary work zones generate severe crash risks due to rapid queue formation that outpaces static roadside warnings. We develop closed-loop telematics systems that ingest high-frequency waypoints from vehicles already in the queue to model shockwave propagation velocity (v<sub>sw</sub> = Δq / Δk) and deceleration gradients in real time.</p>
+        <div style="margin-top:14px;font-size:14px;color:var(--muted)">
+          <p><b>Deployed Reality:</b> Deployed dynamic queue-warning trucks equipped with upstream digital alerts, delivering a documented <b>80% reduction in hard-braking events</b> upstream of bottleneck queues. Developed statewide surrogate safety screening methods linking hard braking to secondary crash prevention.</p>
+        </div>
+        <span class="more" style="color:var(--accent);font-weight:700">Recognized as ITS Midwest Project of the Year · Safety Editor's Choice Award</span>
+      </div>
+
+      <!-- Thrust 2 -->
+      <div class="card" style="padding-top:20px">
+        <span class="ic">THRUST 02</span>
+        <h3>Scalable Cloud-Native Network Diagnostics &amp; Big Data Analytics</h3>
+        <p>Conventional physical loop detectors and roadside sensors cover less than 15% of highway networks. Ingesting statewide probe trajectories generates over 10 billion records monthly. We engineer distributed cloud architectures using Google BigQuery geospatial polygon indexing to transform raw trajectory points into 0.1-mile segment performance metrics across 24,831 directional highway miles.</p>
+        <div style="margin-top:14px;font-size:14px;color:var(--muted)">
+          <p><b>Deployed Reality:</b> Authored the <b>506-page FHWA Monograph (TPF-5(514))</b> establishing standardized national references for 24-hour spatiotemporal speed heatmaps. Quantified statewide mobility degradation during severe winter storms, extreme rain events, and the 2024 total solar eclipse across 13 states.</p>
+        </div>
+        <span class="more" style="color:var(--accent);font-weight:700">Selected to Google Cloud Research Innovators Global Cohort · 23 CFR Part 490 Compliance</span>
+      </div>
+
+      <!-- Thrust 3 -->
+      <div class="card" style="padding-top:20px">
+        <span class="ic">THRUST 03</span>
+        <h3>Applied Machine Vision &amp; Automated Infrastructure Digital Twins</h3>
+        <p>Physical highway inspection is among the most hazardous activities in civil engineering, exposing maintenance personnel to fatal struck-by vehicle collisions. We harness routine commercial freight logistics — utilizing 1-Hz optical dashcams across freight fleets traversing 48 states — to create a passive, continuous infrastructure auditing sensor network.</p>
+        <div style="margin-top:14px;font-size:14px;color:var(--muted)">
+          <p><b>Deployed Reality:</b> Built an edge deep learning (YOLO) and Multimodal LLM (gemini-3.1-flash-lite) portal actively auditing <b>170 active work zones across 10 states</b> weekly for temporary traffic control compliance. Eliminates human maintenance hazards on live highway shoulders.</p>
+        </div>
+        <span class="more" style="color:var(--accent);font-weight:700">Published in IEEE Access &amp; Journal of Transportation Technologies · 80–95% 48h Corridor Revisit</span>
+      </div>
+
+      <!-- Cross-Cutting Impact -->
+      <div class="card" style="padding-top:20px">
+        <span class="ic">CROSS-CUTTING</span>
+        <h3>Public Health, Emissions Equity &amp; Asset Management</h3>
+        <p>Bottleneck queues and severe hard-braking cycles generate heavy transient particulate matter (PM2.5) and NOx emissions that disproportionately impact frontline environmental justice communities adjacent to freight corridors. Our speed harmonization and queue smoothing algorithms serve as active emissions-mitigation interventions.</p>
+        <div style="margin-top:14px;font-size:14px;color:var(--muted)">
+          <p><b>Deployed Reality:</b> Extended vehicle telematics and vertical acceleration signatures to assess statewide pavement roughness (IRI), monitor retroreflectivity degradation, and support data-driven capital investment programs.</p>
+        </div>
+        <span class="more" style="color:var(--accent);font-weight:700">Featured in TRB Lectern Sessions &amp; Annual Purdue Road School</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Systems Showroom -->
+  <section class="section wrap" id="systems">
+    <span class="eyebrow">Production Systems Showroom</span>
+    <h2>Operational Platforms &amp; Software Tools.</h2>
+    <p class="intro">Rather than abstract simulations, each selected system represents a tangible, production-scale software platform actively utilized by public transportation agencies.</p>
+
+    <div class="systems-stack">
+      <!-- System 1 -->
+      <article class="sys-card" id="system-segment-pm">
+        <div class="sys-head">
+          <span class="sys-num">SYSTEM 01 · STATEWIDE SCREENING PLATFORM</span>
+          <div class="sys-badge-group">
+            <span class="pill pill-accent">INDOT Central Office &amp; Districts</span>
+            <span class="pill pill-blue">108B+ Annual Waypoints</span>
+            <span class="pill pill-dark">24,831 Highway Miles</span>
+          </div>
+        </div>
+        <div class="sys-content">
+          <div class="sys-visual">
+            <img src="assets/img/indiana_segment_pm.webp" alt="Indiana Segment-PM WebGIS Platform" loading="lazy">
+          </div>
+          <div class="sys-details">
+            <h3>Indiana Segment-PM WebGIS Platform</h3>
+            <p>An operational cloud-scale analytics platform that converts billions of connected vehicle trajectory points into granular 0.1-mile segment performance measures across the entire state highway network, resolving localized friction points and intersection queues that aggregate corridor averages obscure.</p>
+            <div class="sys-metrics">
+              <div class="sys-m-cell"><div class="num">0.1 mi</div><div class="lab">Granular Spatial Segments</div></div>
+              <div class="sys-m-cell"><div class="num">0th–100th</div><div class="lab">Full Empirical Speed Percentiles</div></div>
+              <div class="sys-m-cell"><div class="num">574k+</div><div class="lab">Waypoints / Segment Sample</div></div>
+              <div class="sys-m-cell"><div class="num">23 CFR 490</div><div class="lab">Federal Rule Compliance</div></div>
+            </div>
+            <p style="font-size:14px;color:var(--muted)"><b>Agency Use Cases:</b> Pinpoints localized bottleneck formation, evaluates interchange spillbacks, and enables district traffic engineers to make immediate operational decisions without waiting for costly manual field studies. Actively incorporated into capital investment committee assessments.</p>
+            <div class="sys-links">
+              <a href="https://doi.org/10.3390/futuretransp6010012" target="_blank" rel="noopener">Methodology Paper (Future Transportation 2026) ↗</a>
+              <a href="projects.html#spr-4857">Associated Project: SPR-4857 →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- System 2 -->
+      <article class="sys-card" id="system-heatmap">
+        <div class="sys-head">
+          <span class="sys-num">SYSTEM 02 · FORENSIC TRAFFIC ENGINE</span>
+          <div class="sys-badge-group">
+            <span class="pill pill-accent">FHWA Pooled-Fund TPF-5(514)</span>
+            <span class="pill pill-gold">506-Page Monograph</span>
+            <span class="pill pill-blue">Live Cloud Run Diagnostic Portal</span>
+          </div>
+        </div>
+        <div class="sys-content">
+          <div class="sys-visual">
+            <img src="assets/img/heatmap_tool.webp" alt="Multi-State Heatmap Diagnostic Tool" loading="lazy">
+          </div>
+          <div class="sys-details">
+            <h3>Multi-State Spatiotemporal Heatmap Diagnostic Tool</h3>
+            <p>An interactive forensic diagnostic tool that generates 24-hour space-mean speed contours plotted against mileposts, enabling traffic engineers to visualize shockwave propagation and disentangle multi-hazard congestion causes through synchronized multi-layer overlays.</p>
+            <div class="sys-metrics">
+              <div class="sys-m-cell"><div class="num">24 hr</div><div class="lab">Space-Mean Speed Contours</div></div>
+              <div class="sys-m-cell"><div class="num">$0.055</div><div class="lab">BigQuery Cost / Execution</div></div>
+              <div class="sys-m-cell"><div class="num">Multi-Layer</div><div class="lab">Car/Truck Speeds, Weather, IoT</div></div>
+              <div class="sys-m-cell"><div class="num">Multi-State</div><div class="lab">Midwest &amp; National Deployment</div></div>
+            </div>
+            <p style="font-size:14px;color:var(--muted)"><b>Forensic Capabilities:</b> Disentangles recurrent bottleneck demand from non-recurrent events like secondary crashes, active work zone shockwaves, and winter storm recovery. The accompanying 506-page monograph serves as an authoritative national standard for connected vehicle data processing.</p>
+            <div class="sys-links">
+              <a href="https://doi.org/10.5703/1288284317751" target="_blank" rel="noopener">Download 506-Page Monograph (Purdue e-Pubs) ↗</a>
+              <a href="projects.html#tpf-514">Associated Project: FHWA TPF-5(514) →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- System 3 -->
+      <article class="sys-card" id="system-dashcam">
+        <div class="sys-head">
+          <span class="sys-num">SYSTEM 03 · PASSIVE REALITY CAPTURE &amp; APPLIED AI</span>
+          <div class="sys-badge-group">
+            <span class="pill pill-accent">IEEE Access &amp; JTTs</span>
+            <span class="pill pill-gold">Edge YOLO Machine Vision</span>
+            <span class="pill pill-blue">Multimodal LLM Audits</span>
+          </div>
+        </div>
+        <div class="sys-content">
+          <div class="sys-visual-multi">
+            <img src="assets/img/dashcam_yolo.webp" alt="Edge YOLO Deep Learning Detection in Work Zone" loading="lazy">
+            <img src="assets/img/dashcam_llm.webp" alt="Multimodal LLM Natural Language Roadway Querying" loading="lazy">
+          </div>
+          <div class="sys-details">
+            <h3>Commercial Fleet Dashcam AI &amp; Digital Twin Portal</h3>
+            <p>An operational computer vision and visual analytics dashboard that ingests 1-Hz forward-facing optical dashcam imagery from commercial freight fleets, combining custom object detection models and multimodal LLMs to automate roadway infrastructure and work zone inspection.</p>
+            <div class="sys-metrics">
+              <div class="sys-m-cell"><div class="num">170</div><div class="lab">Work Zones Monitored Weekly</div></div>
+              <div class="sys-m-cell"><div class="num">10 States</div><div class="lab">Continuous Freight Footprint</div></div>
+              <div class="sys-m-cell"><div class="num">80–95%</div><div class="lab">24–48h Interstate Revisit</div></div>
+              <div class="sys-m-cell"><div class="num">Zero Risk</div><div class="lab">Eliminates Worker Shoulder Hazards</div></div>
+            </div>
+            <p style="font-size:14px;color:var(--muted)"><b>Automated Audits &amp; Visual LLM Querying:</b> Detects displaced, knocked-down, or missing barrels and signage in active construction zones, comparing setups against approved Maintenance of Traffic (MOT) plans. Allows engineers to query visual streams via natural language prompts (e.g., <i>'Show all knocked-down barrels or missing warning signs'</i>).</p>
+            <div class="sys-links">
+              <a href="https://doi.org/10.1109/ACCESS.2024.3503368" target="_blank" rel="noopener">Read IEEE Access Publication ↗</a>
+              <a href="https://doi.org/10.4236/jtts.2026.161006" target="_blank" rel="noopener">Read Work Zone AI Field Study (JTTs 2026) ↗</a>
+              <a href="projects.html#spr-5005">Associated Project: SPR-5005 (Co-PI) →</a>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 </main>
 <footer class="foot wrap">
-  <span>© 2026 Rahul Suryakant Sakhare</span>
+  <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E.</span>
   <span>West Lafayette, IN</span>
 </footer>
 <script src="script.js"></script>
