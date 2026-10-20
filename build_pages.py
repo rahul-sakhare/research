@@ -113,7 +113,7 @@ P["index.html"] = head(
           <p><b>Email:</b><br><a href="mailto:rsakhare@purdue.edu">rsakhare@purdue.edu</a></p>
           <p><b>Credentials:</b><br>Ph.D. Civil Eng, Purdue ('23)<br>M.Tech. &amp; B.Tech., IIT Madras ('18)</p>
           <p><b>Licensure:</b><br>Professional Engineer (P.E.), Indiana (No. PE12600619)</p>
-          <p><b>Certification:</b><br>Google Cloud Certified Generative AI Leader</p>
+          <p><b>Certification:</b><br><a href="https://www.credly.com/badges/5c0f6fa1-c2d6-4c57-a6d4-d926aecd16b2/public_url" target="_blank" rel="noopener">Google Cloud Certified Generative AI Leader ↗</a></p>
           <p><b>TRB Committee:</b><br>Member of the Committee, ACF13 (Limited Access Roadway Operations)</p>
         </div>
       </aside>
@@ -409,11 +409,13 @@ P["education.html"] = head(
       <div class="edu-meta">
         <span class="yr">Certification</span>
         <span>Google Cloud</span>
+        <div style="margin-top:6px"><a href="https://www.credly.com/badges/5c0f6fa1-c2d6-4c57-a6d4-d926aecd16b2/public_url" target="_blank" rel="noopener">Credly Badge ↗</a></div>
       </div>
       <div class="edu-detail">
         <h3><b>Google Cloud Certified Generative AI Leader</b></h3>
-        <div class="inst">Google Cloud</div>
+        <div class="inst">Google Cloud Certification</div>
         <p>Professional certification validating expertise in enterprise AI technologies, Google Cloud infrastructure, data governance, and scalable cloud analytics for modern engineering workflows.</p>
+        <p style="margin-top:8px"><a href="https://www.credly.com/badges/5c0f6fa1-c2d6-4c57-a6d4-d926aecd16b2/public_url" target="_blank" rel="noopener">View Verified Credly Badge ↗</a></p>
       </div>
     </div>
   </section>
