@@ -614,7 +614,7 @@ P["awards.html"] = head(
         </a>
       </li>
       <li>
-        <a class="award-item has-link" href="https://indianaite.org/Scholarship" target="_blank" rel="noopener" title="Open Indiana ITE scholarship overview">
+        <a class="award-item has-link" href="https://indianaite.org/Scholarship#:~:text=Rahul%20Sakhare" target="_blank" rel="noopener" title="Open Indiana ITE scholarship listing for Rahul Sakhare">
           <span class="award-yr">2023</span>
           <div class="award-desc">
             <b>Edward J. Cox Memorial Scholarship <span class="ext-hint">↗</span></b>
