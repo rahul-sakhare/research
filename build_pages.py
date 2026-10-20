@@ -155,15 +155,17 @@ P["index.html"] = head(
 
         <!-- Understated Scholarly Metrics Summary Bar -->
         <div class="metrics-summary-bar">
-          <span><a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="View Google Scholar Profile"><b>Google Scholar:</b> <span id="stat-cites" data-to="543">540+</span> citations</a></span>
-          <span class="dot">·</span>
-          <span><b>h-index:</b> <span id="stat-h" data-to="14">14</span></span>
-          <span class="dot">·</span>
-          <span><b>i10-index:</b> <span id="stat-i10" data-to="19">19</span></span>
-          <span class="dot">·</span>
-          <span><b><span id="stat-journal" data-to="32">32</span></b> journal articles</span>
-          <span class="dot">·</span>
-          <span><b><span id="stat-report" data-to="22">22</span></b> technical reports</span>
+          <div class="metrics-items">
+            <span><a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="View Google Scholar Profile"><b>Google Scholar:</b> <span id="stat-cites" data-to="543">540+</span> citations</a></span>
+            <span class="dot">·</span>
+            <span><b>h-index:</b> <span id="stat-h" data-to="14">14</span></span>
+            <span class="dot">·</span>
+            <span><b>i10-index:</b> <span id="stat-i10" data-to="19">19</span></span>
+            <span class="dot">·</span>
+            <span><b><span id="stat-journal" data-to="32">32</span></b> journal articles</span>
+            <span class="dot">·</span>
+            <span><b><span id="stat-report" data-to="22">22</span></b> technical reports</span>
+          </div>
           <span class="stat-asof" id="stat-asof">as of {as_of_month}</span>
         </div>
 
