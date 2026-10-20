@@ -752,7 +752,6 @@ for p in PROJECTS_DATA:
           </div>
           <div class="proj-meta-right">
             <span class="proj-period">{p['period']}</span>
-            {funding_badge}
           </div>
         </div>
         <h3>{p['title']}</h3>
@@ -864,32 +863,12 @@ P["projects.html"] = head(
       Consolidated portfolio of 22 federal, multi-state pooled fund, and state DOT sponsored research projects spanning connected vehicle telemetry, work zone safety, automated traffic signal performance, systemic safety screening, and cloud infrastructure. Search by keyword or filter by scholarly role and sponsoring agency.
     </p>
 
-    <!-- Key Metrics Summary Bar -->
-    <div class="projects-summary-bar">
-      <div class="projects-stat">
-        <span class="num">22</span>
-        <span class="lbl">Sponsored Projects</span>
-      </div>
-      <div class="projects-stat">
-        <span class="num">4</span>
-        <span class="lbl">Co-PI Grant Awards</span>
-      </div>
-      <div class="projects-stat">
-        <span class="num">$3.3M+</span>
-        <span class="lbl">Documented Research Funding</span>
-      </div>
-      <div class="projects-stat">
-        <span class="num">10+</span>
-        <span class="lbl">State DOT &amp; Agency Partners</span>
-      </div>
-    </div>
-
     <!-- Role Definition & Framework Legend -->
     <div class="projects-legend">
       <span class="legend-title">Role Framework:</span>
-      <span class="legend-item"><span class="proj-role-badge badge-copi">Co-PI</span> <b>Co-Principal Investigator:</b> Proposal conceptualization, grant stewardship &amp; project leadership</span>
-      <span class="legend-item"><span class="proj-role-badge badge-re">RE</span> <b>Research Engineer:</b> Methodological formulation, large-scale data engineering &amp; state DOT deployment</span>
-      <span class="legend-item"><span class="proj-role-badge badge-gra">GRA</span> <b>Graduate Research Assistant:</b> Algorithm development, sensor fusion &amp; pilot field evaluations</span>
+      <span class="legend-item"><span class="proj-role-badge badge-copi">Co-PI</span> <b>Co-Principal Investigator</b></span>
+      <span class="legend-item"><span class="proj-role-badge badge-re">RE</span> <b>Research Engineer</b></span>
+      <span class="legend-item"><span class="proj-role-badge badge-gra">GRA</span> <b>Graduate Research Assistant</b></span>
     </div>
 
     <!-- Search & Filter Toolbar -->
