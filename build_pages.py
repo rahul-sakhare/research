@@ -144,7 +144,7 @@ P["index.html"] = head(
 
         <!-- Understated Scholarly Metrics Summary Bar -->
         <div class="metrics-summary-bar">
-          <span><b>Google Scholar:</b> <span id="stat-cites" data-to="543">540+</span> citations</span>
+          <span><a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="View Google Scholar Profile"><b>Google Scholar:</b> <span id="stat-cites" data-to="543">540+</span> citations</a></span>
           <span class="dot">·</span>
           <span><b>h-index:</b> <span id="stat-h" data-to="14">14</span></span>
           <span class="dot">·</span>
@@ -327,7 +327,7 @@ P["publications.html"] = head(
     </div>
     <div id="pub-root"></div>
   </section>
-""" + foot("Google Scholar: 540+ citations · h-index 14 · i10-index 19", '<script src="pubs-data.js"></script>\n')
+""" + foot('<a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="View Google Scholar Profile">Google Scholar: 540+ citations · h-index 14 · i10-index 19 ↗</a>', '<script src="pubs-data.js"></script>\n')
 
 
 # =========================================================================

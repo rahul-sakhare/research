@@ -469,6 +469,23 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
 .metrics-summary-bar .dot {
   color: var(--border-strong);
 }
+.metrics-summary-bar a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+.metrics-summary-bar a:hover {
+  color: var(--link-color);
+  text-decoration-color: var(--link-color);
+}
+.metrics-summary-bar a b {
+  transition: color .15s ease;
+}
+.metrics-summary-bar a:hover b {
+  color: var(--link-color);
+}
 
 /* ==========================================================================
    RECENT NEWS (HOME & NEWS PAGE) — Clean Chronological Stream
@@ -1052,6 +1069,17 @@ div.mi:not(.has-link) {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+}
+.site-foot a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+  transition: color .15s ease, text-decoration-color .15s ease;
+}
+.site-foot a:hover {
+  color: var(--link-color);
+  text-decoration-color: var(--link-color);
 }
 
 .hidden { display: none !important; }
