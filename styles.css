@@ -1223,10 +1223,7 @@ a.award-item:hover .award-desc b,
 .award-desc .appt-inst .loc {
   color: var(--ink-muted);
   font-weight: 400;
-}
-.award-desc .appt-inst .dot {
-  color: var(--border-strong);
-  margin: 0 4px;
+  margin-left: 6px;
 }
 .award-desc span {
   color: var(--ink-muted);
