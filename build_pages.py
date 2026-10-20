@@ -46,7 +46,7 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8.4">
+<link rel="stylesheet" href="styles.css?v=8.5">
 </head>
 <body class="{body_cls}">"""
 
@@ -71,7 +71,7 @@ def foot(right="West Lafayette, IN", scripts=""):
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
   <span>{right}</span>
 </footer>
-{scripts}<script src="script.js?v=8.4"></script>
+{scripts}<script src="script.js?v=8.5"></script>
 </body>
 </html>"""
 
@@ -797,7 +797,7 @@ P["news.html"] = head(
     <div class="filters" id="media-filters"></div>
     <div id="media-root"></div>
   </section>
-""" + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js"></script>\n')
+""" + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js?v=8.5"></script>\n')
 
 
 # =========================================================================
