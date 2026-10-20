@@ -156,6 +156,7 @@ if (root && window.PUBS){
         const badge = /Editor.s Choice|Best Paper|Project of the Year|Recognized by ITS/i.test(p.cite)
           ? '<span class="badge">Honor / Award</span>' : '';
         const bibText = encodeURIComponent(formatBibtex(p));
+        const pubId = `pub-${g.key}-${idx}`;
         const hasLinkCls = p.url ? ' has-link' : '';
         const urlAttr = p.url ? ` data-url="${p.url}" tabindex="0" role="link" title="Open publication in new tab"` : '';
 
