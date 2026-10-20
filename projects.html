@@ -2,12 +2,686 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=publications.html">
-<link rel="canonical" href="publications.html">
-<title>Redirecting to Publications | Rahul Sakhare, Ph.D., P.E.</title>
-<script>window.location.replace("publications.html");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsored Research Projects | Rahul Sakhare, Ph.D., P.E.</title>
+<meta name="description" content="Federal, multi-state pooled fund, and state DOT sponsored research projects led and engineered by Rahul Sakhare, Ph.D., P.E. at Purdue University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=9.1">
+<script>
+(function(){
+  var t = localStorage.getItem('theme');
+  if (!t) {
+    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
 </head>
-<body>
-<p>Redirecting to <a href="publications.html">Rahul Sakhare's Publications</a>...</p>
+<body class="sub"><header class="site-head" id="site-head">
+  <nav class="wrap nav" aria-label="Primary">
+    <a class="brand" href="index.html">Rahul Sakhare<span class="creds">, Ph.D., P.E.</span></a>
+    <div class="nav-right">
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="publications.html">Publications</a></li><li><a href="projects.html" class="active">Projects</a></li><li><a href="education.html">Education</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a></li></ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark theme" title="Toggle dark theme" type="button">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" type="button">☰</button>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="wrap" style="padding-top:36px">
+    <h1>Sponsored Research Projects</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:24px">
+      Consolidated portfolio of 22 federal, multi-state pooled fund, and state DOT sponsored research projects spanning connected vehicle telemetry, work zone safety, automated traffic signal performance, systemic safety screening, and cloud infrastructure. Search by keyword or filter by scholarly role and sponsoring agency.
+    </p>
+
+    <!-- Key Metrics Summary Bar -->
+    <div class="projects-summary-bar">
+      <div class="projects-stat">
+        <span class="num">22</span>
+        <span class="lbl">Sponsored Projects</span>
+      </div>
+      <div class="projects-stat">
+        <span class="num">4</span>
+        <span class="lbl">Co-PI Grant Awards</span>
+      </div>
+      <div class="projects-stat">
+        <span class="num">$3.3M+</span>
+        <span class="lbl">Documented Research Funding</span>
+      </div>
+      <div class="projects-stat">
+        <span class="num">10+</span>
+        <span class="lbl">State DOT &amp; Agency Partners</span>
+      </div>
+    </div>
+
+    <!-- Role Definition & Framework Legend -->
+    <div class="projects-legend">
+      <span class="legend-title">Role Framework:</span>
+      <span class="legend-item"><span class="proj-role-badge badge-copi">Co-PI</span> <b>Co-Principal Investigator:</b> Proposal conceptualization, grant stewardship &amp; project leadership</span>
+      <span class="legend-item"><span class="proj-role-badge badge-re">RE</span> <b>Research Engineer:</b> Methodological formulation, large-scale data engineering &amp; state DOT deployment</span>
+      <span class="legend-item"><span class="proj-role-badge badge-gra">GRA</span> <b>Graduate Research Assistant:</b> Algorithm development, sensor fusion &amp; pilot field evaluations</span>
+    </div>
+
+    <!-- Search & Filter Toolbar -->
+    <div class="projects-toolbar">
+      <div class="pub-search-wrap">
+        <svg class="pub-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="pub-search-input" id="proj-search-input" placeholder="Search by project title, keyword, grant number, sponsor, or role (e.g. 'work zone', 'SPR-5021', 'freight', 'Drivewyze')..." autocomplete="off">
+        <button class="pub-clear-btn" id="proj-clear-btn" title="Clear search">✕</button>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group-label">Role:</span>
+        <div class="filters">
+          <button class="filter role-filter active" data-role="all" type="button">All Roles (22)</button>
+          <button class="filter role-filter" data-role="Co-PI" type="button">Co-Principal Investigator (4)</button>
+          <button class="filter role-filter" data-role="RE" type="button">Research Engineer (12)</button>
+          <button class="filter role-filter" data-role="GRA" type="button">Graduate Research Assistant (6)</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group-label">Sponsor:</span>
+        <div class="filters">
+          <button class="filter sponsor-filter active" data-sponsor="all" type="button">All Sponsors</button>
+          <button class="filter sponsor-filter" data-sponsor="FHWA" type="button">FHWA Pooled Funds (2)</button>
+          <button class="filter sponsor-filter" data-sponsor="INDOT" type="button">INDOT / JTRP (19)</button>
+          <button class="filter sponsor-filter" data-sponsor="CCAT" type="button">CCAT UTC (1)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Counter -->
+    <div style="font-size:14px;color:var(--ink-muted);margin-bottom:18px">
+      Showing <b id="proj-visible-count" style="color:var(--ink-heading)">22</b> of 22 sponsored projects
+    </div>
+
+    <!-- No Matches Fallback -->
+    <div id="proj-no-matches" class="hidden" style="padding:48px 0;text-align:center;color:var(--ink-muted)">
+      <h3>No matching projects found</h3>
+      <p>Try refining your search query or resetting the filters above.</p>
+    </div>
+
+    <!-- Projects List -->
+    <div class="projects-list" id="projects-list">
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="FHWA">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">FHWA · TPF-5(514)</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2026</span>
+            <span class="proj-funding">$890,000</span>
+          </div>
+        </div>
+        <h3>Work Zone Analytics</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Federal Highway Administration (FHWA) Pooled Fund Consortium<br>
+          <b>Lead Entity:</b> Indiana Department of Transportation (INDOT) & Purdue University<br><b>Agency Partners:</b> FHWA, INDOT, Delaware DOT, Illinois DOT, Maryland SHA, Massachusetts DOT, Michigan DOT, Pennsylvania DOT, Texas DOT, Utah DOT, Wisconsin DOT
+        </div>
+        <div class="proj-desc">
+          Multi-state transportation pooled fund consortium developing scalable cloud-native analytics, automated performance measures, and real-time mobility dashboards using connected vehicle trajectory data across 10 participating state highway agencies.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://pooledfund.org/Details/Study/746" target="_blank" rel="noopener">FHWA Pooled Fund Study (TPF-5(514)) ↗</a><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317751" target="_blank" rel="noopener">JTRP Monograph & Technical Publication ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="FHWA">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">FHWA · TPF-5(519)</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2026</span>
+            <span class="proj-funding">$1,300,000</span>
+          </div>
+        </div>
+        <h3>Expansion: Enhanced Traffic Signal Performance Measures</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Federal Highway Administration (FHWA) Pooled Fund Consortium<br>
+          <b>Lead Entity:</b> Indiana Department of Transportation (INDOT) & Purdue University<br><b>Agency Partners:</b> Multi-State Transportation Pooled Fund Consortium
+        </div>
+        <div class="proj-desc">
+          Expanding Automated Traffic Signal Performance Measures (ATSPM) across statewide arterial networks utilizing commercial probe vehicle trajectory data for split failure diagnostics, arterial coordination screening, and control delay quantification.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://pooledfund.org/Details/Study/751" target="_blank" rel="noopener">FHWA Pooled Fund Study (TPF-5(519)) ↗</a></div>
+      </article>
+
+      <article class="project-card role-copi" data-role="Co-PI" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-5005</span>
+            <span class="proj-role-badge badge-copi">Co-Principal Investigator (Co-PI)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2025–2027</span>
+            <span class="proj-funding">$301,966</span>
+          </div>
+        </div>
+        <h3>Evaluation of Asset Identification Technology</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Asset Management Division
+        </div>
+        <div class="proj-desc">
+          Developing edge-computing and computer vision pipelines to analyze truck-mounted camera imagery and telematics for automated statewide roadway asset identification, inventory verification, and condition scoring.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://engineering.purdue.edu/JTRP/Research" target="_blank" rel="noopener">JTRP Research Program ↗</a></div>
+      </article>
+
+      <article class="project-card role-copi" data-role="Co-PI" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-5021</span>
+            <span class="proj-role-badge badge-copi">Co-Principal Investigator (Co-PI)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2026–2027</span>
+            <span class="proj-funding">$383,966</span>
+          </div>
+        </div>
+        <h3>Traffic Signal Freight Prioritization via Vehicle to Infrastructure (V2I) Communications</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Management & Commercial Telematics Providers (Drivewyze)
+        </div>
+        <div class="proj-desc">
+          Pioneering cloud-based vehicle-to-infrastructure (V2I) communication with third-party in-cab telematics to extend green intervals for heavy freight trucks approaching intersection decision zones, reducing hard braking, tailpipe emissions, and pavement wear.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://engineering.purdue.edu/JTRP/Research" target="_blank" rel="noopener">JTRP Research Program ↗</a></div>
+      </article>
+
+      <article class="project-card role-copi" data-role="Co-PI" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-5020</span>
+            <span class="proj-role-badge badge-copi">Co-Principal Investigator (Co-PI)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2025–2027</span>
+            <span class="proj-funding">$224,109</span>
+          </div>
+        </div>
+        <h3>Identifying Locations with Abnormally High Wrong Way Driving or Interstate U-Turns</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Safety & Operations
+        </div>
+        <div class="proj-desc">
+          Systemwide spatial screening of vehicle trajectory heading vectors and waypoint sequences to detect high-risk interchange ramps, wrong-way driving movements, and unauthorized median crossovers across Indiana interstates.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://engineering.purdue.edu/JTRP/Research" target="_blank" rel="noopener">JTRP Research Program ↗</a></div>
+      </article>
+
+      <article class="project-card role-copi" data-role="Co-PI" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4928</span>
+            <span class="proj-role-badge badge-copi">Co-Principal Investigator (Co-PI)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2024–2025</span>
+            <span class="proj-funding">$218,390</span>
+          </div>
+        </div>
+        <h3>Connected Vehicle Trajectory Data to Screen Network for Hard Braking and Hard Acceleration Events</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Office of Systems Analysis and Planning
+        </div>
+        <div class="proj-desc">
+          Engineered systemic safety screening algorithms utilizing longitudinal acceleration telematics to identify friction hotspots, queue tails, and interchange merge conflicts before crash accumulation occurs.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318579" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/30) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4933</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2024–2025</span>
+            
+          </div>
+        </div>
+        <h3>Worksite Speed Control System (WSCS)</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Construction & Work Zone Operations
+        </div>
+        <div class="proj-desc">
+          Empirical evaluation of worksite speed control technologies and automated speed photo enforcement systems, evaluating driver compliance, speed variance, and highway construction worker safety.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318595" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/33) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4907</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2024–2025</span>
+            
+          </div>
+        </div>
+        <h3>Systemwide Asset Condition Assessment using Connected Vehicle Data</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Asset Management & Maintenance
+        </div>
+        <div class="proj-desc">
+          Harvested vertical acceleration sensor telemetry, chassis vibrations, and optical camera streams to monitor pavement surface roughness, detect pavement distress, and automate road asset condition scoring.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318612" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2026/04) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4857</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2024</span>
+            
+          </div>
+        </div>
+        <h3>Statewide Screening of Signalized Intersections for Capacity Improvements</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Engineering Division
+        </div>
+        <div class="proj-desc">
+          Leveraged billions of vehicle trajectory records to evaluate and rank thousands of signalized intersections across Indiana, quantifying split failures, green allocation efficiency, and retiming priorities.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317755" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2024/20) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4854</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2025</span>
+            
+          </div>
+        </div>
+        <h3>MOT for MOT: Case Studies Documenting Lessons Learned and Opportunities for Maintenance of Traffic Improvements</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Division of Construction Management
+        </div>
+        <div class="proj-desc">
+          Analyzed empirical queueing, speed reductions, and crash patterns during maintenance of traffic (MOT) transitions across major interstate reconstruction corridors to improve future MOT contract designs.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318578" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/29) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4851</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2025</span>
+            
+          </div>
+        </div>
+        <h3>Development of Incident Management Performance Measure Database and IN-TIME Training Material</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Incident Management (IN-TIME) & Indiana State Police
+        </div>
+        <div class="proj-desc">
+          Synthesized multi-source traffic telemetry, CAD logs, and roadside camera feeds to build automated incident timeline metrics (roadway clearance, scene clearance, secondary crash detection) for first-responder training.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317907" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/21) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4850</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2025</span>
+            
+          </div>
+        </div>
+        <h3>Continued Deployment of Indiana Work Zone Analytics</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Engineering & Operations
+        </div>
+        <div class="proj-desc">
+          Maintained, refined, and deployed statewide automated work zone monitoring dashboards tracking daily and weekly queuing, congestion hours, speed compliance, and traveler delay across hundreds of construction contracts.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318581" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/31) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4803</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2025</span>
+            
+          </div>
+        </div>
+        <h3>Communication of Fixed and Mobile Warning to Commercial Trucks Using In-Cab Notification</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Freight Office & Commercial Telematics Providers (Drivewyze)
+        </div>
+        <div class="proj-desc">
+          Demonstrated and evaluated in-cab dynamic safety alerts delivering real-time queue warnings, sudden slowdown advisories, and rollover risk alerts directly to thousands of heavy commercial motor vehicles on Indiana interstates.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318232" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/24) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4704</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2022–2024</span>
+            
+          </div>
+        </div>
+        <h3>Evaluating the Robustness of MDSS Forecast and Compliance with Recommendations</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Winter Operations & Maintenance
+        </div>
+        <div class="proj-desc">
+          Assessed Maintenance Decision Support System (MDSS) winter storm forecasts, comparing automated recommendations against automated vehicle location (AVL) spreader records and post-storm traffic speed recovery.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317805" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2024/31) ↗</a></div>
+      </article>
+
+      <article class="project-card role-gra" data-role="GRA" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4639</span>
+            <span class="proj-role-badge badge-gra">Graduate Research Assistant (GRA)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2021–2023</span>
+            
+          </div>
+        </div>
+        <h3>Connected Vehicle Centric Dashboards for TMC of the Future</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Management Center (TMC)
+        </div>
+        <div class="proj-desc">
+          Architected next-generation traffic management center web dashboards integrating high-frequency trajectory speeds, automated anomaly detection, and queue alert triggers for real-time operations.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317642" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2023/17) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4636</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2021–2025</span>
+            
+          </div>
+        </div>
+        <h3>Research Support to INDOT on I-465 Southeast Variable Speed Limit and Ramp Meter Project</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Greenfield District & Traffic Operations
+        </div>
+        <div class="proj-desc">
+          Rigorous before-and-after operational performance assessment of Indiana’s premier dynamic variable speed limit (VSL) and ramp metering installation along the congested I-465 Southeast corridor.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284318592" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2025/32) ↗</a></div>
+      </article>
+
+      <article class="project-card role-gra" data-role="GRA" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4603</span>
+            <span class="proj-role-badge badge-gra">Graduate Research Assistant (GRA)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2021–2023</span>
+            
+          </div>
+        </div>
+        <h3>Crowdsourcing / Winter Operations Dashboard Upgrade</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Maintenance & Public Safety
+        </div>
+        <div class="proj-desc">
+          Upgraded enterprise winter maintenance dashboards merging crowdsourced incident data (Waze CCP), snowplow GPS tracking, and probe speed recovery metrics to optimize winter maintenance operations.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317652" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2023/21) ↗</a></div>
+      </article>
+
+      <article class="project-card role-gra" data-role="GRA" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4536</span>
+            <span class="proj-role-badge badge-gra">Graduate Research Assistant (GRA)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2020–2023</span>
+            
+          </div>
+        </div>
+        <h3>Implementation of Enhanced Probe Data (CANBUS) for Tactical Workzone and Winter Operations Management</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Operations & Commercial Vehicle Telematics
+        </div>
+        <div class="proj-desc">
+          Investigated vehicle CANBUS sensor feeds (active wipers, anti-lock braking, electronic stability control) to provide real-time hyper-local weather detection and pavement friction assessments.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317643" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2023/18) ↗</a></div>
+      </article>
+
+      <article class="project-card role-re" data-role="RE" data-sponsor="CCAT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">CCAT · UTC Grant</span>
+            <span class="proj-role-badge badge-re">Research Engineer (RE)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2023–2025</span>
+            
+          </div>
+        </div>
+        <h3>Methodologies for Monitoring Work Zone Performance Measures across State Border Highways using Connected Vehicle Data</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Center for Connected and Automated Transportation (CCAT)<br>
+          <b>Lead Entity:</b> USDOT Tier 1 University Transportation Center (CCAT / Purdue University)<br><b>Agency Partners:</b> Regional State DOT Partners (INDOT, IDOT, MDOT)
+        </div>
+        <div class="proj-desc">
+          Bridged jurisdictional boundaries by developing methods to track queue propagation, back-of-queue secondary crashes, and travel delays extending across interstate state line borders without roadside sensors.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://ccat.umtri.umich.edu/" target="_blank" rel="noopener">CCAT UTC Research Consortium ↗</a></div>
+      </article>
+
+      <article class="project-card role-gra" data-role="GRA" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4600</span>
+            <span class="proj-role-badge badge-gra">Graduate Research Assistant (GRA)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2021–2022</span>
+            
+          </div>
+        </div>
+        <h3>Impacts to Traffic Behavior from Queue Warning Truck: Current Pilot Project</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Work Zone Safety Committee
+        </div>
+        <div class="proj-desc">
+          Field evaluation of truck-mounted dynamic message signs (queue warning trucks) equipped with digital alerts, measuring upstream traffic deceleration, driver compliance, and hard-braking mitigation.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317448" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2022/26) ↗</a></div>
+      </article>
+
+      <article class="project-card role-gra" data-role="GRA" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4524</span>
+            <span class="proj-role-badge badge-gra">Graduate Research Assistant (GRA)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2020–2022</span>
+            
+          </div>
+        </div>
+        <h3>Evaluation of the Impact of On-Vehicle Digital Communication Alerts to Improve INDOT and Motorist Safety</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Maintenance & HAAS Alert Safety Cloud
+        </div>
+        <div class="proj-desc">
+          Quantified driver deceleration behavior and earlier lane-change maneuvers in response to digital in-vehicle notifications alerting approaching motorists to maintenance and emergency responders.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317324" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2021/27) ↗</a></div>
+      </article>
+
+      <article class="project-card role-gra" data-role="GRA" data-sponsor="INDOT">
+        <div class="proj-top">
+          <div class="proj-tags">
+            <span class="proj-code">INDOT · SPR-4451</span>
+            <span class="proj-role-badge badge-gra">Graduate Research Assistant (GRA)</span>
+          </div>
+          <div class="proj-meta-right">
+            <span class="proj-period">2020–2022</span>
+            
+          </div>
+        </div>
+        <h3>Integration of Probe Data Tools into TMC Operations</h3>
+        <div class="proj-meta-line">
+          <b>Sponsor:</b> Indiana Department of Transportation (INDOT) / JTRP<br>
+          <b>Lead Entity:</b> Joint Transportation Research Program, Purdue University<br><b>Agency Partners:</b> INDOT Traffic Management Center (TMC)
+        </div>
+        <div class="proj-desc">
+          Operational integration of high-density commercial vehicle probe speed feeds into statewide TMC incident dispatch, congestion monitoring, and operator decision support.
+        </div>
+        <div class="proj-links"><a class="proj-link-btn" href="https://doi.org/10.5703/1288284317363" target="_blank" rel="noopener">JTRP Final Report (FHWA/IN/JTRP-2022/01) ↗</a></div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="wrap site-foot">
+  <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
+  <span>Purdue University · JTRP</span>
+</footer>
+<script>
+(function(){
+  const searchInput = document.getElementById('proj-search-input');
+  const clearBtn = document.getElementById('proj-clear-btn');
+  const roleFilters = document.querySelectorAll('.role-filter');
+  const sponsorFilters = document.querySelectorAll('.sponsor-filter');
+  const cards = document.querySelectorAll('.project-card');
+  const countEl = document.getElementById('proj-visible-count');
+  const noMatches = document.getElementById('proj-no-matches');
+
+  let currentRole = 'all';
+  let currentSponsor = 'all';
+  let currentQuery = '';
+
+  function filterProjects() {
+    let visible = 0;
+    const q = currentQuery.toLowerCase().trim();
+
+    cards.forEach(card => {
+      const role = card.getAttribute('data-role');
+      const sponsor = card.getAttribute('data-sponsor');
+      const text = card.textContent.toLowerCase();
+
+      const matchRole = (currentRole === 'all' || role === currentRole);
+      const matchSponsor = (currentSponsor === 'all' || sponsor === currentSponsor);
+      const matchQuery = (!q || text.includes(q));
+
+      if (matchRole && matchSponsor && matchQuery) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (countEl) countEl.textContent = visible;
+    if (noMatches) {
+      if (visible === 0) noMatches.classList.remove('hidden');
+      else noMatches.classList.add('hidden');
+    }
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentQuery = e.target.value;
+      if (clearBtn) {
+        if (currentQuery) clearBtn.classList.add('visible');
+        else clearBtn.classList.remove('visible');
+      }
+      filterProjects();
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      currentQuery = '';
+      clearBtn.classList.remove('visible');
+      searchInput.focus();
+      filterProjects();
+    });
+  }
+
+  roleFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      roleFilters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentRole = btn.getAttribute('data-role');
+      filterProjects();
+    });
+  });
+
+  sponsorFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sponsorFilters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentSponsor = btn.getAttribute('data-sponsor');
+      filterProjects();
+    });
+  });
+})();
+</script>
+<script src="script.js?v=9.2"></script>
 </body>
 </html>

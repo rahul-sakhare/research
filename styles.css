@@ -784,6 +784,256 @@ html[data-theme="dark"] .btn-bib.copied {
 }
 
 /* ==========================================================================
+   PROJECTS & SPONSORED RESEARCH — Scholarly Grant Portfolio
+   ========================================================================== */
+.projects-summary-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+.projects-stat {
+  display: flex;
+  flex-direction: column;
+}
+.projects-stat .num {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink-heading);
+  line-height: 1.1;
+}
+.projects-stat .lbl {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.projects-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: center;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  padding: 12px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 28px;
+}
+.legend-title {
+  font-weight: 700;
+  color: var(--ink-heading);
+  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: .06em;
+}
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projects-toolbar {
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.filter-group-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--ink-muted);
+  min-width: 65px;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-card);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  position: relative;
+  box-shadow: var(--card-shadow);
+}
+.project-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+.project-card.role-copi {
+  border-left: 4px solid var(--accent-gold);
+}
+.project-card.role-re {
+  border-left: 4px solid var(--link-color);
+}
+.project-card.role-gra {
+  border-left: 4px solid var(--ink-muted);
+}
+
+.proj-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.proj-code {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--bg-inset);
+  color: var(--ink-heading);
+  border: 1px solid var(--border);
+}
+.proj-role-badge {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.proj-role-badge.badge-copi {
+  background: var(--accent-gold-bg);
+  color: var(--accent-gold);
+  border: 1px solid rgba(146, 64, 14, 0.35);
+}
+html[data-theme="dark"] .proj-role-badge.badge-copi {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+.proj-role-badge.badge-re {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #BFDBFE;
+}
+html[data-theme="dark"] .proj-role-badge.badge-re {
+  background: rgba(30, 64, 175, 0.2);
+  color: #93C5FD;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+.proj-role-badge.badge-gra {
+  background: var(--bg-inset);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+.proj-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.proj-period {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+.proj-funding {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: var(--accent-gold-bg);
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1px solid rgba(146, 64, 14, 0.25);
+}
+html[data-theme="dark"] .proj-funding {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.project-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.38;
+  color: var(--ink-heading);
+}
+
+.proj-meta-line {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+}
+.proj-meta-line b {
+  color: var(--ink-heading);
+}
+
+.proj-desc {
+  font-size: 15px;
+  line-height: 1.68;
+  color: var(--ink-body);
+  margin-bottom: 16px;
+}
+
+.proj-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.proj-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--link-color);
+  background: var(--bg-inset);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all .15s ease;
+}
+.proj-link-btn:hover {
+  background: var(--ink-heading);
+  color: var(--bg-page);
+  border-color: var(--ink-heading);
+}
+html[data-theme="dark"] .proj-link-btn:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+  border-color: #2563EB;
+}
+
+/* ==========================================================================
    EDUCATION & DEGREES — Clean Academic CV Style
    ========================================================================== */
 .edu-entry {
@@ -1204,6 +1454,17 @@ html[data-theme="dark"] .mi.usdot-feature:hover {
   .edu-entry {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  .nav-links a {
+    padding: 6px 8px;
+    font-size: 13.5px;
+  }
+  .nav-links a.cv {
+    padding: 5px 8px;
+    margin-left: 2px;
   }
 }
 
