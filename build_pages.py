@@ -113,6 +113,7 @@ P["index.html"] = head(
           <p><b>Email:</b><br><a href="mailto:rsakhare@purdue.edu">rsakhare@purdue.edu</a></p>
           <p><b>Credentials:</b><br>Ph.D. Civil Eng, Purdue ('23)<br>M.Tech. &amp; B.Tech., IIT Madras ('18)</p>
           <p><b>Licensure:</b><br>Professional Engineer (P.E.), Indiana (No. PE12600619)</p>
+          <p><b>Certification:</b><br>Google Cloud Certified Generative AI Leader</p>
           <p><b>TRB Committee:</b><br>Member of the Committee, ACF13 (Limited Access Roadway Operations)</p>
         </div>
       </aside>
@@ -339,7 +340,7 @@ P["education.html"] = head(
     "sub"
 ) + nav("education.html") + f"""
   <section class="wrap" style="padding-top:36px">
-    <h1>Education &amp; Licensure</h1>
+    <h1>Education, Licensure &amp; Certification</h1>
     <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:32px">
       Doctoral training in civil infrastructure systems and connected vehicle data at Purdue University, built upon a dual-degree foundation in transportation engineering from the Indian Institute of Technology (IIT) Madras.
     </p>
@@ -401,6 +402,18 @@ P["education.html"] = head(
         <div class="inst">State of Indiana — State Board of Registration for Professional Engineers</div>
         <p><b>License Number:</b> PE12600619 (Active · Issued June 2026)</p>
         <p>Discipline: Civil &amp; Transportation Engineering. Licensed professional engineer upholding public safety, technical rigor, and ethical engineering standards.</p>
+      </div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-meta">
+        <span class="yr">Certification</span>
+        <span>Google Cloud</span>
+      </div>
+      <div class="edu-detail">
+        <h3><b>Google Cloud Certified Generative AI Leader</b></h3>
+        <div class="inst">Google Cloud</div>
+        <p>Professional certification validating expertise in enterprise AI technologies, Google Cloud infrastructure, data governance, and scalable cloud analytics for modern engineering workflows.</p>
       </div>
     </div>
   </section>
