@@ -46,7 +46,7 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=8.1">
 </head>
 <body class="{body_cls}">"""
 
