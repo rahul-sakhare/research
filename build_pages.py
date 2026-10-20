@@ -46,7 +46,7 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8.1">
+<link rel="stylesheet" href="styles.css?v=8.2">
 </head>
 <body class="{body_cls}">"""
 
@@ -90,7 +90,7 @@ P["index.html"] = head(
       <!-- Left Column: Portrait & Academic Coordinates -->
       <aside class="profile-sidebar">
         <div class="profile-photo-frame">
-          <img src="assets/img/hero_photo.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1000" height="666">
+          <img src="assets/img/sakhare_headshot.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1080" height="720">
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Affiliation:</b><br>Joint Transportation Research Program (JTRP), Purdue University</p>
@@ -306,7 +306,7 @@ P["about.html"] = head(
     <div class="profile-grid">
       <aside class="profile-sidebar">
         <div class="profile-photo-frame">
-          <img src="assets/img/hero_photo.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1000" height="666">
+          <img src="assets/img/sakhare_headshot.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1080" height="720">
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
