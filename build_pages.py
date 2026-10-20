@@ -149,7 +149,7 @@ P["index.html"] = head(
             I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP) and a licensed Professional Engineer (P.E.) in Indiana. My engineering research investigates how large-scale, heterogeneous vehicle sensor data can resolve pressing operational challenges across civil infrastructure systems.
           </p>
           <p>
-            By synthesizing traffic flow theory, kinematic wave dynamics, surrogate safety physics, and scalable cloud computing pipelines, my work translates billions of high-frequency connected vehicle waypoints and commercial truck telematics into actionable measures used daily by transportation agencies. Across multiple state and national research initiatives, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants and as lead research engineer on multi-state FHWA Pooled-Fund studies. Methodologies developed through this research are embedded in statewide operations for work zone safety screening, winter storm mobility recovery, secondary crash prevention, and capital investment prioritization.
+            My work translates billions of connected vehicle waypoints and commercial truck telematics into actionable safety and mobility measures deployed daily by transportation agencies for work zone operations, incident management, and capital prioritization.
           </p>
         </div>
 
