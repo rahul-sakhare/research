@@ -46,7 +46,16 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8.7">
+<link rel="stylesheet" href="styles.css?v=9.0">
+<script>
+(function(){{
+  var t = localStorage.getItem('theme');
+  if (!t) {{
+    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }}
+  document.documentElement.setAttribute('data-theme', t);
+}})();
+</script>
 </head>
 <body class="{body_cls}">"""
 
@@ -59,8 +68,14 @@ def nav(active):
     return f"""<header class="site-head" id="site-head">
   <nav class="wrap nav" aria-label="Primary">
     <a class="brand" href="index.html">Rahul Sakhare<span class="creds">, Ph.D., P.E.</span></a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">{links}<li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a></li></ul>
+    <div class="nav-right">
+      <ul class="nav-links">{links}<li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a></li></ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark theme" title="Toggle dark theme" type="button">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" type="button">☰</button>
+    </div>
   </nav>
 </header>
 <main>"""
@@ -71,7 +86,7 @@ def foot(right="West Lafayette, IN", scripts=""):
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
   <span>{right}</span>
 </footer>
-{scripts}<script src="script.js?v=8.7"></script>
+{scripts}<script src="script.js?v=9.0"></script>
 </body>
 </html>"""
 
