@@ -7,44 +7,44 @@
 <meta name="description" content="Peer-reviewed journal articles, technical reports, monographs, and conference presentations by Rahul Sakhare, Ph.D., P.E.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="sub"><header class="site-head" id="site-head">
   <nav class="wrap nav" aria-label="Primary">
-    <a class="brand" href="index.html">Rahul&nbsp;Sakhare<span class="dot">.</span></a>
+    <a class="brand" href="index.html">Rahul Sakhare<span class="creds">, Ph.D., P.E.</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="publications.html" class="active">Publications</a></li><li><a href="education.html">Education</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV ↗</a></li></ul>
+    <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="publications.html" class="active">Publications</a></li><li><a href="education.html">Education</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="awards.html">Awards</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li><li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a></li></ul>
   </nav>
 </header>
 <main>
-  <section class="page-hero wrap">
-    <span class="eyebrow"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H12v15H6.5A2.5 2.5 0 0 0 4 20.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H12v15h5.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg> Scholarly Works</span>
-    <h1>Publications &amp; Reports.</h1>
-    <p>Peer-reviewed journal articles, technical research reports for INDOT &amp; FHWA, authoritative monographs, and conference presentations spanning connected vehicle data, traffic safety, and cloud computing. Use the search bar or category filters below.</p>
-  </section>
+  <section class="wrap" style="padding-top:36px">
+    <h1>Publications &amp; Reports</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:24px">
+      32 peer-reviewed journal articles, 22 technical research reports for INDOT &amp; FHWA, 1 monograph, and conference proceedings spanning connected vehicle data, traffic safety, and cloud computing. Search by keyword or filter by scholarly category.
+    </p>
 
-  <!-- Sticky Search & Filter Toolbar -->
-  <div class="wrap pub-toolbar">
-    <div class="pub-search-wrap">
-      <svg class="pub-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="pub-search-input" id="pub-search-input" placeholder="Search publications by title, co-author, venue, or year (e.g., 'work zone', 'IEEE', '2026')..." autocomplete="off">
-      <button class="pub-clear-btn" id="pub-clear-btn" title="Clear search">✕</button>
+    <!-- Search & Filter Toolbar -->
+    <div class="pub-toolbar">
+      <div class="pub-search-wrap">
+        <svg class="pub-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="pub-search-input" id="pub-search-input" placeholder="Search by title, co-author, venue, or year (e.g., 'work zone', 'IEEE', '2026')..." autocomplete="off">
+        <button class="pub-clear-btn" id="pub-clear-btn" title="Clear search">✕</button>
+      </div>
+      <div class="filters" id="filters"></div>
     </div>
-    <div class="filters" id="filters"></div>
-  </div>
 
-  <div class="wrap">
+    <!-- Publications List Root -->
     <div id="no-matches" class="hidden" style="padding:48px 0;text-align:center;color:var(--ink-muted)">
       <h3>No matching publications found</h3>
       <p>Try refining your search query or switching categories above.</p>
     </div>
     <div id="pub-root"></div>
-  </div>
+  </section>
 </main>
-<footer class="foot wrap">
+<footer class="wrap site-foot">
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
-  <span>Google Scholar: 521 citations · h-index 13 · i10-index 19</span>
+  <span>Google Scholar: 540+ citations · h-index 14 · i10-index 19</span>
 </footer>
 <script src="pubs-data.js"></script>
 <script src="script.js"></script>

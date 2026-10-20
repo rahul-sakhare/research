@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Generate all site pages with shared head/nav/footer (v7 - Clean Modern Academic Architecture)."""
+"""Generate all site pages with shared head/nav/footer (Refined Modern Scholar Architecture).
+
+Typography: Lora (Editorial Serif Headings) + Inter (Scholarly Sans Body)
+Aesthetic: Authentic Academic Minimalist (No SaaS cards, no bubble chips, authentic scholarly layout)
+"""
 
 import os
 
-FONTS = "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
 
 I = {  # inline SVGs (stroke, currentColor)
  "user":'<svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 19.5c1.8-3.2 4.3-4.7 7.5-4.7s5.7 1.5 7.5 4.7"/></svg>',
@@ -17,10 +21,12 @@ I = {  # inline SVGs (stroke, currentColor)
  "linkedin":'<svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M8 10.5V17M8 7.6v.1M12 17v-4a2.4 2.4 0 0 1 4.8 0v4"/></svg>',
  "orcid":'<svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 8.5v7M9 6.7v.1M12.5 15.5v-7h2a3.5 3.5 0 0 1 0 7z"/></svg>',
  "rg":'<svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 16V8h3a2.3 2.3 0 0 1 .9 4.4L15 16"/></svg>',
+ "doc":'<svg class="ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
 }
 
 NAV_ITEMS = [
  ("index.html", "Home"),
+ ("about.html", "About"),
  ("publications.html", "Publications"),
  ("education.html", "Education"),
  ("teaching.html", "Teaching"),
@@ -52,16 +58,16 @@ def nav(active):
     links = "".join(link_items)
     return f"""<header class="site-head" id="site-head">
   <nav class="wrap nav" aria-label="Primary">
-    <a class="brand" href="index.html">Rahul&nbsp;Sakhare<span class="dot">.</span></a>
+    <a class="brand" href="index.html">Rahul Sakhare<span class="creds">, Ph.D., P.E.</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <ul class="nav-links">{links}<li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV ↗</a></li></ul>
+    <ul class="nav-links">{links}<li><a class="cv" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">CV (PDF) ↗</a></li></ul>
   </nav>
 </header>
 <main>"""
 
 def foot(right="West Lafayette, IN", scripts=""):
     return f"""</main>
-<footer class="foot wrap">
+<footer class="wrap site-foot">
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
   <span>{right}</span>
 </footer>
@@ -72,157 +78,170 @@ def foot(right="West Lafayette, IN", scripts=""):
 P = {}
 
 # =========================================================================
-# 1. HOME (index.html)
+# 1. HOME (index.html) — Authentic Academic Profile Layout
 # =========================================================================
-P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Engineer",
- "Rahul Sakhare, Ph.D., P.E. — Transportation Research Engineer at Purdue University. Connected vehicle trajectory data, traffic operations, work zone safety, and cloud analytics.",
- "home") + nav("index.html") + f"""
-  <section class="hero wrap">
-    <div class="hero-inner">
-      <div>
-        <p class="loc">TRANSPORTATION RESEARCH ENGINEER · <b>PURDUE UNIVERSITY</b> · LICENSED P.E. (INDIANA)</p>
-        <h1>Rahul Sakhare<span class="creds">, Ph.D., P.E.</span></h1>
-        <p class="tagline">Civil Infrastructure Systems &amp; <span>Connected Vehicle Data</span></p>
-        <p class="lede">
-          I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP) and a licensed Professional Engineer (P.E.) in Indiana. My research focuses on turning high-frequency connected vehicle trajectory streams, commercial truck telematics, and roadway sensing data into operational performance measures that enhance highway mobility, work zone safety, and infrastructure reliability.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="publications.html">View Publications (92) →</a>
-          <a class="btn btn-secondary" href="education.html">Academic Education</a>
-          <a class="btn btn-ghost" href="teaching.html">Teaching &amp; Mentoring</a>
-          <a class="btn btn-ghost" href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a>
-        </div>
-      </div>
-
-      <!-- Right Column: Profile Portrait & Quick Coordinates -->
-      <div class="hero-card">
-        <div class="hero-photo-wrap">
+P["index.html"] = head(
+    "Rahul Sakhare, Ph.D., P.E. | Purdue University",
+    "Rahul Sakhare, Ph.D., P.E. — Transportation Research Engineer at Purdue University. Connected vehicle trajectory data, traffic operations, work zone safety, and cloud analytics.",
+    "home"
+) + nav("index.html") + f"""
+  <section class="wrap profile-section">
+    <div class="profile-grid">
+      <!-- Left Column: Portrait & Academic Coordinates -->
+      <aside class="profile-sidebar">
+        <div class="profile-photo-frame">
           <img src="assets/img/hero_photo.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1000" height="666">
         </div>
-        <div class="hero-meta-list">
-          <div class="hero-meta-row">
-            <b>Affiliation</b>
-            <span>JTRP, Purdue University</span>
+        <div class="profile-sidebar-meta">
+          <p><b>Affiliation:</b><br>Joint Transportation Research Program (JTRP), Purdue University</p>
+          <p><b>Office:</b><br>Hall of Discovery and Learning Research (DLR), Room 204F<br>West Lafayette, IN 47906</p>
+          <p><b>Email:</b><br><a href="mailto:rsakhare@purdue.edu">rsakhare@purdue.edu</a></p>
+          <p><b>Credentials:</b><br>Ph.D. Civil Eng, Purdue ('23)<br>Dual M.Tech. &amp; B.Tech., IIT Madras ('18)</p>
+          <p><b>Licensure:</b><br>Professional Engineer (P.E.), Indiana</p>
+          <p><b>TRB Committee:</b><br>ACF13 (Limited Access Roadways)</p>
+        </div>
+      </aside>
+
+      <!-- Right Column: Name, Title, Quick Links, Narrative Bio, and Highlights -->
+      <div class="profile-main">
+        <h1>Rahul Sakhare, Ph.D., P.E.</h1>
+        <div class="profile-title">Transportation Research Engineer <span>· Purdue University</span></div>
+
+        <!-- Academic Coordinates & Quick Profile Links -->
+        <div class="profile-links">
+          <a href="assets/Sakhare_CV.pdf" target="_blank" rel="noopener">{I["doc"]} Curriculum Vitae (PDF)</a>
+          <a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&hl=en" target="_blank" rel="noopener">{I["scholar"]} Google Scholar</a>
+          <a href="https://orcid.org/0000-0001-7843-5707" target="_blank" rel="noopener">{I["orcid"]} ORCID</a>
+          <a href="https://www.linkedin.com/in/rahulsakhare/" target="_blank" rel="noopener">{I["linkedin"]} LinkedIn</a>
+          <a href="https://www.researchgate.net/profile/Rahul-Suryakant-Sakhare" target="_blank" rel="noopener">{I["rg"]} ResearchGate</a>
+          <a href="mailto:rsakhare@purdue.edu">{I["mail"]} Contact</a>
+        </div>
+
+        <!-- Scholarly Biography Narrative -->
+        <div class="profile-bio">
+          <p>
+            I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP) and a licensed Professional Engineer (P.E.) in Indiana. My engineering research investigates how large-scale, heterogeneous vehicle sensor data can resolve pressing operational challenges across civil infrastructure systems.
+          </p>
+          <p>
+            By synthesizing traffic flow theory, kinematic wave dynamics, surrogate safety physics, and scalable cloud computing pipelines, my work translates billions of high-frequency connected vehicle waypoints and commercial truck telematics into actionable measures used daily by transportation agencies. Over more than 20 funded research projects totaling over $6.0M, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants ($1.13M) and as lead research engineer on multi-state FHWA Pooled-Fund studies. Methodologies developed through this research are embedded in statewide operations for work zone safety screening, winter storm mobility recovery, secondary crash prevention, and capital investment prioritization.
+          </p>
+        </div>
+
+        <!-- Core Research Areas -->
+        <h3>Research Interests</h3>
+        <ul class="research-bullets">
+          <li>Connected vehicle trajectory data &amp; probe telematics</li>
+          <li>Freeway traffic flow dynamics, shockwaves &amp; bottleneck diagnosis</li>
+          <li>Work zone safety, automated queue warnings &amp; speed compliance</li>
+          <li>Surrogate safety measures &amp; deceleration physics (hard-braking)</li>
+          <li>Traffic incident management &amp; emergency clearance performance</li>
+          <li>Scalable cloud telematics architectures (Google BigQuery)</li>
+          <li>Road weather mobility &amp; winter storm operational recovery</li>
+          <li>Commercial fleet dashcam video analytics &amp; asset condition assessment</li>
+        </ul>
+
+        <!-- Understated Scholarly Metrics Summary Bar -->
+        <div class="metrics-summary-bar">
+          <span><b>Google Scholar:</b> <span id="stat-cites" data-to="543">540+</span> citations</span>
+          <span class="dot">·</span>
+          <span><b>h-index:</b> <span id="stat-h" data-to="14">14</span></span>
+          <span class="dot">·</span>
+          <span><b>i10-index:</b> <span id="stat-i10" data-to="19">19</span></span>
+          <span class="dot">·</span>
+          <span><b><span id="stat-journal" data-to="32">32</span></b> journal articles</span>
+          <span class="dot">·</span>
+          <span><b><span id="stat-report" data-to="22">22</span></b> technical reports</span>
+          <span class="dot">·</span>
+          <span><b>$6.0M+</b> research portfolio</span>
+        </div>
+
+        <!-- Recent News & Milestones -->
+        <h2>Recent News &amp; Updates</h2>
+        <div class="news-feed">
+          <div class="news-entry">
+            <span class="news-date">2026</span>
+            <div class="news-content">
+              <b>Transportation (Springer Nature)</b> published paper on <i>Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics Using Connected Vehicle Waypoint Data</i>.
+            </div>
           </div>
-          <div class="hero-meta-row">
-            <b>Licensure</b>
-            <span>Professional Engineer (P.E.), IN</span>
+          <div class="news-entry">
+            <span class="news-date">2026</span>
+            <div class="news-content">
+              <b>Future Transportation</b> published research establishing empirical work zone performance measures aligned directly with the FHWA Rule on Work Zone Safety and Mobility.
+            </div>
           </div>
-          <div class="hero-meta-row">
-            <b>Education</b>
-            <span>Ph.D. Purdue ('23) · IIT Madras ('18)</span>
+          <div class="news-entry">
+            <span class="news-date">2026</span>
+            <div class="news-content">
+              <b>IEEE Open Journal of Intelligent Transportation Systems</b> published safety evaluation of freeway ramp metering and variable speed limits using vehicle trajectory data.
+            </div>
           </div>
-          <div class="hero-meta-row">
-            <b>TRB Committee</b>
-            <span>ACF13 (Limited Access Roadways)</span>
+          <div class="news-entry">
+            <span class="news-date">Dec 2024</span>
+            <div class="news-content">
+              <b>The New York Times</b> featured our connected vehicle research and freeway traffic congestion diagnostics on the front page of the Sunday edition.
+            </div>
           </div>
-          <div class="hero-meta-row">
-            <b>Contact</b>
-            <span><a href="mailto:rsakhare@purdue.edu">rsakhare@purdue.edu</a></span>
+          <div class="news-entry">
+            <span class="news-date">2024</span>
+            <div class="news-content">
+              Selected to the <b>Google Cloud Research Innovator</b> Fourth Global Cohort for pioneering large-scale cloud analytics on transportation telematics.
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Live Metrics Readout Strip -->
-    <div class="readout" role="group" aria-label="Research metrics">
-      <div class="cell"><div class="numline"><div class="num" id="stat-cites" data-to="521">521</div></div><div class="lab">Citations</div></div>
-      <div class="cell"><div class="numline"><div class="num" id="stat-h" data-to="13">13</div></div><div class="lab">h-index</div></div>
-      <div class="cell"><div class="numline"><div class="num" id="stat-i10" data-to="19">19</div></div><div class="lab">i10-index</div></div>
-      <div class="cell"><div class="numline"><div class="num" id="stat-journal" data-to="32">32</div></div><div class="lab">Journal articles</div></div>
-      <div class="cell"><div class="numline"><div class="num" id="stat-report" data-to="22">22</div></div><div class="lab">Technical reports</div></div>
-      <div class="cell"><div class="numline"><span class="pre">&gt;</span><div class="num" id="dl-num" data-to="35566">35,566</div></div><div class="lab">Downloads &amp; views</div><div class="asof" id="dl-asof">as of Jul 8, 2026</div></div>
-      <div class="cell"><div class="numline"><span class="pre">$</span><div class="num" data-to="6">6.0</div><span class="pre">M+</span></div><div class="lab">Research Funding Portfolio</div></div>
-    </div>
+        <!-- Selected Publications Preview -->
+        <h2>Selected Publications</h2>
+        <div class="pub-list">
+          <div class="pub">
+            <div class="yr">2026</div>
+            <div>
+              <p class="cite"><b>Sakhare, R. S.</b>, Li, H., &amp; Bullock, D. M. (2026). "Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics Using Connected Vehicle Waypoint Data." <i>Transportation</i> (Springer Nature).</p>
+              <div class="pub-actions">
+                <a class="pub-doi" href="https://doi.org/10.1007/s11116-026-10702-6" target="_blank" rel="noopener">doi.org/10.1007/s11116-026-10702-6 ↗</a>
+                <button class="btn-bib" data-bib="%40article%7Bsakhare2026transportation%2C%0A%20%20author%20%3D%20%7BSakhare%2C%20Rahul%20S.%20and%20Li%2C%20Howell%20and%20Bullock%2C%20Darcy%20M.%7D%2C%0A%20%20title%20%3D%20%7BDeriving%20Systemwide%20Granular%20Segment%20Level%20Traffic%20Mobility%20Performance%20Metrics%20Using%20Connected%20Vehicle%20Waypoint%20Data%7D%2C%0A%20%20journal%20%3D%20%7BTransportation%7D%2C%0A%20%20year%20%3D%20%7B2026%7D%2C%0A%20%20url%20%3D%20%7Bhttps%3A%2F%2Fdoi.org%2F10.1007%2Fs11116-026-10702-6%7D%0A%7D">Copy BibTeX</button>
+              </div>
+            </div>
+          </div>
 
-    <!-- Two-Column Balanced Overview (Wide-Screen Responsive) -->
-    <div class="home-split">
-      <!-- Left: Research Focus & Academic Background -->
-      <div>
-        <h2 class="home-section-title">Research Overview &amp; Practice</h2>
-        <p class="home-bio-p">
-          My engineering research investigates how large-scale, heterogeneous vehicle sensor data can solve pressing operational challenges in transportation systems. By combining traffic flow theory, surrogate safety physics, and scalable cloud computing pipelines, my work translates billions of trajectory waypoints into actionable measures used daily by state DOTs and transportation agencies.
+          <div class="pub">
+            <div class="yr">2026</div>
+            <div>
+              <p class="cite"><b>Sakhare, R. S.</b>, Mukai, J., Desai, J., &amp; Bullock, D. M. (2026). "Work Zone Performance Measures Derived from Connected Vehicle Data." <i>Future Transportation</i>, 6(1), 1-18.</p>
+              <div class="pub-actions">
+                <a class="pub-doi" href="https://doi.org/10.3390/futuretransp6010001" target="_blank" rel="noopener">doi.org/10.3390/futuretransp6010001 ↗</a>
+                <button class="btn-bib" data-bib="%40article%7Bsakhare2026futuretransp%2C%0A%20%20author%20%3D%20%7BSakhare%2C%20Rahul%20S.%20and%20Mukai%2C%20Justin%20and%20Desai%2C%20Jash%20and%20Bullock%2C%20Darcy%20M.%7D%2C%0A%20%20title%20%3D%20%7BWork%20Zone%20Performance%20Measures%20Derived%20from%20Connected%20Vehicle%20Data%7D%2C%0A%20%20journal%20%3D%20%7BFuture%20Transportation%7D%2C%0A%20%20year%20%3D%20%7B2026%7D%2C%0A%20%20url%20%3D%20%7Bhttps%3A%2F%2Fdoi.org%2F10.3390%2Ffuturetransp6010001%7D%0A%7D">Copy BibTeX</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="yr">2026</div>
+            <div>
+              <p class="cite"><b>Sakhare, R. S.</b>, Li, H., &amp; Bullock, D. M. (2026). "Evaluating Safety Benefits of Ramp Metering." <i>IEEE Open Journal of Intelligent Transportation Systems</i>.</p>
+              <div class="pub-actions">
+                <a class="pub-doi" href="https://doi.org/10.1109/OJITS.2026.3533261" target="_blank" rel="noopener">doi.org/10.1109/OJITS.2026.3533261 ↗</a>
+                <button class="btn-bib" data-bib="%40article%7Bsakhare2026ojits%2C%0A%20%20author%20%3D%20%7BSakhare%2C%20Rahul%20S.%20and%20Li%2C%20Howell%20and%20Bullock%2C%20Darcy%20M.%7D%2C%0A%20%20title%20%3D%20%7BEvaluating%20Safety%20Benefits%20of%20Ramp%20Metering%7D%2C%0A%20%20journal%20%3D%20%7BIEEE%20Open%20Journal%20of%20Intelligent%20Transportation%20Systems%7D%2C%0A%20%20year%20%3D%20%7B2026%7D%2C%0A%20%20url%20%3D%20%7Bhttps%3A%2F%2Fdoi.org%2F10.1109%2FOJITS.2026.3533261%7D%0A%7D">Copy BibTeX</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pub">
+            <div class="yr">2025</div>
+            <div>
+              <p class="cite">Bullock, D. M., <b>Sakhare, R. S.</b>, et al. (2025). <i>Big Data for Work Zone Performance Measures: Monograph on Techniques, Implementation, and Case Studies</i>. Federal Highway Administration (FHWA), 506 pages.</p>
+              <div class="pub-actions">
+                <a class="pub-doi" href="https://doi.org/10.5703/1288284317804" target="_blank" rel="noopener">doi.org/10.5703/1288284317804 ↗</a>
+                <button class="btn-bib" data-bib="%40book%7Bbullock2025monograph%2C%0A%20%20author%20%3D%20%7BBullock%2C%20Darcy%20M.%20and%20Sakhare%2C%20Rahul%20S.%20and%20others%7D%2C%0A%20%20title%20%3D%20%7BBig%20Data%20for%20Work%20Zone%20Performance%20Measures%3A%20Monograph%20on%20Techniques%2C%20Implementation%2C%20and%20Case%20Studies%7D%2C%0A%20%20publisher%20%3D%20%7BFederal%20Highway%20Administration%7D%2C%0A%20%20year%20%3D%20%7B2025%7D%2C%0A%20%20url%20%3D%20%7Bhttps%3A%2F%2Fdoi.org%2F10.5703%2F1288284317804%7D%0A%7D">Copy BibTeX</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:20px">
+          <a href="publications.html" style="font-weight:600">View all 92 publications, technical reports, and monographs →</a>
         </p>
-        <p class="home-bio-p">
-          Over more than 20 funded research projects totaling over $6.0M, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants ($1.13M) and as lead research engineer on multi-state FHWA Pooled-Fund studies. These methodologies support statewide bottleneck screening, winter storm recovery, automated work zone queue warning, and capital project prioritization.
-        </p>
-
-        <div class="interest-chips">
-          <span class="interest-chip">Connected Vehicle Trajectory Data</span>
-          <span class="interest-chip">Traffic Flow Dynamics &amp; Shockwaves</span>
-          <span class="interest-chip">Work Zone Safety &amp; Speed Control</span>
-          <span class="interest-chip">Surrogate Safety &amp; Hard-Braking</span>
-          <span class="interest-chip">Incident Management &amp; Tow Clearance</span>
-          <span class="interest-chip">Cloud Analytics (Google BigQuery)</span>
-          <span class="interest-chip">Road Weather Mobility</span>
-          <span class="interest-chip">Commercial Fleet Dashcam Vision</span>
-        </div>
-
-        <a class="btn btn-secondary" href="about.html">Read Full Biography &amp; Appointments →</a>
       </div>
-
-      <!-- Right: Recent Publications & Media Highlights -->
-      <div>
-        <h2 class="home-section-title">Recent Highlights</h2>
-        <div class="highlight-stack">
-          <div class="hl-card">
-            <div class="hl-tagline"><span>Transportation (Springer Nature)</span><span class="hl-date">2026</span></div>
-            <h3 class="hl-title">Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics</h3>
-            <p class="hl-desc">Translating billions of connected vehicle waypoints into granular 0.1-mile segment performance metrics across statewide highway networks.</p>
-          </div>
-          <div class="hl-card">
-            <div class="hl-tagline"><span>Future Transportation</span><span class="hl-date">2026</span></div>
-            <h3 class="hl-title">Work Zone Performance Measures Derived from Connected Vehicle Data</h3>
-            <p class="hl-desc">Framework mapping connected vehicle trajectory metrics directly to the FHWA Rule on Work Zone Safety and Mobility.</p>
-          </div>
-          <div class="hl-card">
-            <div class="hl-tagline"><span>IEEE Open Journal of ITS</span><span class="hl-date">2026</span></div>
-            <h3 class="hl-title">Evaluating Safety Benefits of Ramp Metering</h3>
-            <p class="hl-desc">Empirical trajectory analysis of variable speed limits and ramp metering on the I-465 beltway.</p>
-          </div>
-          <div class="hl-card">
-            <div class="hl-tagline"><span>The New York Times</span><span class="hl-date">Dec 2024</span></div>
-            <h3 class="hl-title">Front-Page Media Feature</h3>
-            <p class="hl-desc">Research on connected vehicle traffic data and road congestion dynamics featured on the front page of The New York Times.</p>
-          </div>
-        </div>
-
-        <a class="btn btn-ghost" href="publications.html" style="width:100%;justify-content:center;margin-top:16px">Browse All 92 Publications &amp; Reports →</a>
-      </div>
-    </div>
-
-    <!-- Quick Navigation Directory Grid -->
-    <div class="nav-grid">
-      <a class="nav-card" href="publications.html">
-        <div class="nav-card-head">{I["book"]}<span>Publications</span></div>
-        <p>32 peer-reviewed journal articles, 22 technical reports, and 1 monograph. Searchable with instant BibTeX copy.</p>
-        <span class="go">Browse publications →</span>
-      </a>
-      <a class="nav-card" href="education.html">
-        <div class="nav-card-head">{I["cap"]}<span>Education</span></div>
-        <p>Ph.D. from Purdue University, dual M.Tech. &amp; B.Tech. from IIT Madras, and licensed Professional Engineer (P.E.).</p>
-        <span class="go">View degrees →</span>
-      </a>
-      <a class="nav-card" href="teaching.html">
-        <div class="nav-card-head">{I["board"]}<span>Teaching &amp; Mentoring</span></div>
-        <p>Instructional philosophy, course subject areas, and mentorship roster of 8 graduate and undergraduate researchers.</p>
-        <span class="go">Explore teaching →</span>
-      </a>
-      <a class="nav-card" href="awards.html">
-        <div class="nav-card-head">{I["trophy"]}<span>Awards &amp; Honors</span></div>
-        <p>Google Cloud Research Innovator, ITS Midwest Project of the Year, Safety Editor's Choice, and ITE Champion.</p>
-        <span class="go">View honors →</span>
-      </a>
-      <a class="nav-card" href="news.html">
-        <div class="nav-card-head">{I["news"]}<span>News &amp; Media</span></div>
-        <p>Media coverage across The New York Times, FHWA Innovator, Google Cloud customer stories, and broadcast outlets.</p>
-        <span class="go">Read coverage →</span>
-      </a>
-      <a class="nav-card" href="contact.html">
-        <div class="nav-card-head">{I["mail"]}<span>Contact</span></div>
-        <p>Purdue office location, scholarly profiles, collaboration inquiries, and direct messaging portal.</p>
-        <span class="go">Get in touch →</span>
-      </a>
     </div>
   </section>
 """ + foot("West Lafayette, IN", '<script src="pubs-data.js"></script>\n')
@@ -231,84 +250,76 @@ P["index.html"] = head("Rahul Sakhare, Ph.D., P.E. | Transportation Research Eng
 # =========================================================================
 # 2. ABOUT (about.html)
 # =========================================================================
-P["about.html"] = head("About | Rahul Sakhare, Ph.D., P.E.",
- "Biographical background and academic appointments of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University.",
- "sub") + nav("about.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["user"]} Biography</span>
+P["about.html"] = head(
+    "About | Rahul Sakhare, Ph.D., P.E.",
+    "Biographical background, academic appointments, and research trajectory of Rahul Sakhare, Ph.D., P.E., Purdue University.",
+    "sub"
+) + nav("about.html") + f"""
+  <section class="wrap" style="padding-top:36px">
     <h1>About Rahul Sakhare, Ph.D., P.E.</h1>
-    <p>Transportation Research Engineer at Purdue University's Joint Transportation Research Program, bridging civil infrastructure systems, connected vehicle telematics, and scalable data analytics.</p>
-  </section>
+    <p style="font-size:17px;color:var(--ink-muted);margin-bottom:32px">
+      Transportation Research Engineer at Purdue University's Joint Transportation Research Program, bridging civil infrastructure systems, connected vehicle telematics, and scalable data analytics.
+    </p>
 
-  <section class="section wrap" style="padding-top:0">
-    <div class="home-split">
-      <div>
-        <p class="home-bio-p">I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP). My work is rooted in civil and transportation engineering principles, integrated with scalable cloud data architectures and sensing systems. I specialize in turning massive, heterogeneous telemetry streams — including connected vehicle trajectory waypoints, commercial truck telematics, and roadway camera feeds — into actionable performance measures that transportation agencies can deploy and sustain.</p>
-        <p class="home-bio-p">Over more than 20 externally funded research projects totaling over $6.0M, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants ($1.13M) and as lead research engineer on multi-state FHWA Pooled-Fund studies. The methodologies and diagnostic tools resulting from this work are embedded into statewide operations with INDOT and regional DOT partners across the Midwest, informing real-time work zone safety alerts, network-wide bottleneck screening, winter storm recovery, and capital program prioritization.</p>
-        <p class="home-bio-p">Alongside research, I actively teach, mentor graduate and undergraduate researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering, serve on the TRB Committee on Limited Access Roadway Operations (ACF13), and contribute to the annual Purdue Road School Planning Committee. I earned my Ph.D. in Civil Engineering from Purdue University, completed dual B.Tech. and M.Tech. degrees from IIT Madras (ranked top 0.2% in the IIT-JEE), and hold a licensed Professional Engineer (P.E.) credential in Indiana.</p>
-
-        <h3 style="margin-top:28px">Core Research Focus Areas</h3>
-        <div class="interest-chips">
-          <span class="interest-chip">Connected Vehicle Trajectory Data</span>
-          <span class="interest-chip">Work Zone Safety &amp; Speed Compliance</span>
-          <span class="interest-chip">Traffic Flow Dynamics &amp; Kinematic Waves</span>
-          <span class="interest-chip">Surrogate Safety &amp; Deceleration Physics</span>
-          <span class="interest-chip">Traffic Incident Management Performance</span>
-          <span class="interest-chip">Scalable Cloud Telematics (Google BigQuery)</span>
-          <span class="interest-chip">Road Weather Operations &amp; Mobility Profiling</span>
-          <span class="interest-chip">Highway Asset Condition Assessment</span>
+    <div class="profile-grid">
+      <aside class="profile-sidebar">
+        <div class="profile-photo-frame">
+          <img src="assets/img/hero_photo.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1000" height="666">
         </div>
-      </div>
-
-      <aside class="hero-card" style="height:fit-content">
-        <h3 style="margin:0 0 14px">Professional Summary</h3>
-        <div class="hero-meta-list">
-          <div class="hero-meta-row"><b>Current Position</b><span>Transportation Research Engineer</span></div>
-          <div class="hero-meta-row"><b>Institution</b><span>JTRP, Purdue University</span></div>
-          <div class="hero-meta-row"><b>Licensure</b><span>Licensed Professional Engineer (P.E.), IN</span></div>
-          <div class="hero-meta-row"><b>Doctorate</b><span>Ph.D. Civil Eng, Purdue ('23)</span></div>
-          <div class="hero-meta-row"><b>Graduate Degree</b><span>M.Tech. Civil Eng, IIT Madras ('18)</span></div>
-          <div class="hero-meta-row"><b>Undergraduate</b><span>B.Tech. Civil Eng, IIT Madras ('18)</span></div>
-          <div class="hero-meta-row"><b>Grant Leadership</b><span>Co-PI on 4 Active Grants ($1.13M)</span></div>
-          <div class="hero-meta-row"><b>Funded Portfolio</b><span>$6.0M+ Total Project Volume</span></div>
-          <div class="hero-meta-row"><b>TRB Committee</b><span>ACF13 (Limited Access Roadways)</span></div>
-          <div class="hero-meta-row"><b>Conference Role</b><span>Purdue Road School Committee</span></div>
+        <div class="profile-sidebar-meta">
+          <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
+          <p><b>Licensure:</b><br>Licensed Professional Engineer (P.E.), State of Indiana</p>
+          <p><b>Grant Leadership:</b><br>Co-PI on 4 Active INDOT Grants ($1.13M)</p>
+          <p><b>Research Volume:</b><br>$6.0M+ across 20+ externally funded projects</p>
+          <p><b>Professional Service:</b><br>TRB ACF13 Committee Member<br>Purdue Road School Committee</p>
         </div>
       </aside>
-    </div>
 
-    <!-- Career Timeline -->
-    <h2 style="margin-top:56px">Career &amp; Professional Appointments</h2>
-    <ul class="teach-list">
-      <li>
-        <div class="yr">2023 — Present</div>
-        <div>
-          <b>Transportation Research Engineer</b>
-          <p>Joint Transportation Research Program (JTRP), Purdue University. Leading multi-agency connected vehicle data research, cloud analytics pipelines, and agency deployments for INDOT and FHWA. Co-PI on four active research grants.</p>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2018 — 2023</div>
-        <div>
-          <b>Graduate Research Assistant</b>
-          <p>Lyles School of Civil Engineering, Purdue University. Conducted doctoral research under Prof. Darcy M. Bullock on connected vehicle data for operational decision-making. Recipient of the Christopher B. &amp; Susan S. Burke Fellowship.</p>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2017</div>
-        <div>
-          <b>Visiting Undergraduate Research Scholar</b>
-          <p>Purdue University. Selected through the prestigious Purdue Undergraduate Research Experience (PURE) program among top civil engineering candidates in India.</p>
-        </div>
-      </li>
-      <li>
-        <div class="yr">2013 — 2018</div>
-        <div>
-          <b>Dual Degree Scholar (B.Tech. &amp; M.Tech.)</b>
-          <p>Department of Civil Engineering, Indian Institute of Technology (IIT) Madras. Awarded the Exemplary &amp; All-Round Best Performance Award in the dual-degree program.</p>
-        </div>
-      </li>
-    </ul>
+      <div class="profile-bio">
+        <h2>Biographical Overview</h2>
+        <p>
+          I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP). My work is rooted in foundational civil and transportation engineering principles, integrated with modern scalable cloud data architectures and connected vehicle sensing streams. I specialize in turning massive, heterogeneous telemetry — including passenger car trajectory waypoints, commercial truck telematics, and roadway camera feeds — into actionable performance measures that transportation agencies can deploy and sustain.
+        </p>
+        <p>
+          Over more than 20 externally funded research projects totaling over $6.0M, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants ($1.13M) and as lead research engineer on multi-state FHWA Pooled-Fund studies. The methodologies and diagnostic tools resulting from this work are embedded into statewide operations with INDOT and regional DOT partners across the Midwest, informing real-time work zone safety alerts, network-wide bottleneck screening, winter storm recovery, and capital program prioritization.
+        </p>
+        <p>
+          Alongside research, I actively teach, mentor graduate and undergraduate researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering, serve on the TRB Committee on Limited Access Roadway Operations (ACF13), and contribute to the annual Purdue Road School Planning Committee. I earned my Ph.D. in Civil Engineering from Purdue University, completed dual B.Tech. and M.Tech. degrees from IIT Madras (ranked top 0.2% in the IIT-JEE), and hold a licensed Professional Engineer (P.E.) credential in Indiana.
+        </p>
+
+        <h2>Career Appointments</h2>
+        <ul class="award-list">
+          <li class="award-item">
+            <span class="award-yr">2023 — Present</span>
+            <div class="award-desc">
+              <b>Transportation Research Engineer</b>
+              <span>Joint Transportation Research Program (JTRP), Purdue University. Leading multi-agency connected vehicle data research, cloud analytics pipelines, and agency deployments for INDOT and FHWA. Co-PI on four active research grants ($1.13M).</span>
+            </div>
+          </li>
+          <li class="award-item">
+            <span class="award-yr">2018 — 2023</span>
+            <div class="award-desc">
+              <b>Graduate Research Assistant</b>
+              <span>Lyles School of Civil Engineering, Purdue University. Conducted doctoral research under Prof. Darcy M. Bullock on connected vehicle data for operational decision-making. Recipient of the Christopher B. &amp; Susan S. Burke Fellowship.</span>
+            </div>
+          </li>
+          <li class="award-item">
+            <span class="award-yr">2017</span>
+            <div class="award-desc">
+              <b>Visiting Undergraduate Research Scholar</b>
+              <span>Purdue University. Selected through the Purdue Undergraduate Research Experience (PURE) program among top civil engineering candidates in India.</span>
+            </div>
+          </li>
+          <li class="award-item">
+            <span class="award-yr">2013 — 2018</span>
+            <div class="award-desc">
+              <b>Dual Degree Scholar (B.Tech. &amp; M.Tech.)</b>
+              <span>Department of Civil Engineering, Indian Institute of Technology (IIT) Madras. Awarded the Exemplary &amp; All-Round Best Performance Award in the dual-degree program.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 """ + foot()
 
@@ -316,114 +327,105 @@ P["about.html"] = head("About | Rahul Sakhare, Ph.D., P.E.",
 # =========================================================================
 # 3. PUBLICATIONS (publications.html)
 # =========================================================================
-P["publications.html"] = head("Publications | Rahul Sakhare, Ph.D., P.E.",
- "Peer-reviewed journal articles, technical reports, monographs, and conference presentations by Rahul Sakhare, Ph.D., P.E.",
- "sub") + nav("publications.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["book"]} Scholarly Works</span>
-    <h1>Publications &amp; Reports.</h1>
-    <p>Peer-reviewed journal articles, technical research reports for INDOT &amp; FHWA, authoritative monographs, and conference presentations spanning connected vehicle data, traffic safety, and cloud computing. Use the search bar or category filters below.</p>
-  </section>
+P["publications.html"] = head(
+    "Publications | Rahul Sakhare, Ph.D., P.E.",
+    "Peer-reviewed journal articles, technical reports, monographs, and conference presentations by Rahul Sakhare, Ph.D., P.E.",
+    "sub"
+) + nav("publications.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>Publications &amp; Reports</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:24px">
+      32 peer-reviewed journal articles, 22 technical research reports for INDOT &amp; FHWA, 1 monograph, and conference proceedings spanning connected vehicle data, traffic safety, and cloud computing. Search by keyword or filter by scholarly category.
+    </p>
 
-  <!-- Sticky Search & Filter Toolbar -->
-  <div class="wrap pub-toolbar">
-    <div class="pub-search-wrap">
-      <svg class="pub-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" class="pub-search-input" id="pub-search-input" placeholder="Search publications by title, co-author, venue, or year (e.g., 'work zone', 'IEEE', '2026')..." autocomplete="off">
-      <button class="pub-clear-btn" id="pub-clear-btn" title="Clear search">✕</button>
+    <!-- Search & Filter Toolbar -->
+    <div class="pub-toolbar">
+      <div class="pub-search-wrap">
+        <svg class="pub-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="pub-search-input" id="pub-search-input" placeholder="Search by title, co-author, venue, or year (e.g., 'work zone', 'IEEE', '2026')..." autocomplete="off">
+        <button class="pub-clear-btn" id="pub-clear-btn" title="Clear search">✕</button>
+      </div>
+      <div class="filters" id="filters"></div>
     </div>
-    <div class="filters" id="filters"></div>
-  </div>
 
-  <div class="wrap">
+    <!-- Publications List Root -->
     <div id="no-matches" class="hidden" style="padding:48px 0;text-align:center;color:var(--ink-muted)">
       <h3>No matching publications found</h3>
       <p>Try refining your search query or switching categories above.</p>
     </div>
     <div id="pub-root"></div>
-  </div>
-""" + foot("Google Scholar: 521 citations · h-index 13 · i10-index 19",
-           '<script src="pubs-data.js"></script>\n')
+  </section>
+""" + foot("Google Scholar: 540+ citations · h-index 14 · i10-index 19", '<script src="pubs-data.js"></script>\n')
 
 
 # =========================================================================
 # 4. EDUCATION (education.html)
 # =========================================================================
-P["education.html"] = head("Education | Rahul Sakhare, Ph.D., P.E.",
- "Academic degrees from Purdue University and IIT Madras, and professional engineering licensure.",
- "sub") + nav("education.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["cap"]} Academic Credentials</span>
-    <h1>Education &amp; Licensure.</h1>
-    <p>Doctoral training in civil infrastructure systems and connected vehicle data at Purdue University, built upon a rigorous dual-degree foundation in transportation engineering from the Indian Institute of Technology (IIT) Madras.</p>
-  </section>
+P["education.html"] = head(
+    "Education & Licensure | Rahul Sakhare, Ph.D., P.E.",
+    "Academic degrees from Purdue University and IIT Madras, and professional engineering licensure.",
+    "sub"
+) + nav("education.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>Education &amp; Licensure</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:32px">
+      Doctoral training in civil infrastructure systems and connected vehicle data at Purdue University, built upon a dual-degree foundation in transportation engineering from the Indian Institute of Technology (IIT) Madras.
+    </p>
 
-  <section class="section wrap" style="padding-top:0">
-    <div class="edu-stack">
-      <!-- Ph.D. -->
-      <div class="edu-card">
-        <div class="edu-left">
-          <span class="edu-when">April 2023</span>
-          <span class="edu-loc">West Lafayette, Indiana</span>
-          <a class="edu-visit" href="https://engineering.purdue.edu/CCE" target="_blank" rel="noopener">Lyles School of Civil Eng ↗</a>
-        </div>
-        <div class="edu-right">
-          <h2 class="edu-deg">Doctor of Philosophy (Ph.D.) in Civil Engineering</h2>
-          <div class="edu-uni">Purdue University</div>
-          <div class="edu-dept">Lyles School of Civil Engineering — Transportation &amp; Infrastructure Systems</div>
-          <p><b>Dissertation:</b> "Integrating Connected Vehicle Data for Operational Decision Making."</p>
-          <p><b>Advisor:</b> Prof. Darcy M. Bullock</p>
-          <p><b>Committee:</b> Prof. Samuel Labi, Prof. Konstantina Gkritza, Prof. James Krogmeier</p>
-          <p style="color:var(--ink-muted);font-size:14px">Supported by the Christopher B. &amp; Susan S. Burke Graduate Research Assistantship.</p>
-        </div>
+    <div class="edu-entry">
+      <div class="edu-meta">
+        <span class="yr">April 2023</span>
+        <span>West Lafayette, Indiana</span>
+        <div style="margin-top:6px"><a href="https://engineering.purdue.edu/CE" target="_blank" rel="noopener">Lyles School of Civil Eng ↗</a></div>
       </div>
-
-      <!-- M.Tech. -->
-      <div class="edu-card">
-        <div class="edu-left">
-          <span class="edu-when">May 2018</span>
-          <span class="edu-loc">Chennai, India</span>
-          <a class="edu-visit" href="https://www.iitm.ac.in/" target="_blank" rel="noopener">IIT Madras Website ↗</a>
-        </div>
-        <div class="edu-right">
-          <h2 class="edu-deg">Master of Technology (M.Tech.) in Transportation Engineering</h2>
-          <div class="edu-uni">Indian Institute of Technology (IIT) Madras</div>
-          <div class="edu-dept">Department of Civil Engineering — Five-Year Dual Degree Program</div>
-          <p><b>Thesis:</b> "Reliable Corridor Level Travel Time Estimation Using Probe Vehicle Data."</p>
-          <p><b>Advisor:</b> Prof. Lelitha Devi Vanajakshi</p>
-          <p><b>Committee:</b> Prof. Gitakrishnan Ramadurai, Prof. Atul Narayan, Prof. A. Veeraragavan</p>
-          <p style="color:var(--accent);font-weight:600;font-size:14px">Recognized with the Exemplary &amp; All-Round Best Performance Award in the dual-degree program.</p>
-        </div>
+      <div class="edu-detail">
+        <h3>Doctor of Philosophy (Ph.D.) in Civil Engineering</h3>
+        <div class="inst">Purdue University — Lyles School of Civil Engineering</div>
+        <p><b>Dissertation:</b> "Integrating Connected Vehicle Data for Operational Decision Making."</p>
+        <p><b>Advisor:</b> Prof. Darcy M. Bullock</p>
+        <p><b>Committee:</b> Prof. Samuel Labi, Prof. Konstantina Gkritza, Prof. James Krogmeier</p>
+        <p style="color:var(--ink-muted);font-size:14px">Supported by the Christopher B. &amp; Susan S. Burke Graduate Research Assistantship.</p>
       </div>
+    </div>
 
-      <!-- B.Tech. -->
-      <div class="edu-card">
-        <div class="edu-left">
-          <span class="edu-when">May 2018</span>
-          <span class="edu-loc">Chennai, India</span>
-          <a class="edu-visit" href="https://www.iitm.ac.in/" target="_blank" rel="noopener">IIT Madras Website ↗</a>
-        </div>
-        <div class="edu-right">
-          <h2 class="edu-deg">Bachelor of Technology (B.Tech.) in Civil Engineering</h2>
-          <div class="edu-uni">Indian Institute of Technology (IIT) Madras</div>
-          <div class="edu-dept">Department of Civil Engineering — Minor in Management Studies</div>
-          <p>Admitted through the prestigious IIT Joint Entrance Examination (IIT-JEE) ranked in the top 0.2 percentile among 1.45 million applicants nationwide (All India Rank 2,445).</p>
-        </div>
+    <div class="edu-entry">
+      <div class="edu-meta">
+        <span class="yr">May 2018</span>
+        <span>Chennai, India</span>
+        <div style="margin-top:6px"><a href="https://www.iitm.ac.in/" target="_blank" rel="noopener">IIT Madras ↗</a></div>
       </div>
+      <div class="edu-detail">
+        <h3>Master of Technology (M.Tech.) in Transportation Engineering</h3>
+        <div class="inst">Indian Institute of Technology (IIT) Madras — Department of Civil Engineering</div>
+        <p><b>Thesis:</b> "Reliable Corridor Level Travel Time Estimation Using Probe Vehicle Data."</p>
+        <p><b>Advisor:</b> Prof. Lelitha Devi Vanajakshi</p>
+        <p><b>Committee:</b> Prof. Gitakrishnan Ramadurai, Prof. Atul Narayan, Prof. A. Veeraragavan</p>
+        <p style="color:var(--accent-gold);font-weight:600;font-size:14px">Recognized with the Exemplary &amp; All-Round Best Performance Award in the dual-degree program.</p>
+      </div>
+    </div>
 
-      <!-- Professional Licensure -->
-      <div class="edu-card">
-        <div class="edu-left">
-          <span class="edu-when">Active Credential</span>
-          <span class="edu-loc">State of Indiana</span>
-          <span style="font-size:12.5px;color:var(--accent);font-weight:700">Licensure Board</span>
-        </div>
-        <div class="edu-right">
-          <h2 class="edu-deg">Professional Engineer (P.E.)</h2>
-          <div class="edu-uni">State of Indiana — State Board of Registration for Professional Engineers</div>
-          <div class="edu-dept">Discipline: Civil &amp; Transportation Engineering</div>
-          <p>Licensed professional engineer authorized to practice civil and transportation engineering in the State of Indiana, upholding public safety, technical standards, and ethical engineering conduct.</p>
-        </div>
+    <div class="edu-entry">
+      <div class="edu-meta">
+        <span class="yr">May 2018</span>
+        <span>Chennai, India</span>
+        <div style="margin-top:6px"><a href="https://www.iitm.ac.in/" target="_blank" rel="noopener">IIT Madras ↗</a></div>
+      </div>
+      <div class="edu-detail">
+        <h3>Bachelor of Technology (B.Tech.) in Civil Engineering</h3>
+        <div class="inst">Indian Institute of Technology (IIT) Madras — Minor in Management Studies</div>
+        <p>Admitted through the IIT Joint Entrance Examination (IIT-JEE) ranked in the top 0.2 percentile among 1.45 million applicants nationwide (All India Rank 2,445).</p>
+      </div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-meta">
+        <span class="yr">Active Licensure</span>
+        <span>State of Indiana</span>
+      </div>
+      <div class="edu-detail">
+        <h3>Professional Engineer (P.E.)</h3>
+        <div class="inst">State of Indiana — State Board of Registration for Professional Engineers</div>
+        <p>Discipline: Civil &amp; Transportation Engineering. Licensed professional engineer upholding public safety, technical rigor, and ethical engineering standards.</p>
       </div>
     </div>
   </section>
@@ -445,7 +447,7 @@ MENTEES = [
      "proj":"INDOT SPR-4907 & SPR-5005"},
     {"name":"Justin Mukai", "deg":"M.S. in Civil Engineering", "dept":"Purdue Civil Eng",
      "topic":"Quantifying vehicle hard-braking events occurring prior to secondary crashes on interstate corridors.",
-     "proj":"JTTs 2026 & INDOT SPR-4928"},
+     "proj":"Future Transportation 2026 & INDOT SPR-4928"},
     {"name":"Thomas Driscoll", "deg":"M.S. in Mechanical Engineering", "dept":"Purdue ME",
      "topic":"Cross-border connected vehicle congestion modeling and multi-jurisdictional delay spillover.",
      "proj":"CCAT & JTTs 2025"},
@@ -460,107 +462,102 @@ MENTEES = [
      "proj":"Future Transportation 2024"}
 ]
 
-mentees_html = "".join([f"""
-<div class="mentee-card">
-  <div class="mentee-top">
-    <span class="mentee-name">{m['name']}</span>
-    <span class="mentee-deg">{m['deg']}</span>
-  </div>
-  <p class="mentee-topic">{m['topic']}</p>
-  <span class="mentee-proj"><b>Collaborative Output:</b> {m['proj']}</span>
-</div>
+mentees_rows = "".join([f"""
+<tr>
+  <td><b>{m['name']}</b><br><span style="font-size:13px;color:var(--ink-muted)">{m['dept']}</span></td>
+  <td>{m['deg']}</td>
+  <td>{m['topic']}</td>
+  <td><span style="font-size:13px;color:var(--accent-gold);font-weight:600">{m['proj']}</span></td>
+</tr>
 """ for m in MENTEES])
 
-P["teaching.html"] = head("Teaching & Mentorship | Rahul Sakhare, Ph.D., P.E.",
- "Teaching philosophy, courses prepared to teach, and student research mentorship across Civil Engineering, ECE, CS, and ME.",
- "sub") + nav("teaching.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["board"]} Education &amp; Mentorship</span>
-    <h1>In the Classroom &amp; Lab.</h1>
-    <p>Educating the next generation of transportation engineers through hands-on telemetry, real-world highway data, and cross-disciplinary research mentorship.</p>
-  </section>
+P["teaching.html"] = head(
+    "Teaching & Mentorship | Rahul Sakhare, Ph.D., P.E.",
+    "Instructional philosophy, courses prepared to teach, and student research mentorship across Civil Engineering, ECE, CS, and ME.",
+    "sub"
+) + nav("teaching.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>Teaching &amp; Mentorship</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:24px">
+      Educating emerging engineers through hands-on telemetry, real-world infrastructure data, and cross-disciplinary research mentorship.
+    </p>
 
-  <section class="section wrap" style="padding-top:0">
-    <!-- Pedagogical Philosophy Callout -->
-    <div class="pedagogy-callout">
-      <h3>Instructional Philosophy: Real-World Telematics in Engineering Pedagogy</h3>
-      <p>"The core purpose of engineering pedagogy is manufacturing the realization that computational analysis has immediate, tangible value in resolving real infrastructure challenges. Coursework comes alive the moment a student realizes that their analysis answers a question a real agency is trying to solve. I construct learning modules around actual connected vehicle trajectory records from Indiana's interstate network, commercial truck telematics, and highway speed profiles — training students to navigate the noise and ambiguities of physical infrastructure and translate data into sound engineering decisions."</p>
+    <!-- Pedagogical Philosophy Quote -->
+    <div class="teaching-quote">
+      "The core purpose of engineering pedagogy is manufacturing the realization that computational analysis has immediate, tangible value in resolving real infrastructure challenges. Coursework comes alive the moment a student realizes that their analysis answers a question a real agency is trying to solve. I construct learning modules around actual connected vehicle trajectory records from Indiana's interstate network, commercial truck telematics, and highway speed profiles — training students to navigate the noise and ambiguities of physical infrastructure and translate data into sound engineering decisions."
     </div>
 
     <!-- Core Subject Areas -->
-    <span class="eyebrow">Instructional Competencies</span>
-    <h2 style="margin-bottom:20px">Courses &amp; Subject Areas.</h2>
-    <div class="course-grid">
-      <div class="course-card">
-        <span class="c-code">Undergraduate Core</span>
+    <h2>Courses &amp; Subject Areas</h2>
+    <div class="teach-grid">
+      <div class="teach-item">
+        <span class="level">Undergraduate Core</span>
         <h3>Transportation Engineering</h3>
-        <p>Traffic flow fundamentals, roadway geometric design, signalized intersection capacity, highway operations, and emerging intelligent transportation systems.</p>
-        <div class="c-tags">
-          <span class="c-tag">CE 36100</span>
-          <span class="c-tag">HCM / MUTCD</span>
-          <span class="c-tag">Traffic Physics</span>
-        </div>
+        <p>Traffic flow fundamentals, roadway geometric design, signalized intersection capacity, highway operations, and emerging intelligent transportation systems (CE 36100).</p>
       </div>
-      <div class="course-card">
-        <span class="c-code">Graduate Core</span>
+      <div class="teach-item">
+        <span class="level">Graduate Core</span>
         <h3>Big Data Analytics in Transportation Systems</h3>
         <p>Cloud-native spatial-temporal analytics, distributed SQL (BigQuery), connected vehicle trajectory processing, probe data validation, and performance measure engineering.</p>
-        <div class="c-tags">
-          <span class="c-tag">Distributed Cloud</span>
-          <span class="c-tag">BigQuery</span>
-          <span class="c-tag">Spatial Telematics</span>
-        </div>
       </div>
-      <div class="course-card">
-        <span class="c-code">Graduate Elective</span>
+      <div class="teach-item">
+        <span class="level">Graduate Elective</span>
         <h3>Traffic Flow Theory &amp; Operations</h3>
         <p>Macroscopic traffic flow theory, kinematic shockwave dynamics (LWR model), queue propagation, surrogate safety analysis, and automated speed control.</p>
-        <div class="c-tags">
-          <span class="c-tag">Shockwave Theory</span>
-          <span class="c-tag">Surrogate Safety</span>
-          <span class="c-tag">Queue Control</span>
-        </div>
       </div>
     </div>
 
     <!-- Student Mentorship Roster -->
-    <span class="eyebrow">Mentorship Wall</span>
-    <h2 style="margin-bottom:8px">Graduate &amp; Undergraduate Researchers Co-Advised.</h2>
-    <p style="color:var(--ink-muted);margin:0 0 24px;font-size:16px">Proud to have co-advised and mentored emerging researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering.</p>
+    <h2>Graduate &amp; Undergraduate Researchers Co-Advised</h2>
+    <p style="font-size:15px;color:var(--ink-muted);margin-bottom:16px">
+      Proud to have co-advised and mentored emerging researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering:
+    </p>
 
-    <div class="mentee-grid">
-      {mentees_html}
+    <div style="overflow-x:auto">
+      <table class="mentee-table">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Program</th>
+            <th>Research Area</th>
+            <th>Collaborative Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mentees_rows}
+        </tbody>
+      </table>
     </div>
 
     <!-- Invited Lectures -->
-    <h2 style="margin-top:40px">Invited Lectures &amp; Workshops</h2>
-    <ul class="teach-list">
-      <li>
-        <div class="yr">2026</div>
-        <div>
-          <b>Guest Lecture: Connected Vehicle Data &amp; Applications</b>
-          <p>CE36100 Transportation Engineering, Purdue University (April 2026). Delivered lecture on high-frequency connected vehicle trajectory applications and statewide safety screening to undergraduate civil engineering students.</p>
+    <h2>Invited Lectures &amp; Workshops</h2>
+    <ul class="award-list">
+      <li class="award-item">
+        <span class="award-yr">2026</span>
+        <div class="award-desc">
+          <b>Guest Lecture: Connected Vehicle Data &amp; Operational Applications</b>
+          <span>CE 36100 Transportation Engineering, Purdue University (April 2026). Delivered lecture on high-frequency trajectory applications, work zone safety screening, and statewide performance measures.</span>
         </div>
       </li>
-      <li>
-        <div class="yr">2024</div>
-        <div>
+      <li class="award-item">
+        <span class="award-yr">2024</span>
+        <div class="award-desc">
           <b>Invited Seminar: Traffic Stream Shock Wave Identification</b>
-          <p>Transportation Division, Department of Civil Engineering, IIT Madras (August 2024). Lectured on methodologies for identifying shockwave type and propagation speed in traffic streams using connected vehicle data.</p>
+          <span>Transportation Division, Department of Civil Engineering, IIT Madras (August 2024). Lectured on methodologies for identifying shockwave type and propagation speed in traffic streams using connected vehicle data.</span>
         </div>
       </li>
-      <li>
-        <div class="yr">2021</div>
-        <div>
+      <li class="award-item">
+        <span class="award-yr">2021</span>
+        <div class="award-desc">
           <b>Course Instructor: SPARC International Mobility Workshop</b>
-          <p>Government of India SPARC initiative. Developed curriculum and instructed three session modules on connected vehicle telematics and traffic performance measures.</p>
+          <span>Government of India SPARC initiative. Developed curriculum and instructed three session modules on connected vehicle telematics and traffic performance measures.</span>
         </div>
       </li>
-      <li>
-        <div class="yr">2017–2018</div>
-        <div>
+      <li class="award-item">
+        <span class="award-yr">2017–2018</span>
+        <div class="award-desc">
           <b>Teaching Assistant: CE2080 Civil Engineering Surveying</b>
-          <p>Department of Civil Engineering, IIT Madras. Led laboratory sessions and field surveying tutorials under Dr. Atul Narayan.</p>
+          <span>Department of Civil Engineering, IIT Madras. Led laboratory sessions and field surveying tutorials under Dr. Atul Narayan.</span>
         </div>
       </li>
     </ul>
@@ -571,75 +568,138 @@ P["teaching.html"] = head("Teaching & Mentorship | Rahul Sakhare, Ph.D., P.E.",
 # =========================================================================
 # 6. AWARDS (awards.html)
 # =========================================================================
-P["awards.html"] = head("Awards & Honors | Rahul Sakhare, Ph.D., P.E.",
- "Honors and awards — Google Cloud Research Innovator, ITS Midwest Project of the Year, ITE International Championship, and more.",
- "sub") + nav("awards.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["trophy"]} Recognition</span>
-    <h1>Honors &amp; Awards.</h1>
-    <p>Selected accolades across research, public agency deployments, academic scholarship, and international competitions.</p>
-  </section>
+P["awards.html"] = head(
+    "Honors & Awards | Rahul Sakhare, Ph.D., P.E.",
+    "Academic, professional, and research accolades of Rahul Sakhare, Ph.D., P.E.",
+    "sub"
+) + nav("awards.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>Honors &amp; Awards</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:32px">
+      Selected accolades across engineering research, public agency deployments, academic scholarship, and international technical competitions.
+    </p>
 
-  <section class="section wrap" style="padding-top:0">
-    <div class="aw-high">
-      <a class="awh" href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener">
-        {I["trophy"]}
-        <h3>Google Cloud Research Innovator</h3>
-        <div class="by">Google Cloud · Fourth Global Cohort</div>
-        <div class="yrp">2024 ↗</div>
-      </a>
-      <div class="awh">
-        {I["trophy"]}
-        <h3>Project of the Year Award</h3>
-        <div class="by">ITS Midwest · Queue-Truck Navigation Alerts</div>
-        <div class="yrp">2021</div>
-      </div>
-      <div class="awh">
-        {I["trophy"]}
-        <h3>Editor's Choice Award</h3>
-        <div class="by">Safety (Journal) · Work Zone Monitoring</div>
-        <div class="yrp">2022</div>
-      </div>
-      <div class="awh">
-        {I["trophy"]}
-        <h3>International Collegiate Championship</h3>
-        <div class="by">ITE International · Traffic Bowl Winner</div>
-        <div class="yrp">2020</div>
-      </div>
-      <div class="awh">
-        {I["trophy"]}
-        <h3>Edward J. Cox Memorial Scholarship</h3>
-        <div class="by">Indiana ITE Section</div>
-        <div class="yrp">2023</div>
-      </div>
-      <div class="awh">
-        {I["trophy"]}
-        <h3>IGS Best Paper Award &amp; Diamond Jubilee</h3>
-        <div class="by">Indian Geotechnical Society</div>
-        <div class="yrp">2016</div>
-      </div>
-    </div>
-
-    <h2>Full Honors &amp; Awards Timeline</h2>
-    <ul class="aw-line">
-      <li><span class="yr">2026</span><div class="what"><b>PRIME Grant Award</b><span>Purdue University in support of professional development.</span></div></li>
-      <li><span class="yr">2024</span><div class="what"><b><a href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener">Google Cloud Research Innovator ↗</a></b><span>Selected to the fourth global cohort of researchers driving scientific breakthroughs with Google Cloud.</span></div></li>
-      <li><span class="yr">2023</span><div class="what"><b>Edward J. Cox Memorial Scholarship</b><span>Indiana ITE Section.</span></div></li>
-      <li><span class="yr">2022–23</span><div class="what"><b>Best Student Speaker Award</b><span>Purdue ITE.</span></div></li>
-      <li><span class="yr">2022</span><div class="what"><b>Editor's Choice Award</b><span>"Methodology for Monitoring Work Zones Traffic Operations Using Connected Vehicle Data," Safety 8(2).</span></div></li>
-      <li><span class="yr">2021</span><div class="what"><b>ITS Midwest Project of the Year</b><span>Evaluation of queue trucks with navigation alerts using connected vehicle data.</span></div></li>
-      <li><span class="yr">2021 &amp; 2022</span><div class="what"><b>Elevator Pitch Event Winner</b><span>Purdue ITE.</span></div></li>
-      <li><span class="yr">2021</span><div class="what"><b>Student Team Design Competition Winner</b><span>Great Lakes District ITE.</span></div></li>
-      <li><span class="yr">2020</span><div class="what"><b>International Collegiate Traffic Bowl Championship</b><span>ITE International.</span></div></li>
-      <li><span class="yr">2020</span><div class="what"><b>Best Poster Presentation</b><span>Sigma Xi Scientific Society, Purdue University.</span></div></li>
-      <li><span class="yr">2020–2023</span><div class="what"><b>Christopher B. &amp; Susan S. Burke Fellowship</b><span>Purdue University graduate program research assistantship.</span></div></li>
-      <li><span class="yr">2018</span><div class="what"><b>Exemplary &amp; All-round Best Performance, Dual-Degree Program</b><span>Civil Engineering, IIT Madras.</span></div></li>
-      <li><span class="yr">2018</span><div class="what"><b>Winner, CEA Technical Events</b><span>Case Study, Prabandha, Bon Auto, and Aquanomics — IIT Madras.</span></div></li>
-      <li><span class="yr">2017</span><div class="what"><b>Invited Visiting Undergraduate Student</b><span>Purdue University.</span></div></li>
-      <li><span class="yr">2016</span><div class="what"><b>Gold Medal in Civil Engineering</b><span>National Design and Research Forum, Institution of Engineers, India.</span></div></li>
-      <li><span class="yr">2016</span><div class="what"><b>Mr. H. C. Verma Diamond Jubilee Award &amp; IGS Best Paper</b><span>Indian Geotechnical Society.</span></div></li>
-      <li><span class="yr">2016</span><div class="what"><b>PURE Program Scholar</b><span>Among the top three civil-engineering students chosen across India for the Purdue Undergraduate Research Experience.</span></div></li>
-      <li><span class="yr">2013</span><div class="what"><b>IIT Joint Entrance Examination (IIT-JEE) — Top 0.2 Percentile</b><span>Ranked 2,445 among 1.45 million students nationwide.</span></div></li>
+    <h2>Chronological Recognition</h2>
+    <ul class="award-list">
+      <li class="award-item">
+        <span class="award-yr">2026</span>
+        <div class="award-desc">
+          <b>PRIME Grant Award</b>
+          <span>Purdue University in support of professional development and academic scholarship.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2024</span>
+        <div class="award-desc">
+          <b>Google Cloud Research Innovator</b>
+          <span>Selected to the fourth global cohort of researchers driving scientific breakthroughs with Google Cloud.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2023</span>
+        <div class="award-desc">
+          <b>Edward J. Cox Memorial Scholarship</b>
+          <span>Indiana Section of the Institute of Transportation Engineers (ITE).</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2022–2023</span>
+        <div class="award-desc">
+          <b>Best Student Speaker Award</b>
+          <span>Purdue University ITE Student Chapter.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2022</span>
+        <div class="award-desc">
+          <b>Editor's Choice Award</b>
+          <span>Safety (MDPI) for paper "Methodology for Monitoring Work Zones Traffic Operations Using Connected Vehicle Data."</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2021</span>
+        <div class="award-desc">
+          <b>ITS Midwest Project of the Year</b>
+          <span>Intelligent Transportation Society of Midwest for evaluation of queue trucks with navigation alerts using connected vehicle data.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2021 &amp; 2022</span>
+        <div class="award-desc">
+          <b>Elevator Pitch Event Winner</b>
+          <span>Purdue University ITE Student Chapter.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2021</span>
+        <div class="award-desc">
+          <b>Student Team Design Competition Winner</b>
+          <span>Great Lakes District ITE.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2020</span>
+        <div class="award-desc">
+          <b>International Collegiate Traffic Bowl Championship</b>
+          <span>Institute of Transportation Engineers (ITE) International.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2020</span>
+        <div class="award-desc">
+          <b>Best Poster Presentation</b>
+          <span>Sigma Xi Scientific Research Honor Society, Purdue University Chapter.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2020–2023</span>
+        <div class="award-desc">
+          <b>Christopher B. &amp; Susan S. Burke Fellowship</b>
+          <span>Purdue University graduate program research fellowship.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2018</span>
+        <div class="award-desc">
+          <b>Exemplary &amp; All-Round Best Performance Award</b>
+          <span>Civil Engineering, Dual-Degree Program, IIT Madras.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2018</span>
+        <div class="award-desc">
+          <b>Winner, CEA Technical Competitions</b>
+          <span>Case Study, Prabandha, Bon Auto, and Aquanomics — IIT Madras.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2017</span>
+        <div class="award-desc">
+          <b>Invited Visiting Undergraduate Research Scholar</b>
+          <span>Purdue University (PURE Program).</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2016</span>
+        <div class="award-desc">
+          <b>Gold Medal in Civil Engineering</b>
+          <span>National Design and Research Forum, Institution of Engineers, India.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2016</span>
+        <div class="award-desc">
+          <b>Mr. H. C. Verma Diamond Jubilee Award &amp; IGS Best Paper</b>
+          <span>Indian Geotechnical Society.</span>
+        </div>
+      </li>
+      <li class="award-item">
+        <span class="award-yr">2013</span>
+        <div class="award-desc">
+          <b>IIT Joint Entrance Examination (IIT-JEE) — Top 0.2 Percentile</b>
+          <span>Ranked 2,445 nationwide among 1.45 million examinees across India.</span>
+        </div>
+      </li>
     </ul>
   </section>
 """ + foot()
@@ -648,16 +708,18 @@ P["awards.html"] = head("Awards & Honors | Rahul Sakhare, Ph.D., P.E.",
 # =========================================================================
 # 7. NEWS & MEDIA (news.html)
 # =========================================================================
-P["news.html"] = head("News & Media | Rahul Sakhare, Ph.D., P.E.",
- "Media coverage from The New York Times, FHWA Innovator, Google Cloud customer stories, and national press.",
- "sub") + nav("news.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["news"]} In The Press</span>
-    <h1>News &amp; Media Coverage.</h1>
-    <p>National and international media coverage highlighting our connected vehicle research, work zone safety innovations, and cloud data analytics.</p>
-  </section>
-  <div class="wrap"><div class="filters" id="media-filters"></div></div>
-  <section class="section wrap" style="padding-top:16px">
+P["news.html"] = head(
+    "News & Media Coverage | Rahul Sakhare, Ph.D., P.E.",
+    "Media coverage from The New York Times, FHWA Innovator, Google Cloud, and transportation industry outlets.",
+    "sub"
+) + nav("news.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>News &amp; Media Coverage</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:24px">
+      National press coverage, agency highlights, and industry impact stories featuring our connected vehicle research, work zone safety innovations, and cloud data analytics.
+    </p>
+
+    <div class="filters" id="media-filters"></div>
     <div id="media-root"></div>
   </section>
 """ + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js"></script>\n')
@@ -666,19 +728,20 @@ P["news.html"] = head("News & Media | Rahul Sakhare, Ph.D., P.E.",
 # =========================================================================
 # 8. CONTACT (contact.html)
 # =========================================================================
-P["contact.html"] = head("Contact | Rahul Sakhare, Ph.D., P.E.",
- "Contact Rahul Sakhare — Office location, scholarly profiles, and collaboration opportunities.",
- "sub") + nav("contact.html") + f"""
-  <section class="page-hero wrap">
-    <span class="eyebrow">{I["mail"]} Connect</span>
-    <h1>Contact &amp; Coordinates.</h1>
-    <p>I welcome research collaborations, discussions with state DOT and municipal partners, conversations with commercial fleet operators, and inquiries from prospective students.</p>
-  </section>
+P["contact.html"] = head(
+    "Contact & Coordinates | Rahul Sakhare, Ph.D., P.E.",
+    "Contact Rahul Sakhare — Office location at Purdue University, scholarly profiles, and message portal.",
+    "sub"
+) + nav("contact.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>Contact &amp; Coordinates</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:32px">
+      I welcome inquiries regarding research collaborations, discussions with state DOT and municipal partners, conversations with commercial fleet telematics providers, and inquiries from prospective students.
+    </p>
 
-  <section class="section wrap" style="padding-top:0">
-    <div class="contact-split">
-      <!-- Left: Office Coordinates & Scholarly Links -->
-      <div class="contact-info-card">
+    <div class="contact-layout">
+      <!-- Left Column: Office Coordinates & Scholarly Profiles -->
+      <div class="contact-block">
         <h3>Office Coordinates</h3>
         <p>
           <b>Joint Transportation Research Program (JTRP)</b><br>
@@ -689,29 +752,27 @@ P["contact.html"] = head("Contact | Rahul Sakhare, Ph.D., P.E.",
           West Lafayette, IN 47906
         </p>
 
-        <h3 style="margin-top:28px">Scholarly Profiles</h3>
-        <div class="contact-links">
-          <a href="mailto:rsakhare@purdue.edu">{I["mail"]} rsakhare@purdue.edu</a>
-          <a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&hl=en" target="_blank" rel="noopener">{I["scholar"]} Google Scholar Profile</a>
-          <a href="https://www.linkedin.com/in/rahulsakhare/" target="_blank" rel="noopener">{I["linkedin"]} LinkedIn Profile</a>
-          <a href="https://orcid.org/0000-0001-7843-5707" target="_blank" rel="noopener">{I["orcid"]} ORCID (0000-0001-7843-5707)</a>
-          <a href="https://www.researchgate.net/profile/Rahul-Suryakant-Sakhare" target="_blank" rel="noopener">{I["rg"]} ResearchGate Profile</a>
-        </div>
+        <h3 style="margin-top:32px">Scholarly Profiles</h3>
+        <p><a href="mailto:rsakhare@purdue.edu">{I["mail"]} rsakhare@purdue.edu</a></p>
+        <p><a href="https://scholar.google.com/citations?user=4crwCDoAAAAJ&hl=en" target="_blank" rel="noopener">{I["scholar"]} Google Scholar Profile ↗</a></p>
+        <p><a href="https://orcid.org/0000-0001-7843-5707" target="_blank" rel="noopener">{I["orcid"]} ORCID (0000-0001-7843-5707) ↗</a></p>
+        <p><a href="https://www.linkedin.com/in/rahulsakhare/" target="_blank" rel="noopener">{I["linkedin"]} LinkedIn Profile ↗</a></p>
+        <p><a href="https://www.researchgate.net/profile/Rahul-Suryakant-Sakhare" target="_blank" rel="noopener">{I["rg"]} ResearchGate Profile ↗</a></p>
       </div>
 
-      <!-- Right: Message Form -->
-      <div class="fb-pane">
-        <h3>Send a Message</h3>
-        <p class="sub">Collaboration ideas, data inquiries, or comments on our research tools — messages deliver directly to my Purdue inbox.</p>
-        <form class="fb-form" action="https://formsubmit.co/rsakhare@purdue.edu" method="POST">
-          <input type="hidden" name="_subject" value="Website Inquiry — Rahul Sakhare Portal">
+      <!-- Right Column: Direct Message Form -->
+      <div class="contact-block">
+        <h3>Send a Direct Message</h3>
+        <p style="color:var(--ink-muted);font-size:14.5px;margin-bottom:16px">
+          Messages submitted through this portal are delivered directly to my Purdue email inbox.
+        </p>
+        <form class="contact-form" action="https://formsubmit.co/rsakhare@purdue.edu" method="POST">
+          <input type="hidden" name="_subject" value="Research Website Inquiry — Rahul Sakhare Portal">
           <input type="text" name="_honey" style="display:none">
-          <div class="fb-row">
-            <input type="text" name="name" placeholder="Your Name (optional)" autocomplete="name">
-            <input type="email" name="email" placeholder="Your Email" required autocomplete="email">
-          </div>
+          <input type="text" name="name" placeholder="Your Name" autocomplete="name">
+          <input type="email" name="email" placeholder="Your Email Address" required autocomplete="email">
           <textarea name="message" placeholder="Your message or collaboration topic..." required></textarea>
-          <button class="btn btn-primary" type="submit">Send Message →</button>
+          <button class="btn-submit" type="submit">Send Message →</button>
         </form>
       </div>
     </div>
@@ -727,4 +788,4 @@ for name, html in P.items():
         f.write(html)
     print(f"Generated: {name}")
 
-print(f"\nSuccessfully built {len(P)} site pages with unified layout.")
+print(f"\nSuccessfully generated {len(P)} site pages with Refined Modern Scholar layout.")
