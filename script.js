@@ -363,9 +363,11 @@ if (mroot && window.MEDIA){
     const inner = `<span class="outlet">${m.outlet}</span>
       <span class="title">${m.title}${m.note?`<span class="note">${m.note}</span>`:''}</span>
       <span class="date">${m.date}</span>`;
+    const isUsdot = (m.outlet === 'U.S. DOT ITS JPO') || (m.url && m.url.includes('its.dot.gov'));
+    const cls = ['mi', m.url ? 'has-link' : 'no-link', isUsdot ? 'usdot-feature' : ''].filter(Boolean).join(' ');
     return m.url
-      ? `<a class="mi has-link" data-kind="${m.kind}" href="${m.url}" target="_blank" rel="noopener" title="Open article in new tab">${inner}</a>`
-      : `<div class="mi no-link" data-kind="${m.kind}">${inner}</div>`;
+      ? `<a class="${cls}" data-kind="${m.kind}" href="${m.url}" target="_blank" rel="noopener" title="Open article in new tab">${inner}</a>`
+      : `<div class="${cls}" data-kind="${m.kind}">${inner}</div>`;
   }).join('') + `</div>`;
 
   mroot.innerHTML = listHTML;

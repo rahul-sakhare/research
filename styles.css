@@ -1098,6 +1098,26 @@ div.mi:not(.has-link) {
   white-space: nowrap;
 }
 
+/* U.S. DOT ITS JPO Features — Subtle distinguished tint to stand out silently */
+.mi.usdot-feature {
+  background-color: rgba(30, 64, 175, 0.04);
+  border-left: 3px solid rgba(30, 64, 175, 0.4);
+  padding-left: 13px;
+  border-radius: 4px 6px 6px 4px;
+}
+.mi.usdot-feature:hover {
+  background-color: rgba(30, 64, 175, 0.08);
+  border-left-color: var(--link-color);
+}
+html[data-theme="dark"] .mi.usdot-feature {
+  background-color: rgba(96, 165, 250, 0.065);
+  border-left: 3px solid rgba(96, 165, 250, 0.5);
+}
+html[data-theme="dark"] .mi.usdot-feature:hover {
+  background-color: rgba(96, 165, 250, 0.12);
+  border-left-color: #60A5FA;
+}
+
 /* ==========================================================================
    FOOTER
    ========================================================================== */
