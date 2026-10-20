@@ -671,6 +671,16 @@ a.news-entry:hover .news-content b,
   letter-spacing: .04em;
   vertical-align: middle;
 }
+.pub-note {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  margin: -2px 0 10px;
+}
+.pub-note b {
+  color: var(--ink-body);
+  font-weight: 600;
+}
 
 .pub-actions {
   display: flex;

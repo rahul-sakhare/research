@@ -152,11 +152,24 @@ function formatBibtex(p) {
   // Try to parse Authors, Year, Title
   const m = cite.match(/^(.*?)\s*\(\d{4}\)\.?\s*(.*?)(?:\.|$)/);
   const authors = m ? m[1].replace(/&/g, 'and').trim() : 'Sakhare, Rahul S.';
-  const title = m ? m[2].trim() : cite;
-  const key = 'sakhare' + year + (p.type || 'entry').slice(0,4);
-  const entryType = p.type === 'journal' ? 'article' : (p.type === 'report' ? 'techreport' : (p.type === 'book' ? 'book' : 'inproceedings'));
+  let title = m ? m[2].trim() : cite;
+  if (p.type === 'thesis') {
+    title = title.replace(/\s*\((?:Doctoral dissertation|Master's thesis)\)/i, '');
+  }
+  const isMaster = /master/i.test(cite);
+  const entryType = p.type === 'journal' ? 'article' :
+    (p.type === 'report' ? 'techreport' :
+    (p.type === 'book' ? 'book' :
+    (p.type === 'thesis' ? (isMaster ? 'mastersthesis' : 'phdthesis') : 'inproceedings')));
+  const key = 'sakhare' + year + (p.type === 'thesis' ? (isMaster ? 'ms' : 'phd') : (p.type || 'entry').slice(0,4));
   
   let bib = `@${entryType}{${key},\n  author = {${authors}},\n  title = {${title}},\n  year = {${year}}`;
+  if (p.type === 'thesis') {
+    const school = /Purdue/i.test(cite) ? 'Purdue University' : (/Madras/i.test(cite) ? 'Indian Institute of Technology Madras' : '');
+    if (school) bib += `,\n  school = {${school}}`;
+    const address = /West Lafayette/i.test(cite) ? 'West Lafayette, IN' : (/Chennai/i.test(cite) ? 'Chennai, India' : '');
+    if (address) bib += `,\n  address = {${address}}`;
+  }
   if (p.url) bib += `,\n  url = {${p.url}}`;
   bib += '\n}';
   return bib;
@@ -193,13 +206,16 @@ if (root && window.PUBS){
     root.innerHTML = GROUPS.filter(g=>counts[g.key]).map(g=>{
       let items = window.PUBS.filter(p=>p.type===g.key);
       if (q){
-        items = items.filter(p => (p.cite||'').toLowerCase().includes(q) || (p.year||'').toString().includes(q) || (p.type||'').toLowerCase().includes(q));
+        items = items.filter(p => (p.cite||'').toLowerCase().includes(q) || (p.year||'').toString().includes(q) || (p.type||'').toLowerCase().includes(q) || (p.note||'').toLowerCase().includes(q));
       }
       totalVisible += items.length;
 
       const rows = items.map((p, idx)=>{
         const badge = /Editor.s Choice|Best Paper|Project of the Year|Recognized by ITS/i.test(p.cite)
           ? '<span class="badge">Honor / Award</span>' : '';
+        const noteHtml = (p.note && !/downloads as of/i.test(p.note))
+          ? `<div class="pub-note">${p.note.replace(/^(Committee:)/, '<b>$1</b>')}</div>`
+          : '';
         const bibText = encodeURIComponent(formatBibtex(p));
         const pubId = `pub-${g.key}-${idx}`;
         const hasLinkCls = p.url ? ' has-link' : '';
@@ -209,6 +225,7 @@ if (root && window.PUBS){
           <div class="yr">${p.year||''}</div>
           <div>
             <p class="cite">${bold(p.cite)}${badge}</p>
+            ${noteHtml}
             <div class="pub-actions">
               ${p.url ? `<a class="pub-doi" href="${p.url}" target="_blank" rel="noopener"><span>${p.url.replace(/^https?:\/\//,'')}</span> ↗</a>` : ''}
               <button class="btn-bib" data-bib="${bibText}" title="Copy BibTeX citation">Copy BibTeX</button>
