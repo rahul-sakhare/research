@@ -1506,6 +1506,7 @@ P["contact.html"] = head(
         </p>
         <form class="contact-form" action="https://formsubmit.co/rsakhare@purdue.edu" method="POST">
           <input type="hidden" name="_subject" value="Research Website Inquiry — Rahul Sakhare Portal">
+          <input type="hidden" name="_next" value="https://rahul-sakhare.github.io/research/contact.html">
           <input type="text" name="_honey" style="display:none">
           <input type="text" name="name" placeholder="Your Name" autocomplete="name">
           <input type="email" name="email" placeholder="Your Email Address" required autocomplete="email">
