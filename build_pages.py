@@ -605,7 +605,7 @@ P["awards.html"] = head(
         </a>
       </li>
       <li>
-        <a class="award-item has-link" href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener" title="Open Google Cloud Research Innovators announcement">
+        <a class="award-item has-link" href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/#:~:text=Rahul%20Suryakant%20Sakhare" target="_blank" rel="noopener" title="Open Google Cloud Research Innovators announcement highlighting Rahul Suryakant Sakhare">
           <span class="award-yr">2024</span>
           <div class="award-desc">
             <b>Google Cloud Research Innovator <span class="ext-hint">↗</span></b>

@@ -64,7 +64,7 @@ window.MEDIA = [
  {outlet:"Google Cloud", title:"Purdue University: Making electric vehicle investments more equitable", date:"Apr 7, 2023", year:2023, kind:"industry", url:null},
  {outlet:"Google Cloud", title:"Research Innovators — 2024 Cohort", date:"2024", year:2024, kind:"recognition",
   note:"Selected to the fourth global cohort of Google Cloud Research Innovators.",
-  url:"https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/"},
+  url:"https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/#:~:text=Rahul%20Suryakant%20Sakhare"},
  {outlet:"ITS Midwest", title:"2021 Project of the Year — Queue trucks with navigation alerts", date:"2021", year:2021, kind:"recognition",
   url:"https://doi.org/10.4236/jtts.2021.114035"}
 ];
