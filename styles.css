@@ -119,15 +119,15 @@ a:hover {
   color: var(--ink-heading);
   text-decoration: none;
   letter-spacing: -0.015em;
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
+  display: inline-block;
+  line-height: 1;
 }
 .brand .creds {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 500;
   color: var(--ink-muted);
+  letter-spacing: 0;
 }
 .brand:hover {
   color: var(--link-color);
