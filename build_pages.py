@@ -96,7 +96,7 @@ def foot(right="West Lafayette, IN", scripts=""):
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
   <span>{right}</span>
 </footer>
-{scripts}<script src="script.js?v=9.1"></script>
+{scripts}<script src="script.js?v=9.2"></script>
 </body>
 </html>"""
 

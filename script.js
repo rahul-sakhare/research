@@ -291,28 +291,6 @@ if (root && window.PUBS){
       searchInput.focus();
     });
   }
-
-  // Delegate BibTeX copy
-  root.addEventListener('click', (e)=>{
-    const btn = e.target.closest('.btn-bib');
-    if (!btn) return;
-    const bib = decodeURIComponent(btn.dataset.bib);
-    if (navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(bib).then(()=>{
-        const originalText = btn.textContent;
-        btn.textContent = '✓ Copied!';
-        btn.classList.add('copied');
-        setTimeout(()=>{
-          btn.textContent = originalText;
-          btn.classList.remove('copied');
-        }, 2000);
-      }).catch(()=>{
-        prompt('Copy BibTeX entry:', bib);
-      });
-    } else {
-      prompt('Copy BibTeX entry:', bib);
-    }
-  });
 }
 
 // ---- Projects page filter ----
@@ -402,3 +380,65 @@ document.addEventListener('keydown', (e)=>{
     }
   }
 });
+
+// ---- Global BibTeX Copy Handler (Home, Publications, and all pages) ----
+function copyBib(btn, text) {
+  let ok = false;
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.top = '0';
+    ta.style.left = '0';
+    ta.style.width = '2em';
+    ta.style.height = '2em';
+    ta.style.padding = '0';
+    ta.style.border = 'none';
+    ta.style.outline = 'none';
+    ta.style.boxShadow = 'none';
+    ta.style.background = 'transparent';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+  } catch (_) {
+    ok = false;
+  }
+
+  // Modern clipboard write as secondary guarantee
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      navigator.clipboard.writeText(text).catch(() => {});
+    } catch (_) {}
+  }
+
+  // Immediate visual feedback
+  if (!btn.dataset.origText) btn.dataset.origText = btn.textContent;
+  btn.textContent = '✓ Copied!';
+  btn.classList.add('copied');
+  clearTimeout(btn._timer);
+  btn._timer = setTimeout(() => {
+    btn.textContent = btn.dataset.origText || 'Copy BibTeX';
+    btn.classList.remove('copied');
+  }, 2000);
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.btn-bib');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+
+  const raw = btn.dataset.bib || '';
+  let bib = '';
+  try {
+    bib = decodeURIComponent(raw);
+  } catch (_) {
+    bib = raw;
+  }
+  if (!bib) return;
+
+  copyBib(btn, bib);
+});
+
