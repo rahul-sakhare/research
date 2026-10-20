@@ -617,11 +617,10 @@ P["awards.html"] = head(
 ) + nav("awards.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Honors &amp; Awards</h1>
-    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:32px">
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:28px">
       Selected accolades across engineering research, public agency deployments, academic scholarship, and international technical competitions.
     </p>
 
-    <h2>Chronological Recognition</h2>
     <ul class="award-list">
       <li>
         <a class="award-item has-link" href="https://www.purdue.edu/gradschool/postdoctorates/prime-grant.php" target="_blank" rel="noopener" title="Open Purdue PRIME Grant announcement">
