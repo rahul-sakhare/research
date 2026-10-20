@@ -46,7 +46,9 @@ NAV_ITEMS = [
  ("contact.html", "Contact")
 ]
 
-def head(title, desc, body_cls):
+def head(title, desc, body_cls, page_url=""):
+    canonical = f"https://rahul-sakhare.github.io/research/{page_url}" if page_url else "https://rahul-sakhare.github.io/research/"
+    image_url = "https://rahul-sakhare.github.io/research/assets/img/sakhare_headshot.jpg"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,6 +56,26 @@ def head(title, desc, body_cls):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="canonical" href="{canonical}">
+
+<!-- Open Graph / Social Sharing Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rahul Sakhare, Ph.D., P.E. — Academic Research Profile">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{image_url}">
+<meta property="og:image:alt" content="Portrait photograph of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="720">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{image_url}">
+<meta name="twitter:image:alt" content="Portrait photograph of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
@@ -109,14 +131,15 @@ P = {}
 P["index.html"] = head(
     "Rahul Sakhare, Ph.D., P.E. | Purdue University",
     "Rahul Sakhare, Ph.D., P.E. — Transportation Research Engineer at Purdue University. Connected vehicle trajectory data, traffic operations, work zone safety, and cloud analytics.",
-    "home"
+    "home",
+    ""
 ) + nav("index.html") + f"""
   <section class="wrap profile-section">
     <div class="profile-grid">
       <!-- Left Column: Portrait & Academic Coordinates -->
       <aside class="profile-sidebar">
         <div class="profile-photo-frame">
-          <img src="assets/img/sakhare_headshot.jpg" alt="Portrait photograph of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University" width="1080" height="720">
+          <img src="assets/img/sakhare_headshot.jpg" alt="Portrait photograph of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University in professional business attire" width="1080" height="720">
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Affiliation:</b><br>Joint Transportation Research Program (JTRP), Purdue University</p>
@@ -233,7 +256,8 @@ P["index.html"] = head(
 P["about.html"] = head(
     "About | Rahul Sakhare, Ph.D., P.E.",
     "Biographical background, academic appointments, and research trajectory of Rahul Sakhare, Ph.D., P.E., Purdue University.",
-    "sub"
+    "sub",
+    "about.html"
 ) + nav("about.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>About Rahul Sakhare, Ph.D., P.E.</h1>
@@ -244,7 +268,7 @@ P["about.html"] = head(
     <div class="profile-grid">
       <aside class="profile-sidebar">
         <div class="profile-photo-frame portrait-frame">
-          <img src="assets/img/sakhare_about.png" alt="Portrait photograph of Rahul Sakhare, Ph.D., P.E. in Purdue doctoral regalia" width="422" height="471">
+          <img src="assets/img/sakhare_about.png" alt="Portrait photograph of Dr. Rahul Sakhare in Purdue University doctoral academic regalia (black gown and doctoral hood)" width="422" height="471">
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
@@ -266,6 +290,9 @@ P["about.html"] = head(
         </p>
         <p>
           Alongside research, I actively teach, mentor graduate and undergraduate researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering, serve as a member of the TRB Standing Committee on Limited Access Roadway Operations (ACF13), and contribute to the annual Purdue Road School Planning Committee. Prior to doctoral research at Purdue, I gained significant industry experience as an Executive Consultant in the Transportation Team at Ernst &amp; Young (EY) LLP in New Delhi, working on infrastructure advisory and transportation consulting projects. I earned my Ph.D. in Civil Engineering from Purdue University, completed dual B.Tech. and M.Tech. degrees from IIT Madras (ranked top 0.2% in the IIT-JEE), and hold a licensed Professional Engineer (P.E.) credential in Indiana.
+        </p>
+        <p>
+          Beyond engineering research, I have a deep passion for playing cricket. I had the privilege of captaining the Purdue University cricket team to win the 2022 NCAA T-20 Championship Trophy for the Midwest (<a href="https://www.purduecricket.com/" target="_blank" rel="noopener">Purdue Cricket Club ↗</a>). Competitive athletics has shaped my collaborative approach to leadership, high-pressure problem solving, and team mentorship.
         </p>
 
         <h2>Career Appointments</h2>
@@ -323,7 +350,8 @@ P["about.html"] = head(
 P["publications.html"] = head(
     "Publications | Rahul Sakhare, Ph.D., P.E.",
     "Peer-reviewed journal articles, technical reports, monographs, and conference presentations by Rahul Sakhare, Ph.D., P.E.",
-    "sub"
+    "sub",
+    "publications.html"
 ) + nav("publications.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Publications &amp; Reports</h1>
@@ -855,7 +883,8 @@ projects_script = """<script>
 P["projects.html"] = head(
     "Sponsored Research Projects | Rahul Sakhare, Ph.D., P.E.",
     "Federal, multi-state pooled fund, and state DOT sponsored research projects led and engineered by Rahul Sakhare, Ph.D., P.E. at Purdue University.",
-    "sub"
+    "sub",
+    "projects.html"
 ) + nav("projects.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Sponsored Research Projects</h1>
@@ -925,7 +954,8 @@ P["projects.html"] = head(
 P["education.html"] = head(
     "Education & Licensure | Rahul Sakhare, Ph.D., P.E.",
     "Academic degrees from Purdue University and IIT Madras, and professional engineering licensure.",
-    "sub"
+    "sub",
+    "education.html"
 ) + nav("education.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Education, Licensure &amp; Certification</h1>
@@ -1052,7 +1082,8 @@ mentees_rows = "".join([f"""
 P["teaching.html"] = head(
     "Teaching & Mentorship | Rahul Sakhare, Ph.D., P.E.",
     "Instructional philosophy, courses prepared to teach, and student research mentorship across Civil Engineering, ECE, CS, and ME.",
-    "sub"
+    "sub",
+    "teaching.html"
 ) + nav("teaching.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Teaching &amp; Mentorship</h1>
@@ -1155,7 +1186,8 @@ P["teaching.html"] = head(
 P["awards.html"] = head(
     "Honors & Awards | Rahul Sakhare, Ph.D., P.E.",
     "Academic, professional, and research accolades of Rahul Sakhare, Ph.D., P.E.",
-    "sub"
+    "sub",
+    "awards.html"
 ) + nav("awards.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Honors &amp; Awards</h1>
@@ -1337,7 +1369,8 @@ P["awards.html"] = head(
 P["news.html"] = head(
     "News & Media Coverage | Rahul Sakhare, Ph.D., P.E.",
     "Media coverage from The New York Times, FHWA Innovator, Google Cloud, and transportation industry outlets.",
-    "sub"
+    "sub",
+    "news.html"
 ) + nav("news.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>News &amp; Media Coverage</h1>
@@ -1357,7 +1390,8 @@ P["news.html"] = head(
 P["contact.html"] = head(
     "Contact & Coordinates | Rahul Sakhare, Ph.D., P.E.",
     "Contact Rahul Sakhare — Office location at Purdue University, scholarly profiles, and message portal.",
-    "sub"
+    "sub",
+    "contact.html"
 ) + nav("contact.html") + f"""
   <section class="wrap" style="padding-top:36px">
     <h1>Contact &amp; Coordinates</h1>
