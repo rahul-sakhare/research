@@ -429,10 +429,10 @@ MENTEES = [
     {"name":"Neelesh Gopalkrishnan", "deg":"M.S. in Computer Science", "dept":"Purdue CS",
      "topic":"Connected vehicle market penetration dashboard and scalable WebGIS trajectory query interfaces.",
      "proj":"JTRP WebGIS Analytics"},
-    {"name":"Ahsmitha Sivakumar", "deg":"B.Tech. in Civil Engineering", "dept":"Purdue Civil Eng",
+    {"name":"Ahsmitha Sivakumar", "deg":"B.Tech. in Civil Engineering", "dept":"IIT Madras Civil Engineering (PURE Scholar at Purdue)",
      "topic":"Toll plaza performance measures and evaluation of privacy filters in probe trajectory datasets.",
      "proj":"Smart Cities 2024"},
-    {"name":"Anirud Nandakumar", "deg":"B.Tech. in Civil Engineering", "dept":"Purdue Civil Eng",
+    {"name":"Anirud Nandakumar", "deg":"B.Tech. in Civil Engineering", "dept":"IIT Madras Civil Engineering (PURE Scholar at Purdue)",
      "topic":"Normalized hard-braking evaluations at signalized intersections, roundabouts, and all-way stops.",
      "proj":"Future Transportation 2024"}
 ]
@@ -462,51 +462,12 @@ P["teaching.html"] = head(
       "The core purpose of engineering pedagogy is manufacturing the realization that computational analysis has immediate, tangible value in resolving real infrastructure challenges. Coursework comes alive the moment a student realizes that their analysis answers a question a real agency is trying to solve. I construct learning modules around actual connected vehicle trajectory records from Indiana's interstate network, commercial truck telematics, and highway speed profiles — training students to navigate the noise and ambiguities of physical infrastructure and translate data into sound engineering decisions."
     </div>
 
-    <!-- Core Subject Areas -->
-    <h2>Courses &amp; Subject Areas</h2>
-    <div class="teach-grid">
-      <div class="teach-item">
-        <span class="level">Undergraduate Core</span>
-        <h3>Transportation Engineering</h3>
-        <p>Traffic flow fundamentals, roadway geometric design, signalized intersection capacity, highway operations, and emerging intelligent transportation systems (CE 36100).</p>
-      </div>
-      <div class="teach-item">
-        <span class="level">Graduate Core</span>
-        <h3>Big Data Analytics in Transportation Systems</h3>
-        <p>Cloud-native spatial-temporal analytics, distributed SQL (BigQuery), connected vehicle trajectory processing, probe data validation, and performance measure engineering.</p>
-      </div>
-      <div class="teach-item">
-        <span class="level">Graduate Elective</span>
-        <h3>Traffic Flow Theory &amp; Operations</h3>
-        <p>Macroscopic traffic flow theory, kinematic shockwave dynamics (LWR model), queue propagation, surrogate safety analysis, and automated speed control.</p>
-      </div>
-    </div>
-
-    <!-- Student Mentorship Roster -->
-    <h2>Graduate &amp; Undergraduate Researchers Co-Advised</h2>
-    <p style="font-size:15px;color:var(--ink-muted);margin-bottom:16px">
-      Proud to have co-advised and mentored emerging researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering:
+    <!-- Invited Lectures, Workshops & Teaching Experience -->
+    <h2>Invited Lectures, Workshops &amp; Teaching Experience</h2>
+    <p style="font-size:15px;color:var(--ink-muted);margin-bottom:20px">
+      Classroom guest lectures, international instructional workshops, and university laboratory teaching experience:
     </p>
-
-    <div style="overflow-x:auto">
-      <table class="mentee-table">
-        <thead>
-          <tr>
-            <th>Student</th>
-            <th>Program</th>
-            <th>Research Area</th>
-            <th>Collaborative Output</th>
-          </tr>
-        </thead>
-        <tbody>
-          {mentees_rows}
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Invited Lectures -->
-    <h2>Invited Lectures &amp; Workshops</h2>
-    <ul class="award-list">
+    <ul class="award-list" style="margin-bottom:48px">
       <li class="award-item">
         <span class="award-yr">2026</span>
         <div class="award-desc">
@@ -536,6 +497,51 @@ P["teaching.html"] = head(
         </div>
       </li>
     </ul>
+
+    <!-- Courses Prepared to Teach / Areas of Competence -->
+    <h2>Courses Prepared to Teach &amp; Areas of Competence</h2>
+    <p style="font-size:15px;color:var(--ink-muted);margin-bottom:20px">
+      Core undergraduate and graduate subject areas in which I have deep technical proficiency, established instructional plans, and am prepared and eager to teach:
+    </p>
+    <div class="teach-grid" style="margin-bottom:48px">
+      <div class="teach-item">
+        <span class="level">Prepared to Teach · Undergraduate Core</span>
+        <h3>Transportation Engineering</h3>
+        <p>Traffic flow fundamentals, roadway geometric design, signalized intersection capacity, highway operations, and emerging intelligent transportation systems (CE 36100 equivalent).</p>
+      </div>
+      <div class="teach-item">
+        <span class="level">Prepared to Teach · Graduate Core</span>
+        <h3>Big Data Analytics in Transportation Systems</h3>
+        <p>Cloud-native spatial-temporal analytics, distributed SQL (BigQuery), connected vehicle trajectory processing, probe data validation, and performance measure engineering.</p>
+      </div>
+      <div class="teach-item">
+        <span class="level">Prepared to Teach · Graduate Elective</span>
+        <h3>Traffic Flow Theory &amp; Operations</h3>
+        <p>Macroscopic traffic flow theory, kinematic shockwave dynamics (LWR model), queue propagation, surrogate safety analysis, and automated speed control.</p>
+      </div>
+    </div>
+
+    <!-- Student Mentorship Roster -->
+    <h2>Graduate &amp; Undergraduate Researchers Co-Advised</h2>
+    <p style="font-size:15px;color:var(--ink-muted);margin-bottom:16px">
+      Proud to have co-advised and mentored emerging researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering:
+    </p>
+
+    <div style="overflow-x:auto">
+      <table class="mentee-table">
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Program</th>
+            <th>Research Area</th>
+            <th>Collaborative Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          {mentees_rows}
+        </tbody>
+      </table>
+    </div>
   </section>
 """ + foot()
 
