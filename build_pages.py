@@ -115,7 +115,7 @@ P["index.html"] = head(
       <!-- Left Column: Portrait & Academic Coordinates -->
       <aside class="profile-sidebar">
         <div class="profile-photo-frame">
-          <img src="assets/img/sakhare_headshot.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1080" height="720">
+          <img src="assets/img/sakhare_headshot.jpg" alt="Portrait photograph of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University" width="1080" height="720">
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Affiliation:</b><br>Joint Transportation Research Program (JTRP), Purdue University</p>
@@ -241,7 +241,7 @@ P["about.html"] = head(
     <div class="profile-grid">
       <aside class="profile-sidebar">
         <div class="profile-photo-frame">
-          <img src="assets/img/sakhare_headshot.jpg" alt="Rahul Sakhare, Ph.D., P.E." width="1080" height="720">
+          <img src="assets/img/sakhare_headshot.jpg" alt="Portrait photograph of Rahul Sakhare, Ph.D., P.E., Transportation Research Engineer at Purdue University" width="1080" height="720">
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
