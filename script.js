@@ -124,6 +124,14 @@ if (isHome){
         const el = document.getElementById(id);
         if (el && typeof s[key] === 'number'){ el.dataset.to = s[key]; el.textContent = s[key].toLocaleString(); }
       });
+      const asof = document.getElementById('stat-asof');
+      if (asof && s.updated){
+        const d = new Date(s.updated + 'T12:00:00');
+        if (!isNaN(d.getTime())){
+          const monthYear = d.toLocaleDateString('en-US', {month:'long', year:'numeric'});
+          asof.textContent = `as of ${monthYear}`;
+        }
+      }
     }).catch(()=>{});
 }
 

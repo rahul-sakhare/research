@@ -6,6 +6,16 @@ Aesthetic: Authentic Academic Minimalist (No SaaS cards, no bubble chips, authen
 """
 
 import os
+import datetime
+import json
+
+try:
+    with open('scholar.json', 'r', encoding='utf-8') as _sf:
+        _sdata = json.load(_sf)
+        _sdate = datetime.date.fromisoformat(_sdata.get('updated', datetime.date.today().isoformat()))
+        as_of_month = _sdate.strftime("%B %Y")
+except Exception:
+    as_of_month = datetime.date.today().strftime("%B %Y")
 
 FONTS = "https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"
 
@@ -154,6 +164,7 @@ P["index.html"] = head(
           <span><b><span id="stat-journal" data-to="32">32</span></b> journal articles</span>
           <span class="dot">·</span>
           <span><b><span id="stat-report" data-to="22">22</span></b> technical reports</span>
+          <span class="stat-asof" id="stat-asof">as of {as_of_month}</span>
         </div>
 
         <!-- Selected Publications Preview -->
