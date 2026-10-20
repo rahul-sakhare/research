@@ -227,9 +227,11 @@ if (root && window.PUBS){
         const bibText = encodeURIComponent(formatBibtex(p));
         const pubId = `pub-${g.key}-${idx}`;
         const hasLinkCls = p.url ? ' has-link' : '';
+        const isFirstAuthor = /^\s*Sakhare\b/i.test(p.cite || '');
+        const firstAuthorCls = isFirstAuthor ? ' is-first-author' : '';
         const urlAttr = p.url ? ` data-url="${p.url}" tabindex="0" role="link" title="Open publication in new tab"` : '';
 
-        return `<div class="pub${hasLinkCls}" id="${pubId}"${urlAttr}>
+        return `<div class="pub${hasLinkCls}${firstAuthorCls}" id="${pubId}"${urlAttr}>
           <div class="yr">${p.year||''}</div>
           <div>
             <p class="cite">${bold(p.cite)}${badge}</p>

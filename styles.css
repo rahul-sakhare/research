@@ -593,8 +593,33 @@ a.news-entry:hover .news-content b,
 /* ==========================================================================
    SELECTED & FULL PUBLICATIONS — Scholarly Citation Typesetting
    ========================================================================== */
+.pub-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+  font-size: 13.5px;
+  color: var(--ink-muted);
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 0 0 20px;
+}
+.pub-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.pub-legend-indicator {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--accent-gold);
+}
 .pub-toolbar {
-  margin: 24px 0 32px;
+  margin: 0 0 32px;
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -695,14 +720,18 @@ a.news-entry:hover .news-content b,
   display: grid;
   grid-template-columns: 60px 1fr;
   gap: 20px;
-  padding: 16px 16px;
+  padding: 16px 16px 16px 13px;
   margin: 0 -16px;
   border-bottom: 1px solid var(--border);
+  border-left: 3px solid transparent;
   border-radius: 6px;
   align-items: baseline;
-  transition: background-color 0.18s ease;
+  transition: background-color 0.18s ease, border-left-color 0.18s ease;
 }
 .pub:last-child { border-bottom: none; }
+.pub.is-first-author {
+  border-left-color: var(--accent-gold);
+}
 .pub.has-link {
   cursor: pointer;
 }

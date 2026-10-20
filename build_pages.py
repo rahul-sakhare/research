@@ -79,7 +79,7 @@ def head(title, desc, body_cls, page_url=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9.2">
+<link rel="stylesheet" href="styles.css?v=9.3">
 <script>
 (function(){{
   var t = localStorage.getItem('theme');
@@ -196,7 +196,7 @@ P["index.html"] = head(
         <!-- Selected Publications Preview -->
         <h2>Selected Publications</h2>
         <div class="pub-list">
-          <div class="pub has-link" data-url="https://doi.org/10.1007/s11116-026-10736-8" tabindex="0" role="link" title="Open publication in new tab">
+          <div class="pub has-link is-first-author" data-url="https://doi.org/10.1007/s11116-026-10736-8" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2026</div>
             <div>
               <p class="cite"><b>Sakhare, R. S.</b>, Desai, J., Gartner, C., Shellhamer, N., Ruble, T., McCoy, D., &amp; Bullock, D. M. (2026). "Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics Using Connected Vehicle Data to Identify Improvement Opportunities." <i>Transportation</i> (Springer Nature).</p>
@@ -207,7 +207,7 @@ P["index.html"] = head(
             </div>
           </div>
 
-          <div class="pub has-link" data-url="https://doi.org/10.1109/ACCESS.2024.3503368" tabindex="0" role="link" title="Open publication in new tab">
+          <div class="pub has-link is-first-author" data-url="https://doi.org/10.1109/ACCESS.2024.3503368" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2024</div>
             <div>
               <p class="cite"><b>Sakhare, R. S.</b>, Desai, J., Mathew, J. K., &amp; Bullock, D. M. (2024). "Assessing the Interstate Coverage of Commercial Trucks Capable of Providing Roadway Imagery via On-Vehicle Dash Camera in the United States." <i>IEEE Access</i>, 12, 173517-173529.</p>
@@ -229,7 +229,7 @@ P["index.html"] = head(
             </div>
           </div>
 
-          <div class="pub has-link" data-url="https://doi.org/10.5703/1288284317751" tabindex="0" role="link" title="Open publication in new tab">
+          <div class="pub has-link is-first-author" data-url="https://doi.org/10.5703/1288284317751" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2024</div>
             <div>
               <p class="cite"><b>Sakhare, R. S.</b>, Desai, J., Mathew, J. K., McGregor, J., Kachler, M., &amp; Bullock, D. M. (2024). <i>Measuring and Visualizing Freeway Traffic Conditions: Using Connected Vehicle Data</i> (Joint Transportation Research Program Publication No. FHWA/IN/JTRP-2024/14 / TPF-5(514)). West Lafayette, IN: Purdue University, 506 pages.</p>
@@ -358,6 +358,11 @@ P["publications.html"] = head(
     <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:24px">
       32 peer-reviewed journal articles, 22 technical research reports for INDOT &amp; FHWA, 1 monograph, and conference proceedings spanning connected vehicle data, traffic safety, and cloud computing. Search by keyword or filter by scholarly category.
     </p>
+
+    <!-- Publication Legend -->
+    <div class="pub-legend">
+      <span class="pub-legend-item"><span class="pub-legend-indicator"></span> <b>Gold Left Border</b> indicates First Author publication (39 entries)</span>
+    </div>
 
     <!-- Search & Filter Toolbar -->
     <div class="pub-toolbar">
