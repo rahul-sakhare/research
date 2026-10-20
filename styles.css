@@ -326,6 +326,12 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   object-position: 70% 25%;
   display: block;
 }
+.profile-photo-frame.portrait-frame {
+  aspect-ratio: 422 / 471;
+}
+.profile-photo-frame.portrait-frame img {
+  object-position: center 15%;
+}
 .profile-sidebar-meta {
   font-size: 14px;
   line-height: 1.6;
