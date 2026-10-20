@@ -79,7 +79,7 @@ def head(title, desc, body_cls, page_url=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9.1">
+<link rel="stylesheet" href="styles.css?v=9.2">
 <script>
 (function(){{
   var t = localStorage.getItem('theme');

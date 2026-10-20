@@ -389,6 +389,10 @@ html[data-theme="dark"] .theme-toggle .icon-sun {
   color: var(--ink-body);
   max-width: 82ch;
 }
+.profile-bio > h2:first-child,
+.profile-bio > h1:first-child {
+  margin-top: 0;
+}
 .profile-bio p {
   margin-bottom: 16px;
 }
