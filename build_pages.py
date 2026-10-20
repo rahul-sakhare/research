@@ -90,6 +90,57 @@ def head(title, desc, body_cls, page_url=""):
   document.documentElement.setAttribute('data-theme', t);
 }})();
 </script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@graph": [
+    {{
+      "@type": "Person",
+      "@id": "https://rahul-sakhare.github.io/research/#person",
+      "name": "Rahul Suryakant Sakhare",
+      "alternateName": ["Rahul Sakhare", "Rahul S. Sakhare"],
+      "honorificPrefix": "Dr.",
+      "honorificSuffix": "Ph.D., P.E.",
+      "jobTitle": "Transportation Research Engineer",
+      "worksFor": {{
+        "@type": "EducationalOrganization",
+        "name": "Purdue University",
+        "url": "https://www.purdue.edu/"
+      }},
+      "alumniOf": [
+        {{
+          "@type": "EducationalOrganization",
+          "name": "Purdue University",
+          "url": "https://www.purdue.edu/"
+        }},
+        {{
+          "@type": "EducationalOrganization",
+          "name": "Indian Institute of Technology (IIT) Madras",
+          "url": "https://www.iitm.ac.in/"
+        }}
+      ],
+      "url": "https://rahul-sakhare.github.io/research/",
+      "image": "{image_url}",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=4crwCDoAAAAJ&hl=en",
+        "https://orcid.org/0000-0001-7843-5707",
+        "https://www.linkedin.com/in/rahulsakhare/",
+        "https://www.researchgate.net/profile/Rahul-Suryakant-Sakhare",
+        "https://github.com/rahul-sakhare"
+      ]
+    }},
+    {{
+      "@type": "WebSite",
+      "@id": "https://rahul-sakhare.github.io/research/#website",
+      "url": "https://rahul-sakhare.github.io/research/",
+      "name": "Rahul Sakhare, Ph.D., P.E. — Academic Research Profile",
+      "publisher": {{
+        "@id": "https://rahul-sakhare.github.io/research/#person"
+      }}
+    }}
+  ]
+}}
+</script>
 </head>
 <body class="{body_cls}">"""
 
