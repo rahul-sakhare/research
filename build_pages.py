@@ -46,7 +46,7 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8.6">
+<link rel="stylesheet" href="styles.css?v=8.7">
 </head>
 <body class="{body_cls}">"""
 
@@ -71,7 +71,7 @@ def foot(right="West Lafayette, IN", scripts=""):
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
   <span>{right}</span>
 </footer>
-{scripts}<script src="script.js?v=8.6"></script>
+{scripts}<script src="script.js?v=8.7"></script>
 </body>
 </html>"""
 
@@ -123,7 +123,7 @@ P["index.html"] = head(
             I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP) and a licensed Professional Engineer (P.E.) in Indiana. My engineering research investigates how large-scale, heterogeneous vehicle sensor data can resolve pressing operational challenges across civil infrastructure systems.
           </p>
           <p>
-            By synthesizing traffic flow theory, kinematic wave dynamics, surrogate safety physics, and scalable cloud computing pipelines, my work translates billions of high-frequency connected vehicle waypoints and commercial truck telematics into actionable measures used daily by transportation agencies. Over more than 20 funded research projects totaling over $6.0M, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants ($1.13M) and as lead research engineer on multi-state FHWA Pooled-Fund studies. Methodologies developed through this research are embedded in statewide operations for work zone safety screening, winter storm mobility recovery, secondary crash prevention, and capital investment prioritization.
+            By synthesizing traffic flow theory, kinematic wave dynamics, surrogate safety physics, and scalable cloud computing pipelines, my work translates billions of high-frequency connected vehicle waypoints and commercial truck telematics into actionable measures used daily by transportation agencies. Across multiple state and national research initiatives, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants and as lead research engineer on multi-state FHWA Pooled-Fund studies. Methodologies developed through this research are embedded in statewide operations for work zone safety screening, winter storm mobility recovery, secondary crash prevention, and capital investment prioritization.
           </p>
         </div>
 
@@ -138,8 +138,6 @@ P["index.html"] = head(
           <span><b><span id="stat-journal" data-to="32">32</span></b> journal articles</span>
           <span class="dot">·</span>
           <span><b><span id="stat-report" data-to="22">22</span></b> technical reports</span>
-          <span class="dot">·</span>
-          <span><b>$6.0M+</b> research portfolio</span>
         </div>
 
         <!-- Research Thrusts (Aligned with GT, CMU, MIT & Research Portfolio) -->
@@ -305,8 +303,7 @@ P["about.html"] = head(
         <div class="profile-sidebar-meta">
           <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
           <p><b>Licensure:</b><br>Licensed Professional Engineer (P.E.), State of Indiana (No. PE12600619, June 2026)</p>
-          <p><b>Grant Leadership:</b><br>Co-PI on 4 Active INDOT Grants ($1.13M)</p>
-          <p><b>Research Volume:</b><br>$6.0M+ across 20+ externally funded projects</p>
+          <p><b>Research Leadership:</b><br>Co-PI on 4 Active INDOT Grants<br>Lead Engineer on FHWA Pooled-Fund Studies</p>
           <p><b>Professional Service:</b><br>TRB ACF13 Committee Member<br>Purdue Road School Committee</p>
         </div>
       </aside>
@@ -317,7 +314,7 @@ P["about.html"] = head(
           I am a Transportation Research Engineer at Purdue University's Joint Transportation Research Program (JTRP). My work is rooted in foundational civil and transportation engineering principles, integrated with modern scalable cloud data architectures and connected vehicle sensing streams. I specialize in turning massive, heterogeneous telemetry — including passenger car trajectory waypoints, commercial truck telematics, and roadway camera feeds — into actionable performance measures that transportation agencies can deploy and sustain.
         </p>
         <p>
-          Over more than 20 externally funded research projects totaling over $6.0M, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants ($1.13M) and as lead research engineer on multi-state FHWA Pooled-Fund studies. The methodologies and diagnostic tools resulting from this work are embedded into statewide operations with INDOT and regional DOT partners across the Midwest, informing real-time work zone safety alerts, network-wide bottleneck screening, winter storm recovery, and capital program prioritization.
+          Across multiple state and national research initiatives, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants and as lead research engineer on multi-state FHWA Pooled-Fund studies. The methodologies and diagnostic tools resulting from this work are embedded into statewide operations with INDOT and regional DOT partners across the Midwest, informing real-time work zone safety alerts, network-wide bottleneck screening, winter storm recovery, and capital program prioritization.
         </p>
         <p>
           Alongside research, I actively teach, mentor graduate and undergraduate researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering, serve on the TRB Committee on Limited Access Roadway Operations (ACF13), and contribute to the annual Purdue Road School Planning Committee. I earned my Ph.D. in Civil Engineering from Purdue University, completed dual B.Tech. and M.Tech. degrees from IIT Madras (ranked top 0.2% in the IIT-JEE), and hold a licensed Professional Engineer (P.E.) credential in Indiana.
@@ -329,7 +326,7 @@ P["about.html"] = head(
             <span class="award-yr">2023 — Present</span>
             <div class="award-desc">
               <b>Transportation Research Engineer</b>
-              <span>Joint Transportation Research Program (JTRP), Purdue University. Leading multi-agency connected vehicle data research, cloud analytics pipelines, and agency deployments for INDOT and FHWA. Co-PI on four active research grants ($1.13M).</span>
+              <span>Joint Transportation Research Program (JTRP), Purdue University. Leading multi-agency connected vehicle data research, cloud analytics pipelines, and agency deployments for INDOT and FHWA. Co-PI on four active INDOT research grants.</span>
             </div>
           </li>
           <li class="award-item">
