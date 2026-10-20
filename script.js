@@ -285,16 +285,9 @@ if (mroot && window.MEDIA){
       KINDS.filter(k=>counts[k.key]).map(k=>mk(k.key,k.label,counts[k.key])).join('');
   }
 
-  const marq = window.MEDIA.filter(m=>m.marquee);
-  const rest = window.MEDIA.filter(m=>!m.marquee).sort((a,b)=>(b.year||0)-(a.year||0));
+  const sortedMedia = [...window.MEDIA].sort((a,b)=>(b.year||0)-(a.year||0));
 
-  const mqHTML = marq.length ? `<div class="media-marquee">` + marq.map(m=>`
-    <a class="mq" data-kind="${m.kind}" href="${m.url}" target="_blank" rel="noopener">
-      <div class="kicker"><span class="src">${m.outlet}</span><span>${m.date}</span></div>
-      <h3>${m.title}</h3>${m.note?`<p>${m.note}</p>`:''}
-      <span class="go">Read ↗</span></a>`).join('') + `</div>` : '';
-
-  const listHTML = `<div class="media-list">` + rest.map(m=>{
+  const listHTML = `<div class="media-list">` + sortedMedia.map(m=>{
     const inner = `<span class="outlet">${m.outlet}</span>
       <span class="title">${m.title}${m.note?`<span class="note">${m.note}</span>`:''}</span>
       <span class="date">${m.date}</span>`;
@@ -303,14 +296,14 @@ if (mroot && window.MEDIA){
       : `<div class="mi" data-kind="${m.kind}">${inner}</div>`;
   }).join('') + `</div>`;
 
-  mroot.innerHTML = mqHTML + listHTML;
+  mroot.innerHTML = listHTML;
 
   if (bar){
     bar.addEventListener('click',(e)=>{
       const b = e.target.closest('.filter'); if(!b) return;
       bar.querySelectorAll('.filter').forEach(f=>f.classList.toggle('active',f===b));
       const f = b.dataset.f;
-      mroot.querySelectorAll('.mq,.mi').forEach(it=>{
+      mroot.querySelectorAll('.mi').forEach(it=>{
         it.classList.toggle('hidden', f!=='all' && it.dataset.kind!==f);
       });
     });
