@@ -156,9 +156,10 @@ if (root && window.PUBS){
         const badge = /Editor.s Choice|Best Paper|Project of the Year|Recognized by ITS/i.test(p.cite)
           ? '<span class="badge">Honor / Award</span>' : '';
         const bibText = encodeURIComponent(formatBibtex(p));
-        const pubId = `pub-${g.key}-${idx}`;
+        const hasLinkCls = p.url ? ' has-link' : '';
+        const urlAttr = p.url ? ` data-url="${p.url}" tabindex="0" role="link" title="Open publication in new tab"` : '';
 
-        return `<div class="pub" id="${pubId}">
+        return `<div class="pub${hasLinkCls}" id="${pubId}"${urlAttr}>
           <div class="yr">${p.year||''}</div>
           <div>
             <p class="cite">${bold(p.cite)}${badge}</p>
@@ -292,8 +293,8 @@ if (mroot && window.MEDIA){
       <span class="title">${m.title}${m.note?`<span class="note">${m.note}</span>`:''}</span>
       <span class="date">${m.date}</span>`;
     return m.url
-      ? `<a class="mi" data-kind="${m.kind}" href="${m.url}" target="_blank" rel="noopener">${inner}</a>`
-      : `<div class="mi" data-kind="${m.kind}">${inner}</div>`;
+      ? `<a class="mi has-link" data-kind="${m.kind}" href="${m.url}" target="_blank" rel="noopener" title="Open article in new tab">${inner}</a>`
+      : `<div class="mi no-link" data-kind="${m.kind}">${inner}</div>`;
   }).join('') + `</div>`;
 
   mroot.innerHTML = listHTML;
@@ -309,3 +310,22 @@ if (mroot && window.MEDIA){
     });
   }
 }
+
+// ---- Global: Clickable list rows with links (.pub.has-link) ----
+document.addEventListener('click', (e)=>{
+  if (e.target.closest('.btn-bib')) return; // handled by bibtex copy
+  if (e.target.closest('a')) return;        // native anchor clicks proceed naturally
+  const pub = e.target.closest('.pub.has-link');
+  if (pub && pub.dataset.url){
+    window.open(pub.dataset.url, '_blank', 'noopener,noreferrer');
+  }
+});
+document.addEventListener('keydown', (e)=>{
+  if (e.key === 'Enter'){
+    if (e.target.closest('.btn-bib') || e.target.closest('a')) return;
+    const pub = e.target.closest('.pub.has-link');
+    if (pub && pub.dataset.url && document.activeElement === pub){
+      window.open(pub.dataset.url, '_blank', 'noopener,noreferrer');
+    }
+  }
+});

@@ -46,7 +46,7 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8.2">
+<link rel="stylesheet" href="styles.css?v=8.3">
 </head>
 <body class="{body_cls}">"""
 
@@ -200,42 +200,42 @@ P["index.html"] = head(
         <!-- Recent News & Milestones -->
         <h2>Recent News &amp; Updates</h2>
         <div class="news-feed">
-          <div class="news-entry">
+          <a class="news-entry has-link" href="https://doi.org/10.1007/s11116-026-10702-6" target="_blank" rel="noopener" title="Open journal article in new tab">
             <span class="news-date">2026</span>
             <div class="news-content">
               <b>Transportation (Springer Nature)</b> published paper on <i>Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics Using Connected Vehicle Waypoint Data</i>.
             </div>
-          </div>
-          <div class="news-entry">
+          </a>
+          <a class="news-entry has-link" href="https://doi.org/10.3390/futuretransp6010001" target="_blank" rel="noopener" title="Open journal article in new tab">
             <span class="news-date">2026</span>
             <div class="news-content">
               <b>Future Transportation</b> published research establishing empirical work zone performance measures aligned directly with the FHWA Rule on Work Zone Safety and Mobility.
             </div>
-          </div>
-          <div class="news-entry">
+          </a>
+          <a class="news-entry has-link" href="https://doi.org/10.1109/OJITS.2026.3533261" target="_blank" rel="noopener" title="Open journal article in new tab">
             <span class="news-date">2026</span>
             <div class="news-content">
               <b>IEEE Open Journal of Intelligent Transportation Systems</b> published safety evaluation of freeway ramp metering and variable speed limits using vehicle trajectory data.
             </div>
-          </div>
-          <div class="news-entry">
+          </a>
+          <a class="news-entry has-link" href="https://www.nytimes.com/2024/12/08/technology/holiday-traffic-google-apple-maps.html" target="_blank" rel="noopener" title="Open New York Times article in new tab">
             <span class="news-date">Dec 2024</span>
             <div class="news-content">
               <b>The New York Times</b> featured our connected vehicle research and freeway traffic congestion diagnostics on the front page of the Sunday edition.
             </div>
-          </div>
-          <div class="news-entry">
+          </a>
+          <a class="news-entry has-link" href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener" title="Open Google Cloud announcement in new tab">
             <span class="news-date">2024</span>
             <div class="news-content">
               Selected to the <b>Google Cloud Research Innovator</b> Fourth Global Cohort for pioneering large-scale cloud analytics on transportation telematics.
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Selected Publications Preview -->
         <h2>Selected Publications</h2>
         <div class="pub-list">
-          <div class="pub">
+          <div class="pub has-link" data-url="https://doi.org/10.1007/s11116-026-10702-6" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2026</div>
             <div>
               <p class="cite"><b>Sakhare, R. S.</b>, Li, H., &amp; Bullock, D. M. (2026). "Deriving Systemwide Granular Segment Level Traffic Mobility Performance Metrics Using Connected Vehicle Waypoint Data." <i>Transportation</i> (Springer Nature).</p>
@@ -246,7 +246,7 @@ P["index.html"] = head(
             </div>
           </div>
 
-          <div class="pub">
+          <div class="pub has-link" data-url="https://doi.org/10.3390/futuretransp6010001" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2026</div>
             <div>
               <p class="cite"><b>Sakhare, R. S.</b>, Mukai, J., Desai, J., &amp; Bullock, D. M. (2026). "Work Zone Performance Measures Derived from Connected Vehicle Data." <i>Future Transportation</i>, 6(1), 1-18.</p>
@@ -257,7 +257,7 @@ P["index.html"] = head(
             </div>
           </div>
 
-          <div class="pub">
+          <div class="pub has-link" data-url="https://doi.org/10.1109/OJITS.2026.3533261" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2026</div>
             <div>
               <p class="cite"><b>Sakhare, R. S.</b>, Li, H., &amp; Bullock, D. M. (2026). "Evaluating Safety Benefits of Ramp Metering." <i>IEEE Open Journal of Intelligent Transportation Systems</i>.</p>
@@ -268,7 +268,7 @@ P["index.html"] = head(
             </div>
           </div>
 
-          <div class="pub">
+          <div class="pub has-link" data-url="https://doi.org/10.5703/1288284317804" tabindex="0" role="link" title="Open publication in new tab">
             <div class="yr">2025</div>
             <div>
               <p class="cite">Bullock, D. M., <b>Sakhare, R. S.</b>, et al. (2025). <i>Big Data for Work Zone Performance Measures: Monograph on Techniques, Implementation, and Case Studies</i>. Federal Highway Administration (FHWA), 506 pages.</p>
@@ -623,124 +623,158 @@ P["awards.html"] = head(
 
     <h2>Chronological Recognition</h2>
     <ul class="award-list">
-      <li class="award-item">
-        <span class="award-yr">2026</span>
-        <div class="award-desc">
-          <b>PRIME Grant Award</b>
-          <span>Purdue University in support of professional development and academic scholarship.</span>
+      <li>
+        <a class="award-item has-link" href="https://www.purdue.edu/gradschool/postdoctorates/prime-grant.php" target="_blank" rel="noopener" title="Open Purdue PRIME Grant announcement">
+          <span class="award-yr">2026</span>
+          <div class="award-desc">
+            <b>PRIME Grant Award <span class="ext-hint">↗</span></b>
+            <span>Purdue University in support of professional development and academic scholarship.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://cloud.google.com/blog/topics/public-sector/google-cloud-research-innovators-launch-fourth-cohort-to-drive-innovation/" target="_blank" rel="noopener" title="Open Google Cloud Research Innovators announcement">
+          <span class="award-yr">2024</span>
+          <div class="award-desc">
+            <b>Google Cloud Research Innovator <span class="ext-hint">↗</span></b>
+            <span>Selected to the fourth global cohort of researchers driving scientific breakthroughs with Google Cloud.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://indianaite.org/Scholarships" target="_blank" rel="noopener" title="Open Indiana ITE scholarship overview">
+          <span class="award-yr">2023</span>
+          <div class="award-desc">
+            <b>Edward J. Cox Memorial Scholarship <span class="ext-hint">↗</span></b>
+            <span>Indiana Section of the Institute of Transportation Engineers (ITE).</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://purdueite.com/" target="_blank" rel="noopener" title="Open Purdue ITE Chapter">
+          <span class="award-yr">2022–2023</span>
+          <div class="award-desc">
+            <b>Best Student Speaker Award <span class="ext-hint">↗</span></b>
+            <span>Purdue University ITE Student Chapter.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://doi.org/10.3390/safety8020039" target="_blank" rel="noopener" title="Open Editor's Choice award-winning article">
+          <span class="award-yr">2022</span>
+          <div class="award-desc">
+            <b>Editor's Choice Award <span class="ext-hint">↗</span></b>
+            <span>Safety (MDPI) for paper "Methodology for Monitoring Work Zones Traffic Operations Using Connected Vehicle Data."</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://doi.org/10.4236/jtts.2021.114035" target="_blank" rel="noopener" title="Open Project of the Year article">
+          <span class="award-yr">2021</span>
+          <div class="award-desc">
+            <b>ITS Midwest Project of the Year <span class="ext-hint">↗</span></b>
+            <span>Intelligent Transportation Society of Midwest for evaluation of queue trucks with navigation alerts using connected vehicle data.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://purdueite.com/" target="_blank" rel="noopener" title="Open Purdue ITE Chapter">
+          <span class="award-yr">2021 &amp; 2022</span>
+          <div class="award-desc">
+            <b>Elevator Pitch Event Winner <span class="ext-hint">↗</span></b>
+            <span>Purdue University ITE Student Chapter.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://greatlakesite.org/" target="_blank" rel="noopener" title="Open Great Lakes District ITE">
+          <span class="award-yr">2021</span>
+          <div class="award-desc">
+            <b>Student Team Design Competition Winner <span class="ext-hint">↗</span></b>
+            <span>Great Lakes District ITE.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://www.ite.org/membership/students/traffic-bowl/" target="_blank" rel="noopener" title="Open ITE International Traffic Bowl Championship">
+          <span class="award-yr">2020</span>
+          <div class="award-desc">
+            <b>International Collegiate Traffic Bowl Championship <span class="ext-hint">↗</span></b>
+            <span>Institute of Transportation Engineers (ITE) International.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://www.purdue.edu/discoverypark/sigmaxi/" target="_blank" rel="noopener" title="Open Purdue Sigma Xi chapter">
+          <span class="award-yr">2020</span>
+          <div class="award-desc">
+            <b>Best Poster Presentation <span class="ext-hint">↗</span></b>
+            <span>Sigma Xi Scientific Research Honor Society, Purdue University Chapter.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://engineering.purdue.edu/CE/Academics/Graduate/Scholarships" target="_blank" rel="noopener" title="Open Purdue Lyles School Graduate Scholarships">
+          <span class="award-yr">2020–2023</span>
+          <div class="award-desc">
+            <b>Christopher B. &amp; Susan S. Burke Fellowship <span class="ext-hint">↗</span></b>
+            <span>Purdue University graduate program research fellowship.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://civil.iitm.ac.in/" target="_blank" rel="noopener" title="Open IIT Madras Civil Engineering">
+          <span class="award-yr">2018</span>
+          <div class="award-desc">
+            <b>Exemplary &amp; All-Round Best Performance Award <span class="ext-hint">↗</span></b>
+            <span>Civil Engineering, Dual-Degree Program, IIT Madras.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <div class="award-item">
+          <span class="award-yr">2018</span>
+          <div class="award-desc">
+            <b>Winner, CEA Technical Competitions</b>
+            <span>Case Study, Prabandha, Bon Auto, and Aquanomics — IIT Madras.</span>
+          </div>
         </div>
       </li>
-      <li class="award-item">
-        <span class="award-yr">2024</span>
-        <div class="award-desc">
-          <b>Google Cloud Research Innovator</b>
-          <span>Selected to the fourth global cohort of researchers driving scientific breakthroughs with Google Cloud.</span>
-        </div>
+      <li>
+        <a class="award-item has-link" href="https://engineering.purdue.edu/JTRP" target="_blank" rel="noopener" title="Open Joint Transportation Research Program, Purdue University">
+          <span class="award-yr">2017</span>
+          <div class="award-desc">
+            <b>Invited Visiting Undergraduate Research Scholar <span class="ext-hint">↗</span></b>
+            <span>Purdue University (PURE Program).</span>
+          </div>
+        </a>
       </li>
-      <li class="award-item">
-        <span class="award-yr">2023</span>
-        <div class="award-desc">
-          <b>Edward J. Cox Memorial Scholarship</b>
-          <span>Indiana Section of the Institute of Transportation Engineers (ITE).</span>
-        </div>
+      <li>
+        <a class="award-item has-link" href="https://www.ndrf.res.in/" target="_blank" rel="noopener" title="Open National Design and Research Forum">
+          <span class="award-yr">2016</span>
+          <div class="award-desc">
+            <b>Gold Medal in Civil Engineering <span class="ext-hint">↗</span></b>
+            <span>National Design and Research Forum, Institution of Engineers, India.</span>
+          </div>
+        </a>
       </li>
-      <li class="award-item">
-        <span class="award-yr">2022–2023</span>
-        <div class="award-desc">
-          <b>Best Student Speaker Award</b>
-          <span>Purdue University ITE Student Chapter.</span>
-        </div>
+      <li>
+        <a class="award-item has-link" href="https://igs.org.in/" target="_blank" rel="noopener" title="Open Indian Geotechnical Society">
+          <span class="award-yr">2016</span>
+          <div class="award-desc">
+            <b>Mr. H. C. Verma Diamond Jubilee Award &amp; IGS Best Paper <span class="ext-hint">↗</span></b>
+            <span>Indian Geotechnical Society.</span>
+          </div>
+        </a>
       </li>
-      <li class="award-item">
-        <span class="award-yr">2022</span>
-        <div class="award-desc">
-          <b>Editor's Choice Award</b>
-          <span>Safety (MDPI) for paper "Methodology for Monitoring Work Zones Traffic Operations Using Connected Vehicle Data."</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2021</span>
-        <div class="award-desc">
-          <b>ITS Midwest Project of the Year</b>
-          <span>Intelligent Transportation Society of Midwest for evaluation of queue trucks with navigation alerts using connected vehicle data.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2021 &amp; 2022</span>
-        <div class="award-desc">
-          <b>Elevator Pitch Event Winner</b>
-          <span>Purdue University ITE Student Chapter.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2021</span>
-        <div class="award-desc">
-          <b>Student Team Design Competition Winner</b>
-          <span>Great Lakes District ITE.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2020</span>
-        <div class="award-desc">
-          <b>International Collegiate Traffic Bowl Championship</b>
-          <span>Institute of Transportation Engineers (ITE) International.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2020</span>
-        <div class="award-desc">
-          <b>Best Poster Presentation</b>
-          <span>Sigma Xi Scientific Research Honor Society, Purdue University Chapter.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2020–2023</span>
-        <div class="award-desc">
-          <b>Christopher B. &amp; Susan S. Burke Fellowship</b>
-          <span>Purdue University graduate program research fellowship.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2018</span>
-        <div class="award-desc">
-          <b>Exemplary &amp; All-Round Best Performance Award</b>
-          <span>Civil Engineering, Dual-Degree Program, IIT Madras.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2018</span>
-        <div class="award-desc">
-          <b>Winner, CEA Technical Competitions</b>
-          <span>Case Study, Prabandha, Bon Auto, and Aquanomics — IIT Madras.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2017</span>
-        <div class="award-desc">
-          <b>Invited Visiting Undergraduate Research Scholar</b>
-          <span>Purdue University (PURE Program).</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2016</span>
-        <div class="award-desc">
-          <b>Gold Medal in Civil Engineering</b>
-          <span>National Design and Research Forum, Institution of Engineers, India.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2016</span>
-        <div class="award-desc">
-          <b>Mr. H. C. Verma Diamond Jubilee Award &amp; IGS Best Paper</b>
-          <span>Indian Geotechnical Society.</span>
-        </div>
-      </li>
-      <li class="award-item">
-        <span class="award-yr">2013</span>
-        <div class="award-desc">
-          <b>IIT Joint Entrance Examination (IIT-JEE) — Top 0.2 Percentile</b>
-          <span>Ranked 2,445 nationwide among 1.45 million examinees across India.</span>
-        </div>
+      <li>
+        <a class="award-item has-link" href="https://jeeadv.ac.in/" target="_blank" rel="noopener" title="Open IIT JEE Advanced Portal">
+          <span class="award-yr">2013</span>
+          <div class="award-desc">
+            <b>IIT Joint Entrance Examination (IIT-JEE) — Top 0.2 Percentile <span class="ext-hint">↗</span></b>
+            <span>Ranked 2,445 nationwide among 1.45 million examinees across India.</span>
+          </div>
+        </a>
       </li>
     </ul>
   </section>
