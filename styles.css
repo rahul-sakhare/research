@@ -747,7 +747,8 @@ html[data-theme="dark"] .btn-bib.copied {
   margin-bottom: 2px;
 }
 .edu-detail h3 {
-  font-size: 18.5px;
+  font-size: 19px;
+  font-weight: 700;
   margin: 0 0 4px;
 }
 .edu-detail .inst {

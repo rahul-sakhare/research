@@ -351,8 +351,9 @@ P["education.html"] = head(
         <div style="margin-top:6px"><a href="https://engineering.purdue.edu/CE" target="_blank" rel="noopener">Lyles School of Civil Eng ↗</a></div>
       </div>
       <div class="edu-detail">
-        <h3>Doctor of Philosophy (Ph.D.) in Civil Engineering</h3>
+        <h3><b>Doctor of Philosophy (Ph.D.) in Civil Engineering</b></h3>
         <div class="inst">Purdue University — Lyles School of Civil Engineering</div>
+        <p><b>Focus Area:</b> Transportation and Infrastructure Systems (TIS)</p>
         <p><b>Dissertation:</b> "Integrating Connected Vehicle Data for Operational Decision Making."</p>
         <p><b>Advisor:</b> Prof. Darcy M. Bullock</p>
         <p><b>Committee:</b> Prof. Samuel Labi, Prof. Konstantina Gkritza, Prof. James Krogmeier</p>
@@ -367,7 +368,7 @@ P["education.html"] = head(
         <div style="margin-top:6px"><a href="https://www.iitm.ac.in/" target="_blank" rel="noopener">IIT Madras ↗</a></div>
       </div>
       <div class="edu-detail">
-        <h3>Master of Technology (M.Tech.) in Transportation Engineering</h3>
+        <h3><b>Master of Technology (M.Tech.) in Transportation Engineering</b></h3>
         <div class="inst">Indian Institute of Technology (IIT) Madras — Department of Civil Engineering</div>
         <p><b>Thesis:</b> "Reliable Corridor Level Travel Time Estimation Using Probe Vehicle Data."</p>
         <p><b>Advisor:</b> Prof. Lelitha Devi Vanajakshi</p>
@@ -383,7 +384,7 @@ P["education.html"] = head(
         <div style="margin-top:6px"><a href="https://www.iitm.ac.in/" target="_blank" rel="noopener">IIT Madras ↗</a></div>
       </div>
       <div class="edu-detail">
-        <h3>Bachelor of Technology (B.Tech.) in Civil Engineering</h3>
+        <h3><b>Bachelor of Technology (B.Tech.) in Civil Engineering</b></h3>
         <div class="inst">Indian Institute of Technology (IIT) Madras — Minor in Management Studies</div>
         <p>Admitted through the IIT Joint Entrance Examination (IIT-JEE) ranked in the top 0.2 percentile among 1.45 million applicants nationwide (All India Rank 2,445).</p>
       </div>
@@ -396,7 +397,7 @@ P["education.html"] = head(
         <div style="margin-top:6px"><a href="https://mylicense.in.gov/EVerification/" target="_blank" rel="noopener">IN PLA Verification ↗</a></div>
       </div>
       <div class="edu-detail">
-        <h3>Professional Engineer (P.E.)</h3>
+        <h3><b>Professional Engineer (P.E.)</b></h3>
         <div class="inst">State of Indiana — State Board of Registration for Professional Engineers</div>
         <p><b>License Number:</b> PE12600619 (Active · Issued June 2026)</p>
         <p>Discipline: Civil &amp; Transportation Engineering. Licensed professional engineer upholding public safety, technical rigor, and ethical engineering standards.</p>
