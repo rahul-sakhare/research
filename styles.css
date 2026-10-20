@@ -912,7 +912,7 @@ html[data-theme="dark"] .btn-bib.copied {
 }
 .award-item {
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 115px 1fr;
   gap: 24px;
   padding: 14px 16px;
   margin: 0 -16px;
@@ -949,6 +949,21 @@ a.award-item:hover .award-desc b,
 .award-desc b {
   color: var(--ink-heading);
   transition: color 0.15s ease;
+}
+.award-desc .appt-inst {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-heading);
+  margin: 2px 0 5px;
+  display: block;
+}
+.award-desc .appt-inst .loc {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+.award-desc .appt-inst .dot {
+  color: var(--border-strong);
+  margin: 0 4px;
 }
 .award-desc span {
   color: var(--ink-muted);
