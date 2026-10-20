@@ -46,7 +46,7 @@ def head(title, desc, body_cls):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8.5">
+<link rel="stylesheet" href="styles.css?v=8.6">
 </head>
 <body class="{body_cls}">"""
 
@@ -71,7 +71,7 @@ def foot(right="West Lafayette, IN", scripts=""):
   <span>© 2026 Rahul Suryakant Sakhare, Ph.D., P.E. · Purdue University</span>
   <span>{right}</span>
 </footer>
-{scripts}<script src="script.js?v=8.5"></script>
+{scripts}<script src="script.js?v=8.6"></script>
 </body>
 </html>"""
 
@@ -97,7 +97,7 @@ P["index.html"] = head(
           <p><b>Office:</b><br>Hall of Discovery and Learning Research (DLR), Room 204F<br>West Lafayette, IN 47906</p>
           <p><b>Email:</b><br><a href="mailto:rsakhare@purdue.edu">rsakhare@purdue.edu</a></p>
           <p><b>Credentials:</b><br>Ph.D. Civil Eng, Purdue ('23)<br>Dual M.Tech. &amp; B.Tech., IIT Madras ('18)</p>
-          <p><b>Licensure:</b><br>Professional Engineer (P.E.), Indiana</p>
+          <p><b>Licensure:</b><br>Professional Engineer (P.E.), Indiana (No. PE12600619)</p>
           <p><b>TRB Committee:</b><br>ACF13 (Limited Access Roadways)</p>
         </div>
       </aside>
@@ -304,7 +304,7 @@ P["about.html"] = head(
         </div>
         <div class="profile-sidebar-meta">
           <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
-          <p><b>Licensure:</b><br>Licensed Professional Engineer (P.E.), State of Indiana</p>
+          <p><b>Licensure:</b><br>Licensed Professional Engineer (P.E.), State of Indiana (No. PE12600619, June 2026)</p>
           <p><b>Grant Leadership:</b><br>Co-PI on 4 Active INDOT Grants ($1.13M)</p>
           <p><b>Research Volume:</b><br>$6.0M+ across 20+ externally funded projects</p>
           <p><b>Professional Service:</b><br>TRB ACF13 Committee Member<br>Purdue Road School Committee</p>
@@ -455,12 +455,14 @@ P["education.html"] = head(
 
     <div class="edu-entry">
       <div class="edu-meta">
-        <span class="yr">Active Licensure</span>
+        <span class="yr">June 2026</span>
         <span>State of Indiana</span>
+        <div style="margin-top:6px"><a href="https://mylicense.in.gov/EVerification/" target="_blank" rel="noopener">IN PLA Verification ↗</a></div>
       </div>
       <div class="edu-detail">
         <h3>Professional Engineer (P.E.)</h3>
         <div class="inst">State of Indiana — State Board of Registration for Professional Engineers</div>
+        <p><b>License Number:</b> PE12600619 (Active · Issued June 2026)</p>
         <p>Discipline: Civil &amp; Transportation Engineering. Licensed professional engineer upholding public safety, technical rigor, and ethical engineering standards.</p>
       </div>
     </div>
@@ -791,7 +793,7 @@ P["news.html"] = head(
     <div class="filters" id="media-filters"></div>
     <div id="media-root"></div>
   </section>
-""" + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js?v=8.5"></script>\n')
+""" + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js?v=8.6"></script>\n')
 
 
 # =========================================================================
