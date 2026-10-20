@@ -1243,16 +1243,25 @@ a.award-item:hover .award-desc b,
   transition: color 0.15s ease;
 }
 .award-desc .appt-inst {
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 500;
   color: var(--ink-heading);
-  margin: 2px 0 5px;
-  display: block;
+  margin: 3px 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.award-desc .appt-inst .inst-name {
+  font-weight: 500;
+  color: var(--ink-heading);
 }
 .award-desc .appt-inst .loc {
   color: var(--ink-muted);
   font-weight: 400;
-  margin-left: 6px;
+  font-size: 13.5px;
+  white-space: nowrap;
 }
 .award-desc span {
   color: var(--ink-muted);

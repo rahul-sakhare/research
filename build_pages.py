@@ -79,7 +79,7 @@ def head(title, desc, body_cls, page_url=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=9.3">
+<link rel="stylesheet" href="styles.css?v=9.4">
 <script>
 (function(){{
   var t = localStorage.getItem('theme');
@@ -301,7 +301,10 @@ P["about.html"] = head(
             <span class="award-yr">2023 — Present</span>
             <div class="award-desc">
               <b>Transportation Research Engineer</b>
-              <div class="appt-inst">Joint Transportation Research Program (JTRP), Purdue University <span class="loc">(West Lafayette, IN)</span></div>
+              <div class="appt-inst">
+                <span class="inst-name">Joint Transportation Research Program (JTRP), Purdue University</span>
+                <span class="loc">West Lafayette, IN</span>
+              </div>
               <span>Leading multi-agency connected vehicle data research, cloud analytics pipelines, and agency deployments for INDOT and FHWA. Co-PI on four active INDOT research grants.</span>
             </div>
           </li>
@@ -309,7 +312,10 @@ P["about.html"] = head(
             <span class="award-yr">2020 — 2023</span>
             <div class="award-desc">
               <b>Graduate Research Assistant</b>
-              <div class="appt-inst">Lyles School of Civil Engineering, Purdue University <span class="loc">(West Lafayette, IN)</span></div>
+              <div class="appt-inst">
+                <span class="inst-name">Lyles School of Civil Engineering, Purdue University</span>
+                <span class="loc">West Lafayette, IN</span>
+              </div>
               <span>Conducted doctoral research under Prof. Darcy M. Bullock on connected vehicle data for operational decision-making. Recipient of the Christopher B. &amp; Susan S. Burke Fellowship.</span>
             </div>
           </li>
@@ -317,7 +323,10 @@ P["about.html"] = head(
             <span class="award-yr">2018 — 2019</span>
             <div class="award-desc">
               <b>Executive Consultant — Transportation Team (Industry Experience)</b>
-              <div class="appt-inst">Ernst &amp; Young (EY) LLP <span class="loc">(New Delhi, India)</span></div>
+              <div class="appt-inst">
+                <span class="inst-name">Ernst &amp; Young (EY) LLP</span>
+                <span class="loc">New Delhi, India</span>
+              </div>
               <span>Provided strategic advisory and technical consulting on transportation infrastructure, traffic data analysis, and public-sector civil engineering advisory projects.</span>
             </div>
           </li>
@@ -325,7 +334,10 @@ P["about.html"] = head(
             <span class="award-yr">2017</span>
             <div class="award-desc">
               <b>Visiting Undergraduate Research Student</b>
-              <div class="appt-inst">Purdue University <span class="loc">(West Lafayette, IN)</span></div>
+              <div class="appt-inst">
+                <span class="inst-name">Purdue University</span>
+                <span class="loc">West Lafayette, IN</span>
+              </div>
               <span>Conducted invited undergraduate research on connected vehicle traffic data and transit GPS estimation under Prof. Darcy M. Bullock.</span>
             </div>
           </li>
@@ -333,7 +345,10 @@ P["about.html"] = head(
             <span class="award-yr">2016</span>
             <div class="award-desc">
               <b>Summer Researcher — Purdue Undergraduate Research Experience (PURE)</b>
-              <div class="appt-inst">Lyles School of Civil Engineering, Purdue University <span class="loc">(West Lafayette, IN)</span></div>
+              <div class="appt-inst">
+                <span class="inst-name">Lyles School of Civil Engineering, Purdue University</span>
+                <span class="loc">West Lafayette, IN</span>
+              </div>
               <span>Selected through the competitive PURE program as one of the top civil engineering students chosen across India (<a href="https://www.purdue.edu/newsroom/archive/purduetoday/releases/2016/Q3/undergraduate-research-experience-for-indian-institute-of-technology-students-addresses-grand-challenges.html" target="_blank" rel="noopener">Purdue Today feature ↗</a>).</span>
             </div>
           </li>
