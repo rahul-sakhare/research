@@ -306,7 +306,7 @@ P["about.html"] = head(
             <div class="award-desc">
               <b>Summer Researcher — Purdue Undergraduate Research Experience (PURE)</b>
               <div class="appt-inst">Lyles School of Civil Engineering, Purdue University <span class="dot">·</span> <span class="loc">West Lafayette, IN</span></div>
-              <span>Selected through the competitive PURE program as one of the top civil engineering students chosen across India.</span>
+              <span>Selected through the competitive PURE program as one of the top civil engineering students chosen across India (<a href="https://www.purdue.edu/newsroom/archive/purduetoday/releases/2016/Q3/undergraduate-research-experience-for-indian-institute-of-technology-students-addresses-grand-challenges.html" target="_blank" rel="noopener">Purdue Today feature ↗</a>).</span>
             </div>
           </li>
         </ul>
@@ -722,7 +722,7 @@ P["awards.html"] = head(
         </a>
       </li>
       <li>
-        <a class="award-item has-link" href="https://engineering.purdue.edu/JTRP" target="_blank" rel="noopener" title="Open Joint Transportation Research Program, Purdue University">
+        <a class="award-item has-link" href="https://www.purdue.edu/newsroom/archive/purduetoday/releases/2016/Q3/undergraduate-research-experience-for-indian-institute-of-technology-students-addresses-grand-challenges.html" target="_blank" rel="noopener" title="Open Purdue Today feature on PURE program">
           <span class="award-yr">2016</span>
           <div class="award-desc">
             <b>PURE Program Scholar <span class="ext-hint">↗</span></b>
