@@ -779,7 +779,7 @@ P["news.html"] = head(
     <div class="filters" id="media-filters"></div>
     <div id="media-root"></div>
   </section>
-""" + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js?v=8.7"></script>\n')
+""" + foot("Media inquiries: rsakhare@purdue.edu", '<script src="media-data.js?v=8.8"></script>\n')
 
 
 # =========================================================================
