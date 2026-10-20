@@ -113,7 +113,7 @@ P["index.html"] = head(
           <p><b>Email:</b><br><a href="mailto:rsakhare@purdue.edu">rsakhare@purdue.edu</a></p>
           <p><b>Credentials:</b><br>Ph.D. Civil Eng, Purdue ('23)<br>Dual M.Tech. &amp; B.Tech., IIT Madras ('18)</p>
           <p><b>Licensure:</b><br>Professional Engineer (P.E.), Indiana (No. PE12600619)</p>
-          <p><b>TRB Committee:</b><br>ACF13 (Limited Access Roadways)</p>
+          <p><b>TRB Committee:</b><br>Member of the Committee, ACF13 (Limited Access Roadway Operations)</p>
         </div>
       </aside>
 
@@ -319,7 +319,7 @@ P["about.html"] = head(
           <p><b>Current Role:</b><br>Transportation Research Engineer<br>JTRP, Purdue University</p>
           <p><b>Licensure:</b><br>Licensed Professional Engineer (P.E.), State of Indiana (No. PE12600619, June 2026)</p>
           <p><b>Research Leadership:</b><br>Co-PI on 4 Active INDOT Grants<br>Lead Engineer on FHWA Pooled-Fund Studies</p>
-          <p><b>Professional Service:</b><br>TRB ACF13 Committee Member<br>Purdue Road School Committee</p>
+          <p><b>Professional Service:</b><br>Member of the TRB Committee ACF13 (Limited Access Roadway Operations)<br>Purdue Road School Committee</p>
         </div>
       </aside>
 
@@ -332,7 +332,7 @@ P["about.html"] = head(
           Across multiple state and national research initiatives, I have served as Co-Principal Investigator (Co-PI) on four active Indiana Department of Transportation (INDOT) research grants and as lead research engineer on multi-state FHWA Pooled-Fund studies. The methodologies and diagnostic tools resulting from this work are embedded into statewide operations with INDOT and regional DOT partners across the Midwest, informing real-time work zone safety alerts, network-wide bottleneck screening, winter storm recovery, and capital program prioritization.
         </p>
         <p>
-          Alongside research, I actively teach, mentor graduate and undergraduate researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering, serve on the TRB Committee on Limited Access Roadway Operations (ACF13), and contribute to the annual Purdue Road School Planning Committee. I earned my Ph.D. in Civil Engineering from Purdue University, completed dual B.Tech. and M.Tech. degrees from IIT Madras (ranked top 0.2% in the IIT-JEE), and hold a licensed Professional Engineer (P.E.) credential in Indiana.
+          Alongside research, I actively teach, mentor graduate and undergraduate researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering, serve as a member of the TRB Standing Committee on Limited Access Roadway Operations (ACF13), and contribute to the annual Purdue Road School Planning Committee. I earned my Ph.D. in Civil Engineering from Purdue University, completed dual B.Tech. and M.Tech. degrees from IIT Madras (ranked top 0.2% in the IIT-JEE), and hold a licensed Professional Engineer (P.E.) credential in Indiana.
         </p>
 
         <h2>Career Appointments</h2>
