@@ -278,15 +278,15 @@ P["about.html"] = head(
           <li class="award-item">
             <span class="award-yr">2017</span>
             <div class="award-desc">
-              <b>Visiting Undergraduate Research Scholar</b>
-              <span>Purdue University. Selected through the Purdue Undergraduate Research Experience (PURE) program among top civil engineering candidates in India.</span>
+              <b>Visiting Undergraduate Research Student</b>
+              <span>Purdue University, West Lafayette. Conducted invited undergraduate research on connected vehicle traffic data and transit GPS estimation under Prof. Darcy M. Bullock.</span>
             </div>
           </li>
           <li class="award-item">
-            <span class="award-yr">2013 — 2018</span>
+            <span class="award-yr">2016</span>
             <div class="award-desc">
-              <b>Dual Degree Scholar (B.Tech. &amp; M.Tech.)</b>
-              <span>Department of Civil Engineering, Indian Institute of Technology (IIT) Madras. Awarded the Exemplary &amp; All-Round Best Performance Award in the dual-degree program.</span>
+              <b>Summer Researcher — Purdue Undergraduate Research Experience (PURE)</b>
+              <span>Lyles School of Civil Engineering, Purdue University. Selected through the competitive PURE program as one of the top civil engineering students chosen across India.</span>
             </div>
           </li>
         </ul>
@@ -675,8 +675,17 @@ P["awards.html"] = head(
         <a class="award-item has-link" href="https://engineering.purdue.edu/JTRP" target="_blank" rel="noopener" title="Open Joint Transportation Research Program, Purdue University">
           <span class="award-yr">2017</span>
           <div class="award-desc">
-            <b>Invited Visiting Undergraduate Research Scholar <span class="ext-hint">↗</span></b>
-            <span>Purdue University (PURE Program).</span>
+            <b>Invited Visiting Undergraduate Student <span class="ext-hint">↗</span></b>
+            <span>Purdue University, West Lafayette.</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="award-item has-link" href="https://engineering.purdue.edu/JTRP" target="_blank" rel="noopener" title="Open Joint Transportation Research Program, Purdue University">
+          <span class="award-yr">2016</span>
+          <div class="award-desc">
+            <b>PURE Program Scholar <span class="ext-hint">↗</span></b>
+            <span>Among top three civil engineering students chosen across India for the Purdue Undergraduate Research Experience.</span>
           </div>
         </a>
       </li>
