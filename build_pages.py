@@ -57,6 +57,7 @@ def head(title, desc, body_cls, page_url=""):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{canonical}">
+<meta name="google-site-verification" content="google368a88109246cfe6">
 
 <!-- Open Graph / Social Sharing Meta Tags -->
 <meta property="og:type" content="website">
