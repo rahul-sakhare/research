@@ -724,7 +724,7 @@ PROJECTS_DATA = [
         "partners": "Regional State DOT Partners (INDOT, IDOT, MDOT)",
         "desc": "Bridged jurisdictional boundaries by developing methods to track queue propagation, back-of-queue secondary crashes, and travel delays extending across interstate state line borders without roadside sensors.",
         "links": [
-            ("CCAT UTC Research Consortium", "https://ccat.umtri.umich.edu/")
+            ("CCAT Project Details & Overview", "https://ccat.umtri.umich.edu/research/purdue/methodologies-for-monitoring-work-zone-performance-measures-across-state-border-highways-using-connected-vehicle-data/")
         ]
     },
     {
