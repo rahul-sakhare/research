@@ -312,7 +312,7 @@ P["about.html"] = head(
     "about.html"
 ) + nav("about.html") + f"""
   <section class="wrap" style="padding-top:36px">
-    <h1>About Rahul Sakhare, Ph.D., P.E.</h1>
+    <h1>About Rahul,</h1>
     <p style="font-size:17px;color:var(--ink-muted);margin-bottom:32px">
       Transportation Research Engineer at Purdue University's Joint Transportation Research Program, bridging civil infrastructure systems, connected vehicle telematics, and scalable data analytics.
     </p>
