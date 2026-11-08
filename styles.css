@@ -1188,6 +1188,16 @@ html[data-theme="dark"] .proj-link-btn:hover {
 }
 .mentee-table tr:last-child td { border-bottom: none; }
 .mentee-table b { color: var(--ink-heading); }
+.mentee-link {
+  color: var(--ink-heading);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-muted);
+  transition: color .15s ease, border-color .15s ease;
+}
+.mentee-link:hover {
+  color: var(--link-color);
+  border-bottom: 1px solid var(--link-color);
+}
 
 /* ==========================================================================
    AWARDS TIMELINE

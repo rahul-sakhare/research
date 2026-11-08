@@ -350,3 +350,4 @@ window.GALLERY = [
     highlight: true
   }
 ];
+
