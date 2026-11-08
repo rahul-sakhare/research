@@ -71,6 +71,7 @@ The site uses a custom Python-based static site generator:
 5. **Contact Form:** FormSubmit action with `<input type="hidden" name="_next" value="https://rahul-sakhare.github.io/research/contact.html">` to prevent 404 redirects.
 6. **CCAT Project:** Linked to official CCAT UMTRI page.
 7. **Research Phrasing:** Changed `capital prioritization` / `capital program prioritization` to `capital project prioritization` and removed the serial comma before `and` in the research overview narrative on both Home and About pages.
+8. **Teaching & Mentorship Roster:** Updated section title to `Graduate & Undergraduate Researchers Co-Advised / Mentored / Collaborated` and expanded the researcher roster to 16 researchers with INDOT SPR project numbers and publications.
 
 ---
 

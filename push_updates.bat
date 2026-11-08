@@ -6,10 +6,10 @@ echo.
 echo Checking Git status...
 git status
 echo.
-set "COMMIT_MSG=%~1"
-if "%COMMIT_MSG%"=="" set "COMMIT_MSG=Update phrasing to capital project prioritization and remove comma before and"
+set "COMMIT_MSG=%*"
+if not defined COMMIT_MSG set "COMMIT_MSG=Update site content and regenerate pages"
 
-echo Staging and committing changes with message: "%COMMIT_MSG%"...
+echo Staging and committing changes...
 git add .
 git commit -m "%COMMIT_MSG%"
 echo.

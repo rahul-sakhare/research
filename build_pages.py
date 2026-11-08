@@ -1125,24 +1125,48 @@ P["education.html"] = head(
 # 6. TEACHING & MENTORSHIP (teaching.html)
 # =========================================================================
 MENTEES = [
+    {"name":"Jairaj Desai", "deg":"Ph.D. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Big data analytics for surface transportation, telematics for winter operations, queue warning truck evaluations, and statewide work zone performance measures.",
+     "proj":"INDOT SPR-4851, SPR-4857 & JTTs 2021"},
+    {"name":"Enrique (ED) Saldivar-Carranza", "deg":"Ph.D. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Scalable traffic signal performance measures from vehicle trajectories, privacy filter impacts, and international land border crossing delay analytics.",
+     "proj":"INDOT SPR-4451 & SPR-4639"},
     {"name":"Myles Overall", "deg":"Ph.D. in Civil Engineering", "dept":"Purdue Civil Eng",
      "topic":"Incident management performance measures, emergency clearance delay, and work zone commercial truck video analytics.",
      "proj":"INDOT SPR-4851 & JTTs 2026"},
+    {"name":"Yunchang Zhang", "deg":"Ph.D. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Evaluating interstate speed and traffic stream impacts under rain intensity and weather disruptions; work zone rolling slowdown mobility analysis.",
+     "proj":"INDOT SPR-4536 & SPR-4542"},
+    {"name":"Abdullah J. Nafakh", "deg":"Ph.D. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Nighttime work zone lighting and glare assessment, safety and mobility impacts of rolling slowdowns, and pedestrian service frameworks.",
+     "proj":"INDOT SPR-4542 & SPR-4319"},
+    {"name":"Justin Mahlberg", "deg":"M.S. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Winter operations fleet telematics, crowdsourced winter dashboards, queue warning truck traffic behavior, and lane keep assist sensor maintenance screening.",
+     "proj":"INDOT SPR-4600 & SPR-4603"},
     {"name":"Chris Gartner", "deg":"M.S. in Civil Engineering", "dept":"Purdue Civil Eng",
      "topic":"Scalable data models for signalized intersection performance measures and statewide network screening.",
      "proj":"INDOT SPR-4857 & IEEE Access 2025"},
-    {"name":"Andrew Thompson", "deg":"M.S. in Electrical & Computer Engineering", "dept":"Purdue ECE",
-     "topic":"Road asset identification and condition assessment utilizing commercial truck computer vision.",
-     "proj":"INDOT SPR-4907 & SPR-5005"},
+    {"name":"Greg Brinster", "deg":"M.S. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Maintenance Decision Support System (MDSS) forecast robustness, truck speed analysis under differential speed limits, and mobile LiDAR inventorying.",
+     "proj":"INDOT SPR-4704 & Safety 2024"},
+    {"name":"Saumabha Gayen", "deg":"M.S. in Civil Engineering", "dept":"Purdue Civil Eng",
+     "topic":"Statewide screening and ranking of signalized intersections for capacity improvements utilizing vehicle trajectory and high-resolution controller data.",
+     "proj":"INDOT SPR-4857 & JTRP-2024/20"},
     {"name":"Justin Mukai", "deg":"M.S. in Civil Engineering", "dept":"Purdue Civil Eng",
      "topic":"Quantifying vehicle hard-braking events occurring prior to secondary crashes on interstate corridors.",
      "proj":"Future Transportation 2026 & INDOT SPR-4928"},
+    {"name":"Andrew Thompson", "deg":"M.S. in Electrical & Computer Engineering", "dept":"Purdue ECE",
+     "topic":"Road asset identification and condition assessment utilizing commercial truck computer vision.",
+     "proj":"INDOT SPR-4907 & SPR-5005"},
     {"name":"Thomas Driscoll", "deg":"M.S. in Mechanical Engineering", "dept":"Purdue ME",
      "topic":"Cross-border connected vehicle congestion modeling and multi-jurisdictional delay spillover.",
      "proj":"CCAT & JTTs 2025"},
     {"name":"Neelesh Gopalkrishnan", "deg":"M.S. in Computer Science", "dept":"Purdue CS",
      "topic":"Connected vehicle market penetration dashboard and scalable WebGIS trajectory query interfaces.",
      "proj":"JTRP WebGIS Analytics"},
+    {"name":"Vihaan Vajpayee", "deg":"B.S. in Engineering (SURF Scholar)", "dept":"Purdue Engineering (SURF Scholar at JTRP)",
+     "topic":"Large-scale evaluation of normalized hard-braking events derived from connected vehicle trajectory data at signalized intersections and roundabouts.",
+     "proj":"INDOT TPF-5(519) & Future Transportation 2024"},
     {"name":"Ahsmitha Sivakumar", "deg":"B.Tech. in Civil Engineering", "dept":"IIT Madras Civil Engineering (PURE Scholar at Purdue)",
      "topic":"Toll plaza performance measures and evaluation of privacy filters in probe trajectory datasets.",
      "proj":"Smart Cities 2024"},
@@ -1237,9 +1261,9 @@ P["teaching.html"] = head(
     </div>
 
     <!-- Student Mentorship Roster -->
-    <h2>Graduate &amp; Undergraduate Researchers Co-Advised</h2>
+    <h2>Graduate &amp; Undergraduate Researchers Co-Advised / Mentored / Collaborated</h2>
     <p style="font-size:15px;color:var(--ink-muted);margin-bottom:16px">
-      Proud to have co-advised and mentored emerging researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering:
+      Proud to have co-advised, mentored, and collaborated with emerging researchers across Civil Engineering, Electrical &amp; Computer Engineering, Computer Science, and Mechanical Engineering:
     </p>
 
     <div style="overflow-x:auto">
