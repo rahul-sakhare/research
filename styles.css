@@ -1544,54 +1544,251 @@ html[data-theme="dark"] .mi.usdot-feature:hover {
 /* ==========================================================================
    VISUAL CHRONICLE / GALLERY STYLING & LIGHTBOX
    ========================================================================== */
-.chronicle-filters {
+.chronicle-timeline-wrapper {
+  margin-bottom: 38px;
+}
+
+/* Timeline Navigation Track */
+.chronicle-timeline-nav {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 0 20px;
+  scrollbar-width: none;
+}
+.chronicle-timeline-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-track-outer {
+  min-width: 620px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 42px 10px 10px;
+}
+
+/* Continuous Horizontal Axis Line */
+.timeline-track-line {
+  position: absolute;
+  left: 24px;
+  right: 28px;
+  bottom: 16px;
+  height: 2px;
+  background: var(--border-strong);
+  z-index: 1;
+  pointer-events: none;
+  transition: background .2s ease;
+}
+
+/* Directional Arrow at the right end */
+.timeline-arrow-indicator {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Node buttons spaced along the line */
+.timeline-nodes-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.timeline-node-btn {
+  background: none;
+  border: none;
+  padding: 0 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin-bottom: 36px;
+  align-items: center;
+  cursor: pointer;
+  color: var(--ink-muted);
+  font-family: inherit;
+  transition: all .2s ease;
+  position: relative;
+  outline-offset: 4px;
 }
-.filter-row {
+
+.timeline-node-label {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 12px;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: all .2s ease;
+}
+
+.timeline-node-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-body);
+  border: 2.5px solid var(--border-strong);
+  transition: all .2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 0 4px var(--bg-body);
+  position: relative;
+}
+
+/* Hover States */
+.timeline-node-btn:hover .timeline-node-label {
+  color: var(--ink-heading);
+  transform: translateY(-1px);
+}
+.timeline-node-btn:hover .timeline-node-dot {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  transform: scale(1.2);
+}
+
+/* Active State (Selected Year) */
+.timeline-node-btn.active .timeline-node-label {
+  color: var(--accent-text);
+  font-weight: 700;
+  transform: translateY(-2px);
+}
+.timeline-node-btn.active .timeline-node-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 4px var(--accent-subtle), 0 0 0 7px var(--bg-body);
+}
+
+/* Format Filter Bar (Unboxed, Understated) */
+.chronicle-format-bar {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 8px 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+  margin-top: 4px;
 }
-.filter-label {
-  font-size: 13px;
+
+.format-bar-title {
+  font-size: 12px;
   font-weight: 600;
-  color: var(--ink-muted);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-right: 6px;
-  min-width: 60px;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  margin-right: 4px;
 }
-.filter-btn {
+
+.format-bar-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.format-chip {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--ink-muted);
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--bg-body);
-  color: var(--ink-body);
+  padding: 4px 6px;
   cursor: pointer;
   transition: all .15s ease;
   white-space: nowrap;
 }
-.filter-btn:hover {
-  background: var(--bg-hover-item);
+
+.format-chip:hover {
   color: var(--ink-heading);
-  border-color: var(--border-strong);
 }
-.filter-btn.active {
-  background: var(--ink-heading);
-  color: var(--bg-body);
-  border-color: var(--ink-heading);
+
+.format-chip.active {
+  color: var(--ink-heading);
+  border-bottom-color: var(--accent);
   font-weight: 600;
+}
+
+/* Chronicle Empty State */
+.chronicle-empty-state {
+  text-align: center;
+  padding: 56px 24px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  margin: 32px 0 60px;
+}
+
+.empty-state-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.empty-state-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--ink-heading);
+  margin: 0 0 10px 0;
+}
+
+.empty-state-text {
+  font-size: 15px;
+  color: var(--ink-muted);
+  max-width: 64ch;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+}
+
+.empty-state-guide {
+  display: inline-block;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 13px;
+  color: var(--ink-body);
+}
+
+.empty-state-guide code {
+  font-family: monospace;
+  background: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: var(--ink-heading);
+}
+
+.filter-reset-btn {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--accent);
+  background: var(--accent-subtle);
+  color: var(--accent-text);
+  cursor: pointer;
+  transition: all .15s ease;
+  margin-top: 12px;
+}
+
+.filter-reset-btn:hover {
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .gallery-year-section {

@@ -456,7 +456,16 @@ document.addEventListener('click', (e) => {
   let currentItems = [];
   let lightboxIndex = 0;
 
-  const years = ['all', '2026', '2025', '2024', '2023', '2022'];
+  // Timeline year progression: past -> present -> forward
+  const timelineYears = [
+    { key: 'all', label: 'All' },
+    { key: '2022', label: '2022 & Prior' },
+    { key: '2023', label: '2023' },
+    { key: '2024', label: '2024' },
+    { key: '2025', label: '2025' },
+    { key: '2026', label: '2026' }
+  ];
+
   const categories = [
     { key: 'all', label: 'All Formats' },
     { key: 'podium', label: 'Podium & Lectern' },
@@ -466,40 +475,58 @@ document.addEventListener('click', (e) => {
     { key: 'field', label: 'Field Deployments' }
   ];
 
-  // Render top filter bars
+  // Render Horizontal Timeline Navigation & Format Bar
   const filterContainer = document.getElementById('gallery-filters');
   if (filterContainer) {
-    let yearBtns = years.map(y => {
-      const lbl = y === 'all' ? 'All Years' : (y === '2022' ? '2022 & Prior' : y);
-      return `<button class="filter-btn${y === activeYear ? ' active' : ''}" data-year="${y}">${lbl}</button>`;
+    const nodeBtns = timelineYears.map(y => {
+      const isAct = y.key === activeYear;
+      return `
+        <button type="button" class="timeline-node-btn${isAct ? ' active' : ''}" data-year="${y.key}" aria-label="Filter ${y.label}">
+          <span class="timeline-node-label">${y.label}</span>
+          <span class="timeline-node-dot"></span>
+        </button>
+      `;
     }).join('');
 
-    let catBtns = categories.map(c => {
-      return `<button class="filter-btn${c.key === activeCat ? ' active' : ''}" data-cat="${c.key}">${c.label}</button>`;
+    const catChips = categories.map(c => {
+      return `<button type="button" class="format-chip${c.key === activeCat ? ' active' : ''}" data-cat="${c.key}">${c.label}</button>`;
     }).join('');
 
     filterContainer.innerHTML = `
-      <div class="filter-row">
-        <span class="filter-label">Year:</span>
-        ${yearBtns}
+      <div class="chronicle-timeline-nav">
+        <div class="timeline-track-outer">
+          <div class="timeline-track-line"></div>
+          <div class="timeline-nodes-row">
+            ${nodeBtns}
+          </div>
+          <div class="timeline-arrow-indicator" title="Forward in time / Present" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="13 6 19 12 13 18"></polyline>
+            </svg>
+          </div>
+        </div>
       </div>
-      <div class="filter-row">
-        <span class="filter-label">Format:</span>
-        ${catBtns}
+      <div class="chronicle-format-bar">
+        <span class="format-bar-title">Format:</span>
+        <div class="format-bar-list">
+          ${catChips}
+        </div>
       </div>
     `;
 
     filterContainer.addEventListener('click', (e) => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      if (btn.dataset.year) {
-        activeYear = btn.dataset.year;
-        filterContainer.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active', b === btn));
-      } else if (btn.dataset.cat) {
-        activeCat = btn.dataset.cat;
-        filterContainer.querySelectorAll('[data-cat]').forEach(b => b.classList.toggle('active', b === btn));
+      const yearBtn = e.target.closest('.timeline-node-btn');
+      const catBtn = e.target.closest('.format-chip');
+      if (yearBtn) {
+        activeYear = yearBtn.dataset.year;
+        filterContainer.querySelectorAll('.timeline-node-btn').forEach(b => b.classList.toggle('active', b === yearBtn));
+        renderGallery();
+      } else if (catBtn) {
+        activeCat = catBtn.dataset.cat;
+        filterContainer.querySelectorAll('.format-chip').forEach(b => b.classList.toggle('active', b === catBtn));
+        renderGallery();
       }
-      renderGallery();
     });
   }
 
@@ -508,6 +535,29 @@ document.addEventListener('click', (e) => {
   }
 
   function renderGallery() {
+    // If the gallery array has no items yet (e.g. before photos are added)
+    if (!window.GALLERY || window.GALLERY.length === 0) {
+      gRoot.innerHTML = `
+        <div class="chronicle-empty-state">
+          <div class="empty-state-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <h2 class="empty-state-title">Chronicle Archive in Preparation</h2>
+          <p class="empty-state-text">
+            Photographs from conference podium presentations, lectern sessions, poster discussions, invited lectures, and research deployments are currently being cataloged with verified dates, presentation venues, and high-resolution imagery.
+          </p>
+          <div class="empty-state-guide">
+            <strong>Adding Photographs:</strong> Place your images into <code>research/assets/img/gallery/</code> and configure session entries in <code>research/gallery-data.js</code>.
+          </div>
+        </div>
+      `;
+      return;
+    }
+
     const filtered = window.GALLERY.filter(item => {
       const matchesYear = (activeYear === 'all')
         ? true
@@ -519,10 +569,14 @@ document.addEventListener('click', (e) => {
     currentItems = filtered;
 
     if (filtered.length === 0) {
-      gRoot.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--ink-muted);">
-        <p style="font-size:16px;">No entries match the selected filters.</p>
-        <button class="filter-btn" onclick="document.querySelector('[data-year=\\'all\\']').click();document.querySelector('[data-cat=\\'all\\']').click();">Reset Filters</button>
-      </div>`;
+      const yearLabel = activeYear === 'all' ? 'any year' : (activeYear === '2022' ? '2022 & Prior' : activeYear);
+      gRoot.innerHTML = `
+        <div class="chronicle-empty-state">
+          <h2 class="empty-state-title" style="font-size:19px;">No sessions found for this selection</h2>
+          <p class="empty-state-text">No chronicle entries are currently cataloged for ${yearLabel} matching the selected format.</p>
+          <button type="button" class="filter-reset-btn" onclick="document.querySelector('[data-year=\\'all\\']').click();document.querySelector('[data-cat=\\'all\\']').click();">Reset Timeline &amp; Filters</button>
+        </div>
+      `;
       return;
     }
 

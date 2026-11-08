@@ -74,7 +74,12 @@ The site uses a custom Python-based static site generator:
 6. **CCAT Project:** Linked to official CCAT UMTRI page.
 7. **Research Phrasing:** Changed `capital prioritization` / `capital program prioritization` to `capital project prioritization` and removed the serial comma before `and` in the research overview narrative on both Home and About pages.
 8. **Teaching & Mentorship Roster:** Updated section title to `Graduate & Undergraduate Researchers Co-Advised / Mentored / Collaborated` and expanded the researcher roster to 16 researchers with INDOT SPR project numbers and publications.
-9. **Visual Chronicle (`gallery.html`):** Built dedicated conference, podium, lecture, and field photo chronicle with timeline year pills, category format filtering, curated 4-5 highlights per year with "+ Discover More" accordion, full interactive Lightbox modal (keyboard arrow support), and data-driven store in `gallery-data.js`.
+9. **Visual Chronicle (`gallery.html`):** Built dedicated conference, podium, lecture, and field photo chronicle with curated highlights per year, "+ Discover More" accordion, full interactive Lightbox modal (keyboard arrow support), and data-driven store in `gallery-data.js`.
+10. **Visual Chronicle Timeline Redesign & Photo Library Reset:**
+    - Replaced the boxy button selector with an authentic horizontal chronological timeline track: a continuous baseline axis line, forward directional arrow (`→`), and interactive node dots for each year (`All`, `2022 & Prior`, `2023`, `2024`, `2025`, `2026`).
+    - Added an unboxed, minimalist format filter bar below the timeline track.
+    - Purged all temporary placeholder images from `assets/img/gallery/` and reset `gallery-data.js` to a clean template schema, ready for Rahul to populate with actual conference and podium session photographs with metadata.
+    - Added an authentic archival empty state explaining the chronicle is in preparation.
 
 ---
 
