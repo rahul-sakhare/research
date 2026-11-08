@@ -1,14 +1,17 @@
 @echo off
 cd /d "E:\rsakhare\OneDrive - purdue.edu\_curricular\RS\research"
-echo Running build_pages.py to regenerate all pages with Google Analytics...
+echo Running build_pages.py to regenerate all pages...
 python build_pages.py
 echo.
 echo Checking Git status...
 git status
 echo.
-echo Staging and committing changes...
+set "COMMIT_MSG=%~1"
+if "%COMMIT_MSG%"=="" set "COMMIT_MSG=Update phrasing to capital project prioritization and remove comma before and"
+
+echo Staging and committing changes with message: "%COMMIT_MSG%"...
 git add .
-git commit -m "Add Google Analytics 4 (G-JX6RBVBKF6) and update About page heading"
+git commit -m "%COMMIT_MSG%"
 echo.
 echo Pushing to GitHub...
 git push origin main
