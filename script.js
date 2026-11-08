@@ -444,3 +444,287 @@ document.addEventListener('click', (e) => {
   copyBib(btn, bib);
 });
 
+// ==========================================================================
+// VISUAL CHRONICLE (gallery.html) HANDLER
+// ==========================================================================
+(function initVisualChronicle() {
+  const gRoot = document.getElementById('gallery-root');
+  if (!gRoot || !window.GALLERY) return;
+
+  let activeYear = 'all';
+  let activeCat = 'all';
+  let currentItems = [];
+  let lightboxIndex = 0;
+
+  const years = ['all', '2026', '2025', '2024', '2023', '2022'];
+  const categories = [
+    { key: 'all', label: 'All Formats' },
+    { key: 'podium', label: 'Podium & Lectern' },
+    { key: 'poster', label: 'Posters' },
+    { key: 'workshop', label: 'Workshops & Talks' },
+    { key: 'awards', label: 'Milestones & Awards' },
+    { key: 'field', label: 'Field Deployments' }
+  ];
+
+  // Render top filter bars
+  const filterContainer = document.getElementById('gallery-filters');
+  if (filterContainer) {
+    let yearBtns = years.map(y => {
+      const lbl = y === 'all' ? 'All Years' : (y === '2022' ? '2022 & Prior' : y);
+      return `<button class="filter-btn${y === activeYear ? ' active' : ''}" data-year="${y}">${lbl}</button>`;
+    }).join('');
+
+    let catBtns = categories.map(c => {
+      return `<button class="filter-btn${c.key === activeCat ? ' active' : ''}" data-cat="${c.key}">${c.label}</button>`;
+    }).join('');
+
+    filterContainer.innerHTML = `
+      <div class="filter-row">
+        <span class="filter-label">Year:</span>
+        ${yearBtns}
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Format:</span>
+        ${catBtns}
+      </div>
+    `;
+
+    filterContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      if (btn.dataset.year) {
+        activeYear = btn.dataset.year;
+        filterContainer.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active', b === btn));
+      } else if (btn.dataset.cat) {
+        activeCat = btn.dataset.cat;
+        filterContainer.querySelectorAll('[data-cat]').forEach(b => b.classList.toggle('active', b === btn));
+      }
+      renderGallery();
+    });
+  }
+
+  function getCategoryBadgeClass(cat) {
+    return 'badge-' + (cat || 'podium');
+  }
+
+  function renderGallery() {
+    const filtered = window.GALLERY.filter(item => {
+      const matchesYear = (activeYear === 'all')
+        ? true
+        : (activeYear === '2022' ? item.year <= 2022 : item.year === parseInt(activeYear, 10));
+      const matchesCat = (activeCat === 'all') ? true : item.category === activeCat;
+      return matchesYear && matchesCat;
+    });
+
+    currentItems = filtered;
+
+    if (filtered.length === 0) {
+      gRoot.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--ink-muted);">
+        <p style="font-size:16px;">No entries match the selected filters.</p>
+        <button class="filter-btn" onclick="document.querySelector('[data-year=\\'all\\']').click();document.querySelector('[data-cat=\\'all\\']').click();">Reset Filters</button>
+      </div>`;
+      return;
+    }
+
+    const yearGroups = {};
+    filtered.forEach(item => {
+      const yKey = item.year <= 2022 ? '2022 & Prior' : item.year.toString();
+      if (!yearGroups[yKey]) yearGroups[yKey] = [];
+      yearGroups[yKey].push(item);
+    });
+
+    const sortedYearKeys = Object.keys(yearGroups).sort((a, b) => {
+      const valA = parseInt(a, 10) || 2020;
+      const valB = parseInt(b, 10) || 2020;
+      return valB - valA;
+    });
+
+    let html = '';
+    sortedYearKeys.forEach(yKey => {
+      const itemsInYear = yearGroups[yKey];
+      const highlights = itemsInYear.filter(it => it.highlight);
+      const moreItems = itemsInYear.filter(it => !it.highlight);
+
+      const isFilteredView = activeYear !== 'all' || activeCat !== 'all';
+      const initialCards = isFilteredView ? itemsInYear : (highlights.length ? highlights : itemsInYear.slice(0, 4));
+      const extraCards = isFilteredView ? [] : (highlights.length ? moreItems : itemsInYear.slice(4));
+
+      html += `<section class="gallery-year-section" id="year-section-${yKey.replace(/[^0-9]/g, '')}">`;
+      html += `<div class="gallery-year-title"><span>${yKey}</span> <span class="gallery-year-count">(${itemsInYear.length} session${itemsInYear.length === 1 ? '' : 's'})</span></div>`;
+      html += `<div class="gallery-grid" id="grid-${yKey.replace(/[^0-9]/g, '')}">`;
+
+      const renderCard = (it, isExtra) => {
+        const globalIdx = currentItems.indexOf(it);
+        const extraCls = isExtra ? ' gallery-item-more' : '';
+        const badgeCls = getCategoryBadgeClass(it.category);
+        
+        let imgHtml = '';
+        if (it.image) {
+          imgHtml = `<div class="gallery-img-frame">
+            <img src="${it.image}" alt="${it.event} - ${it.date}" loading="lazy">
+            <span class="gallery-badge ${badgeCls}">${it.badge}</span>
+          </div>`;
+        } else {
+          imgHtml = `<div class="gallery-img-frame gallery-placeholder">
+            <div class="placeholder-graphic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <span>${it.badge}</span>
+            </div>
+            <span class="gallery-badge ${badgeCls}">${it.badge}</span>
+          </div>`;
+        }
+
+        let peopleHtml = '';
+        if (it.people && it.people.length) {
+          peopleHtml = `<div class="gallery-people"><b>With:</b> ${it.people.join(', ')}</div>`;
+        }
+
+        let linkHtml = '';
+        if (it.link) {
+          linkHtml = `<a href="${it.link}" target="_blank" rel="noopener" class="gallery-link" onclick="event.stopPropagation()">Session / Document ↗</a>`;
+        }
+
+        return `
+          <div class="gallery-card${extraCls}" data-idx="${globalIdx}" onclick="openLightbox(${globalIdx})">
+            ${imgHtml}
+            <div class="gallery-body">
+              <div class="gallery-meta">
+                <span>${it.date}</span> · <span>${it.location}</span>
+              </div>
+              <h3 class="gallery-event">${it.event}</h3>
+              <p class="gallery-caption">${it.caption}</p>
+              ${peopleHtml}
+              ${linkHtml}
+            </div>
+          </div>
+        `;
+      };
+
+      initialCards.forEach(it => {
+        html += renderCard(it, false);
+      });
+
+      if (extraCards.length > 0) {
+        extraCards.forEach(it => {
+          html += renderCard(it, true);
+        });
+      }
+
+      html += `</div>`; // end grid
+
+      if (extraCards.length > 0) {
+        const secId = yKey.replace(/[^0-9]/g, '');
+        html += `
+          <div class="discover-more-wrap" id="wrap-more-${secId}">
+            <button class="btn-discover-more" onclick="toggleYearMore('${secId}', this)">+ Discover ${extraCards.length} More ${yKey} Session${extraCards.length === 1 ? '' : 's'}</button>
+          </div>
+        `;
+      }
+
+      html += `</section>`;
+    });
+
+    gRoot.innerHTML = html;
+  }
+
+  // Toggle year extra sessions
+  window.toggleYearMore = function(secId, btn) {
+    const grid = document.getElementById('grid-' + secId);
+    if (!grid) return;
+    const moreItems = grid.querySelectorAll('.gallery-item-more');
+    const isExpanded = btn.getAttribute('data-expanded') === 'true';
+
+    if (isExpanded) {
+      moreItems.forEach(el => el.classList.remove('expanded'));
+      btn.setAttribute('data-expanded', 'false');
+      btn.textContent = btn.getAttribute('data-orig-text') || '+ Discover More Sessions';
+    } else {
+      if (!btn.getAttribute('data-orig-text')) {
+        btn.setAttribute('data-orig-text', btn.textContent);
+      }
+      moreItems.forEach(el => el.classList.add('expanded'));
+      btn.setAttribute('data-expanded', 'true');
+      btn.textContent = '– Show Key Highlights Only';
+    }
+  };
+
+  // Lightbox Modal Setup
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbInfo = document.getElementById('lightbox-info');
+
+  window.openLightbox = function(idx) {
+    if (!currentItems || idx < 0 || idx >= currentItems.length) return;
+    lightboxIndex = idx;
+    const it = currentItems[lightboxIndex];
+
+    if (it.image) {
+      lbImg.src = it.image;
+      lbImg.style.display = 'block';
+    } else {
+      lbImg.style.display = 'none';
+    }
+
+    let peopleStr = it.people && it.people.length ? `<p style="font-size:13px;color:var(--ink-muted);margin:8px 0;"><b>Attendees &amp; Collaborators:</b> ${it.people.join(', ')}</p>` : '';
+    let linkStr = it.link ? `<p style="margin-top:12px;"><a href="${it.link}" target="_blank" rel="noopener" class="gallery-link" style="font-size:13px;">View Session Details &amp; Publications ↗</a></p>` : '';
+
+    lbInfo.innerHTML = `
+      <div style="font-size:12.5px;color:var(--ink-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px;">
+        <span class="gallery-badge ${getCategoryBadgeClass(it.category)}" style="position:static;display:inline-block;margin-right:8px;">${it.badge}</span>
+        ${it.date} · ${it.location}
+      </div>
+      <h2 style="font-family:var(--font-serif);font-size:22px;color:var(--ink-heading);margin:8px 0 12px 0;line-height:1.3;">${it.event}</h2>
+      <p style="font-size:15px;color:var(--ink-body);line-height:1.6;margin:0 0 8px 0;">${it.caption}</p>
+      ${peopleStr}
+      ${linkStr}
+      <div style="font-size:12px;color:var(--ink-muted);margin-top:16px;border-top:1px solid var(--border);padding-top:10px;">
+        Photo ${lightboxIndex + 1} of ${currentItems.length}
+      </div>
+    `;
+
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closeLightbox = function() {
+    if (lightbox) {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  };
+
+  window.nextLightbox = function() {
+    if (currentItems.length <= 1) return;
+    lightboxIndex = (lightboxIndex + 1) % currentItems.length;
+    openLightbox(lightboxIndex);
+  };
+
+  window.prevLightbox = function() {
+    if (currentItems.length <= 1) return;
+    lightboxIndex = (lightboxIndex - 1 + currentItems.length) % currentItems.length;
+    openLightbox(lightboxIndex);
+  };
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-box')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
+      if (e.key === 'ArrowLeft') prevLightbox();
+    });
+  }
+
+  // Initial render
+  renderGallery();
+})();
+

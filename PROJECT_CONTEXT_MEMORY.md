@@ -19,7 +19,7 @@
 The site uses a custom Python-based static site generator:
 - **Primary Generator Script:** `build_pages.py`
   - Defines the global layout: `head()`, `nav()`, `foot()`.
-  - Generates all 9 site pages:
+  - Generates all 10 site pages:
     1. `index.html` (Home — Authentic Academic Minimalist layout, photo, scholar stats, selected publications)
     2. `about.html` (About — Bio, cricket hobby narrative, career appointments table)
     3. `publications.html` (Publications — 92 peer-reviewed items, interactive search, category filters, BibTeX modal)
@@ -28,12 +28,14 @@ The site uses a custom Python-based static site generator:
     6. `teaching.html` (Teaching — Philosophy, guest lectures, mentee roster)
     7. `awards.html` (Honors & Awards — PRIME grant, Cox scholarship, ITS Project of Year)
     8. `news.html` (News & Media — NYT, Google Cloud Innovator, USDOT V2X feature)
-    9. `contact.html` (Contact — Newton quote, Purdue DLR coordinates, FormSubmit portal with redirect)
-- **Styling:** `styles.css` (current version: `v=9.4`, uses Lora editorial serif headings + Inter sans body, dark/light theme toggle).
-- **Client Script:** `script.js` (handles live publication search, filtering, and BibTeX copying).
+    9. `gallery.html` (Visual Chronicle — Curated 4-5 annual photo highlights, timeline filters, "+ Discover More" accordion, full lightbox)
+    10. `contact.html` (Contact — Newton quote, Purdue DLR coordinates, FormSubmit portal with redirect)
+- **Styling:** `styles.css` (Lora editorial serif headings + Inter sans body, dark/light theme toggle, lightbox & gallery cards).
+- **Client Script:** `script.js` (handles live publication search, filtering, gallery timeline & lightbox).
 - **Data Stores:**
   - `pubs-data.js` (92 publications data array)
   - `media-data.js` (news/press clippings)
+  - `gallery-data.js` (photo library with year, event, category, location, people, and highlight flags)
   - `scholar.json` (citation counts, h-index 14, i10-index 19)
 
 ---
@@ -72,6 +74,7 @@ The site uses a custom Python-based static site generator:
 6. **CCAT Project:** Linked to official CCAT UMTRI page.
 7. **Research Phrasing:** Changed `capital prioritization` / `capital program prioritization` to `capital project prioritization` and removed the serial comma before `and` in the research overview narrative on both Home and About pages.
 8. **Teaching & Mentorship Roster:** Updated section title to `Graduate & Undergraduate Researchers Co-Advised / Mentored / Collaborated` and expanded the researcher roster to 16 researchers with INDOT SPR project numbers and publications.
+9. **Visual Chronicle (`gallery.html`):** Built dedicated conference, podium, lecture, and field photo chronicle with timeline year pills, category format filtering, curated 4-5 highlights per year with "+ Discover More" accordion, full interactive Lightbox modal (keyboard arrow support), and data-driven store in `gallery-data.js`.
 
 ---
 

@@ -43,6 +43,7 @@ NAV_ITEMS = [
  ("teaching.html", "Teaching"),
  ("awards.html", "Awards"),
  ("news.html", "News"),
+ ("gallery.html", "Visual Chronicle"),
  ("contact.html", "Contact")
 ]
 
@@ -1490,7 +1491,44 @@ P["news.html"] = head(
 
 
 # =========================================================================
-# 9. CONTACT (contact.html)
+# 9. VISUAL CHRONICLE (gallery.html)
+# =========================================================================
+P["gallery.html"] = head(
+    "Visual Chronicle | Rahul Sakhare, Ph.D., P.E.",
+    "Photographic and documentary chronicle of podium sessions, conference presentations, invited lectures, technical workshops, and field deployments.",
+    "sub",
+    "gallery.html"
+) + nav("gallery.html") + f"""
+  <section class="wrap" style="padding-top:36px">
+    <h1>Visual Chronicle</h1>
+    <p style="font-size:16px;color:var(--ink-muted);max-width:85ch;margin-bottom:28px">
+      A curated photographic and documentary chronicle of podium presentations, lectern sessions, poster discussions, invited lectures, and field deployments across my transportation engineering career.
+    </p>
+
+    <!-- Interactive Year and Format Filters -->
+    <div class="chronicle-filters" id="gallery-filters"></div>
+
+    <!-- Gallery Timeline Grid Root -->
+    <div id="gallery-root"></div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="prevLightbox()" aria-label="Previous Photo">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" onclick="nextLightbox()" aria-label="Next Photo">&#10095;</button>
+    <div class="lightbox-box">
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="Presentation photo preview">
+      </div>
+      <div class="lightbox-info" id="lightbox-info"></div>
+    </div>
+  </div>
+""" + foot("Event & speaking inquiries: rsakhare@purdue.edu", '<script src="gallery-data.js?v=1.0"></script>\n')
+
+
+# =========================================================================
+# 10. CONTACT (contact.html)
 # =========================================================================
 P["contact.html"] = head(
     "Contact & Coordinates | Rahul Sakhare, Ph.D., P.E.",
